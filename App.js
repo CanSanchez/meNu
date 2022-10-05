@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { ApplicationProvider, Button, Card, Layout, Text, Calendar } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import { CalendarSimpleUsageShowcase } from './components/calendar';
+import { BottomNavigationSimpleUsageShowcase } from './components/navbar';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const HomeScreen = () => (
+  <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text category='h1' style={{paddingBottom: '5%'}}>Calendar</Text>
+    <CalendarSimpleUsageShowcase />
+  </Layout>
+);
+
+export default () => (
+  <ApplicationProvider {...eva} theme={eva.dark}>
+    <HomeScreen>
+    </HomeScreen>
+    <BottomNavigationSimpleUsageShowcase/>
+  </ApplicationProvider>
+);

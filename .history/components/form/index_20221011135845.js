@@ -1,7 +1,11 @@
 import React from 'react';
 import { Input, styled } from '@ui-kitten/components';
-import { FlexStyleProps } from '@ui-kitten/components/devsupport';
 
+const FormCont = styled.div`
+  display:flex;
+  justify-content:center;
+
+`;
 
 export const InputSimpleUsageShowcase = () => {
 
@@ -9,14 +13,15 @@ export const InputSimpleUsageShowcase = () => {
 
   return (
 
+    <FormCont>
 
-      <Input style={{display:'flex', justifyContent:'center', backgroundColor:'white'}}
+      <Input
       label='Personal Info'
       placeholder='Full Name'
       value={value}
-      StyleProp='poppins'
       onChangeText={nextValue => setValue(nextValue)}
       />
+    </FormCont>
     
   );
 };

@@ -14,7 +14,6 @@ export const InputSimpleUsageShowcase = () => {
       label='Personal Info'
       placeholder='Full Name'
       value={value}
-      StyleProp='poppins'
       onChangeText={nextValue => setValue(nextValue)}
       />
     

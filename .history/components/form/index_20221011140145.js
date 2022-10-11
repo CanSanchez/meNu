@@ -10,11 +10,10 @@ export const InputSimpleUsageShowcase = () => {
   return (
 
 
-      <Input style={{display:'flex', justifyContent:'center', backgroundColor:'white'}}
+      <Input style={{display:'flex', }}
       label='Personal Info'
       placeholder='Full Name'
       value={value}
-      StyleProp='poppins'
       onChangeText={nextValue => setValue(nextValue)}
       />
     

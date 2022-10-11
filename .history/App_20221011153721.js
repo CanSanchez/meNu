@@ -15,10 +15,10 @@ const HomeScreen = () => (
     <Text category='h1' style={{paddingBottom: '5%'}}>Calendar</Text>
     <CalendarSimpleUsageShowcase />
     <InputSimpleUsageShowcase />
-    <ButtonMain> 
-      
+    <ButtonMain />
+    <ButtonMain>
+      waasup
     </ButtonMain>
-    
   </Layout>
 );
 

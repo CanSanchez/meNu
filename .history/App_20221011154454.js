@@ -16,7 +16,7 @@ const HomeScreen = () => (
     <CalendarSimpleUsageShowcase />
     <InputSimpleUsageShowcase />
     <ButtonMain> 
-      
+      Hello
     </ButtonMain>
     
   </Layout>

@@ -6,7 +6,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { CalendarSimpleUsageShowcase } from './components/calendar';
 import { BottomNavigationSimpleUsageShowcase } from './components/navbar';
 import { InputSimpleUsageShowcase } from './components/form';
-import { ButtonMain} from './components/button';
+import { ButtonSimpleUsageShowcase } from './components/button';
 
 
 
@@ -15,10 +15,8 @@ const HomeScreen = () => (
     <Text category='h1' style={{paddingBottom: '5%'}}>Calendar</Text>
     <CalendarSimpleUsageShowcase />
     <InputSimpleUsageShowcase />
-    <ButtonMain> 
-      
-    </ButtonMain>
-    
+    <InputSimpleUsageShowcase label='Last Name' />
+    <ButtonSimpleUsageShowcase />
   </Layout>
 );
 

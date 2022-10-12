@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    
+    backgroundColor: 'transparent'
   },
   button: {
-    margin: 2,
+    margin: 4,
     backgroundColor: 'black',
     borderColor:'black',
     borderRadius:'50px'

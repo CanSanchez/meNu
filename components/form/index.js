@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, styled } from '@ui-kitten/components';
+import { Input, styled, Text } from '@ui-kitten/components';
 import { FlexStyleProps } from '@ui-kitten/components/devsupport';
 
 
@@ -10,8 +10,8 @@ export const InputSimpleUsageShowcase = () => {
   return (
 
 
-      <Input style={{display:'flex', justifyContent:'center', backgroundColor:'white'}}
-      label='Personal Info'
+      <Input style={{display:'flex', justifyContent:'center', backgroundColor:'white', width: '70%'}}
+      label={() =><Text style={{fontWeight:"bold", color: "white"}}>Personal Info</Text>}
       placeholder='Full Name'
       value={value}
       StyleProp='poppins'

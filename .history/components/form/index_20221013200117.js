@@ -10,7 +10,7 @@ const UserIcon = (props) => (
 );
 
 const PassIcon = (props) => (
-  <Icon {...props} name='lock-outline'/>
+  <Icon {...props} name='locl-outline'/>
 );
 
 
@@ -67,13 +67,12 @@ const styles = StyleSheet.create({
     margin:15,
     borderRadius:15,
     
-    
   },
 
   captionText: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#626262",
+    color: "#8F9BB3",
 
   }
 })

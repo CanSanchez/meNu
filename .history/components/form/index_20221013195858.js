@@ -9,9 +9,6 @@ const UserIcon = (props) => (
   <Icon {...props} name='person-outline'/>
 );
 
-const PassIcon = (props) => (
-  <Icon {...props} name='lock-outline'/>
-);
 
 
 export const InputSimpleUsageShowcase = () => {
@@ -50,7 +47,6 @@ export const InputSimpleUsageShowcase = () => {
         size='large'
         value={value}
         StyleProp='poppins'
-        accessoryLeft={PassIcon}
         onChangeText={nextValue => setValue(nextValue)} />
   </>
 
@@ -67,13 +63,12 @@ const styles = StyleSheet.create({
     margin:15,
     borderRadius:15,
     
-    
   },
 
   captionText: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#626262",
+    color: "#8F9BB3",
 
   }
 })

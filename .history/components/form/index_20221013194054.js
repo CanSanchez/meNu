@@ -3,15 +3,9 @@ import { Icon, Input, styled } from '@ui-kitten/components';
 import { FlexStyleProps, PropsService } from '@ui-kitten/components/devsupport';
 import { StyleSheet } from 'react-native';
 import {FaAlignRight, FaUserAlt} from 'react-icons/fa';
-import { View, Text} from 'react-native';
 
-const UserIcon = (props) => (
-  <Icon {...props} name='person-outline'/>
-);
 
-const PassIcon = (props) => (
-  <Icon {...props} name='lock-outline'/>
-);
+
 
 
 export const InputSimpleUsageShowcase = () => {
@@ -19,14 +13,6 @@ export const InputSimpleUsageShowcase = () => {
 
   const [value, setValue] = React.useState('');
 
-  const renderCaption = () => {
-    return (
-      <View style={styles.captionContainer}>
-    
-        <Text style={styles.captionText}>Forgot Password?</Text>
-      </View>
-    )
-  }
   
 
   return (
@@ -40,17 +26,15 @@ export const InputSimpleUsageShowcase = () => {
         size='large'
         value={value}
         StyleProp='poppins'
-        accessoryLeft={UserIcon}
         
         onChangeText={nextValue => setValue(nextValue)} />
 
         <Input style={styles.input}
-        caption={renderCaption}
+
         placeholder='Password'
         size='large'
         value={value}
         StyleProp='poppins'
-        accessoryLeft={PassIcon}
         onChangeText={nextValue => setValue(nextValue)} />
   </>
 
@@ -67,13 +51,7 @@ const styles = StyleSheet.create({
     margin:15,
     borderRadius:15,
     
-    
   },
-
-  captionText: {
-    fontSize: 12,
-    fontWeight: "400",
-    color: "#626262",
-
-  }
+  
+  
 })

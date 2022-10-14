@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     margin:15,
     borderRadius:15,
     
-    
   },
 
   captionText: {

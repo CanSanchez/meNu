@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     margin:15,
     borderRadius:15,
-    
+    color: '#626262'
     
   },
 

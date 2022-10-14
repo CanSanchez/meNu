@@ -10,7 +10,7 @@ export const InputSimpleUsageShowcase = () => {
   return (
 
 
-      <><Input style={styles.input}
+      <View style={styles.container}><Input style={styles.input}
 
       placeholder='Username or Email'
       value={value}
@@ -21,7 +21,7 @@ export const InputSimpleUsageShowcase = () => {
       placeholder='Password'
       StyleProp='poppins'
       
-      /></>
+      /><View/>
 
       
     
@@ -35,5 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     
   },
-  
+  container: {
+    padding:'10px'
+  }
 })

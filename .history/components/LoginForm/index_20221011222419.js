@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent:'center',
     backgroundColor:'white',
-    
-  },
-  
+    padding:'10px'
+  }
 })

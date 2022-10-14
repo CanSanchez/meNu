@@ -5,15 +5,16 @@ import { styled } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 
 
-export const ButtonMain = () => (
+export default function ButtonMain({
+    
+}){
   <Layout style={styles.container} level='1'>
 
-    <Button style={styles.button} >
-      Sign In
+    <Button title={title} style={styles.button} >
     </Button>
 
   </Layout>
-);
+};
 
 const styles = StyleSheet.create({
   container: {

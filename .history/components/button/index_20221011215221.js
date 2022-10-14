@@ -1,15 +1,13 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Layout} from '@ui-kitten/components';
-import { styled } from '@ui-kitten/components';
-import * as eva from '@eva-design/eva';
-
+import { PropsService } from '@ui-kitten/components/devsupport';
 
 export const ButtonMain = () => (
   <Layout style={styles.container} level='1'>
 
-    <Button style={styles.button} >
-      Sign In
+    <Button style={styles.button}>
+    {Props.name}
     </Button>
 
   </Layout>

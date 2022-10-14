@@ -4,16 +4,9 @@ import { Button, Layout} from '@ui-kitten/components';
 import { styled } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 
+const ButtonCont = styled.div`
 
-export const ButtonMain = () => (
-  <Layout style={styles.container} level='1'>
-
-    <Button style={styles.button} >
-      Sign In
-    </Button>
-
-  </Layout>
-);
+`;
 
 const styles = StyleSheet.create({
   container: {

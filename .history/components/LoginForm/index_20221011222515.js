@@ -32,8 +32,7 @@ const styles = StyleSheet.create({
   input: {
     display:'flex',
     justifyContent:'center',
-    backgroundColor:'white',
+    backgroundColor:'pink',
     
-  },
-  
+  }
 })

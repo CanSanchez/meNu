@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent:'center',
     backgroundColor:'white',
-    
-  },
-  
+    color:'pink'
+  }
 })

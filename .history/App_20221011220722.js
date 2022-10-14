@@ -14,8 +14,8 @@ const HomeScreen = () => (
   <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
     <Text category='h1' style={{paddingBottom: '5%'}}>Calendar</Text>
     <CalendarSimpleUsageShowcase />
-    <InputSimpleUsageShowcase />
-    <ButtonMain></ButtonMain>
+    <InputSimpleUsageShowcase name="Hello" />
+    <ButtonMain name="hello" ></ButtonMain>
     
   </Layout>
 );

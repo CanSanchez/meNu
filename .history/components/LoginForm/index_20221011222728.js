@@ -10,7 +10,7 @@ export const InputSimpleUsageShowcase = () => {
   return (
 
 
-      <><Input style={styles.input}
+      <View style={styles.container}><Input style={styles.input}
 
       placeholder='Username or Email'
       value={value}

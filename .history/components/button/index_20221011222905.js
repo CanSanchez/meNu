@@ -9,7 +9,7 @@ export const ButtonMain = () => (
   <Layout style={styles.container} level='1'>
 
     <Button style={styles.button} >
-      Sign In
+    Sign In
     </Button>
 
   </Layout>

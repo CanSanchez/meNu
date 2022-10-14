@@ -20,7 +20,6 @@ export const InputSimpleUsageShowcase = () => {
       <Input style={styles.input} 
       placeholder='Password'
       StyleProp='poppins'
-      
       /></>
 
       
@@ -32,8 +31,6 @@ const styles = StyleSheet.create({
   input: {
     display:'flex',
     justifyContent:'center',
-    backgroundColor:'white',
-    
-  },
-  
+    backgroundColor:'white'
+  }
 })

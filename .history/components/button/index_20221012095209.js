@@ -5,15 +5,14 @@ import { styled } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 
 
-export const ButtonMain = () => (
-  <Layout style={styles.container} level='1'>
-
-    <Button style={styles.button} >
-      Sign In
-    </Button>
-
-  </Layout>
-);
+export default function MyComponent({
+  //...write your props here
+  category='h1'
+  }){
+  
+  return <View>
+  <Text category={category}>Hi this is my UI Kitten Text</Text>
+  </View>
 
 const styles = StyleSheet.create({
   container: {

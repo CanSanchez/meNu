@@ -9,8 +9,9 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1}}>
-      <Divider/>
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#7161EF' }}>
+      <Divider />
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
+        <InputSimpleUsageShowcase />
         <InputSimpleUsageShowcase />
         <ButtonMain />
       </Layout>

@@ -1,15 +1,24 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Layout} from '@ui-kitten/components';
+import { Button, Layout, Icon} from '@ui-kitten/components';
 
-export const ButtonMain = () => (
-  <Layout style={styles.container} level='1'>
-
-    <Button style={styles.button}>
-      Press Me
+export const ButtonMain = ({
+  text = "Press Me",
+  bgcolor = "black",
+  ar = "",
+  al="",
+  sz="",
+  stat=""
+}) => (
+    <Button 
+    style={styles.button} 
+    bgcolor={bgcolor} 
+    accessoryRight={ar} 
+    accessoryLeft={al}
+    size={sz}
+    status={stat}>
+      {text}
     </Button>
-
-  </Layout>
 );
 
 const styles = StyleSheet.create({
@@ -19,9 +28,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   button: {
-    margin: 4,
-    backgroundColor: 'black',
-    borderColor:'black',
+    margin: 5,
     borderRadius:'50px'
   },
 });
+

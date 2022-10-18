@@ -6,7 +6,7 @@ import { ButtonMain } from './components/button'
 import { TutorialCard } from './components/TutorialCard';
 import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
 import { StyleSheet } from 'react-native';
-
+import { HeaderTitle } from './components/Header';
 
 export const HomeScreen = () => {
 
@@ -17,7 +17,8 @@ export const HomeScreen = () => {
 
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
-        <TutorialCard />
+        <HeaderTitle />
+        <TutorialCard style={styles.card}/>
         <InputSimpleUsageShowcase />
         <ButtonMain />
         
@@ -25,4 +26,8 @@ export const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  
+})
 

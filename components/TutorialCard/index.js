@@ -18,11 +18,12 @@ export const TutorialCard = () => {
 const styles = StyleSheet.create({
     card: {
         width:240,
-        height:320,
+        height:260,
         display:"flex",
         padding: 20,
         borderRadius:50,
-        backgroundColor:"#F8F386"
+        backgroundColor:"#F8F386",
+
     },
 
     text: {

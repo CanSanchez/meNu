@@ -1,23 +1,19 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigation, BottomNavigationTab, Layout, Text, IconRegistry, Icon } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import { HomeScreen } from '../../home.component';
 import { CalendarScreen } from '../../calendar.component';
+import { ProfileScreen } from '../../profile.component';
+
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const OrdersScreen = () => (
   <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     <Text category='h1'>Activities</Text>
-  </Layout>
-);
-
-const ProfileScreen = () => (
-  <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text category='h1'>Profile</Text>
   </Layout>
 );
 
@@ -62,3 +58,4 @@ const CalendarIcon = (props) => (
 const UserIcon = (props) => (
   <Icon {...props} name='person-outline'/>
 );
+

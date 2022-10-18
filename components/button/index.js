@@ -1,20 +1,24 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Layout, Text} from '@ui-kitten/components';
+import { Button, Layout, Icon} from '@ui-kitten/components';
 
-
-const ButtonTxt = (props) => (
-  <Text category='h6' style={styles.text}>Sign In</Text>
-)
-
-export const ButtonMain = () => (
-  <Layout style={styles.container} level='1'>
-
-    <Button style={styles.button}>
-    {ButtonTxt}
+export const ButtonMain = ({
+  text = "Press Me",
+  bgcolor = "black",
+  ar = "",
+  al="",
+  sz="",
+  stat=""
+}) => (
+    <Button 
+    style={styles.button} 
+    bgcolor={bgcolor} 
+    accessoryRight={ar} 
+    accessoryLeft={al}
+    size={sz}
+    status={stat}>
+      {text}
     </Button>
-
-  </Layout>
 );
 
 const styles = StyleSheet.create({
@@ -24,12 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   button: {
-    margin: 4,
-    borderRadius:'50px',
-    backgroundColor:"#91CCA8",
-    borderColor:"#91CCA8"
+    margin: 5,
+    borderRadius:'50px'
   },
   text: {
     color:"white"
   }
 });
+

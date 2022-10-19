@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, Card, Modal, Text } from '@ui-kitten/components';
-import { ButtonMain } from '../button';
+import { ButtonMain } from '../Button';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../../home.component';

@@ -4,6 +4,8 @@ import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/component
 import { AvatarProfile } from './components/avatar';
 import { ButtonMain } from './components/button';
 import { PopupCardButton } from './components/popupcard';
+import { ToggleSimpleUsageShowcase } from './components/toggle/';
+import { ActionListItem } from './components/actionlist';
 // import { StyleSheet, View } from 'react-native';
 
 export const ProfileScreen = () => {
@@ -16,13 +18,13 @@ export const ProfileScreen = () => {
         <AvatarProfile />
         <Text category='h4' style={{color: 'black'}}>Username</Text>
         <ButtonMain text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
-        <View style={{margin: 30}}>
+        <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>
             <ButtonMain text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <Text category='s2'>Preferences</Text>
-            <ButtonMain text='Notifications' al={NotifIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
-            <ButtonMain text='Dark Mode' al={DarkIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
-            <ButtonMain text='Colorblind Mode' al={ColorblindIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
+            <ActionListItem tle='Notification' al={NotifIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
+            <ActionListItem tle='Dark Mode' al={DarkIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
+            <ActionListItem tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
         </View>
         <PopupCardButton />
       </Layout>

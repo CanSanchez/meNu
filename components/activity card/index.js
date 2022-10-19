@@ -12,3 +12,21 @@ export const ActivityCard = () => {
         </Card>
     )
 }
+
+const styles = StyleSheet.create({
+    acard: {
+        width:277,
+        height:452,
+        display:"flex",
+        padding: 20,
+        borderRadius:50,
+        backgroundColor:"FFF3D3",
+
+    },
+
+    text: {
+        textAlign:'center',
+        paddingBottom:5
+    }
+
+})

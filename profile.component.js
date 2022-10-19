@@ -1,9 +1,9 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
 import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
-import { AvatarProfile } from './components/avatar';
-import { ButtonMain } from './components/button';
-import { PopupCardButton } from './components/popupcard';
+import { AvatarProfile } from './components/Avatar';
+import { ButtonMain } from './components/Button';
+import { PopupCardButton } from './components/PopupCard';
 // import { StyleSheet, View } from 'react-native';
 
 export const ProfileScreen = () => {

@@ -7,15 +7,16 @@ import * as eva from '@eva-design/eva';
 import { HomeScreen } from '../../home.component';
 import { CalendarScreen } from '../../calendar.component';
 import { ProfileScreen } from '../../profile.component';
+import { ActivityScreen } from '../../activities.component';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-const ActivitiesScreen = () => (
-  <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text category='h1'>Activities</Text>
-  </Layout>
-);
+//const ActivitiesScreen = () => (
+  //<Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //<Text category='h1'>Activities</Text>
+  //</Layout>
+//);
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
@@ -31,7 +32,7 @@ const BottomTabBar = ({ navigation, state }) => (
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeScreen}/>
-    <Screen name='Activities' component={ActivitiesScreen}/>
+    <Screen name='Activities' component={ActivityScreen}/>
     <Screen name='Calendar' component={CalendarScreen}/>
     <Screen name='Profile' component={ProfileScreen}/>
   </Navigator>

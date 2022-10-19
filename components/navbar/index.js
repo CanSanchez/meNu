@@ -11,7 +11,7 @@ import { ProfileScreen } from '../../profile.component';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-const OrdersScreen = () => (
+const ActivitiesScreen = () => (
   <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     <Text category='h1'>Activities</Text>
   </Layout>
@@ -31,7 +31,7 @@ const BottomTabBar = ({ navigation, state }) => (
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeScreen}/>
-    <Screen name='Orders' component={OrdersScreen}/>
+    <Screen name='Activities' component={ActivitiesScreen}/>
     <Screen name='Calendar' component={CalendarScreen}/>
     <Screen name='Profile' component={ProfileScreen}/>
   </Navigator>

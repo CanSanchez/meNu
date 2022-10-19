@@ -1,21 +1,23 @@
 import  React from 'react';
 import { Icon, Layout, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
+import { useFonts, FredokaOne_400Regular } from '@expo-google-fonts/fredoka-one';
 
 
 
 
-export const HeaderTitle = () => (
+export const HeaderTitle = () => {
+    const [fontsLoaded] = useFonts({
+        FredokaOne_400Regular,
+      });
+}
+   
+(
     
-    <Text style={styles.text} category='h3'>Welcome To MEnU!</Text>
+    <Text category='h3' style={{ fontFamily: 'FredokaOne_400Regular'}}>Welcome To MEnU!</Text>
 
 
 );
 
-const styles = StyleSheet.create({
-    text: {
-        padding:20,
-        paddingTop:100
-    }
-})
+
 

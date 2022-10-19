@@ -6,7 +6,6 @@ import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
 
 export const CalendarScreen = () => {
 
-
   return (
     <><TopNavigationSimpleUsageShowcase /><SafeAreaView style={{ flex: 1 }}>
       <Divider />

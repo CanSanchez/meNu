@@ -3,6 +3,7 @@ import { SafeAreaView, View, StyleSheet } from 'react-native';
 import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
 import { AvatarProfile } from './components/avatar';
 import { ButtonMain } from './components/button';
+import { PopupCardButton } from './components/popupcard';
 // import { StyleSheet, View } from 'react-native';
 
 export const ProfileScreen = () => {
@@ -22,9 +23,8 @@ export const ProfileScreen = () => {
             <ButtonMain text='Notifications' al={NotifIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <ButtonMain text='Dark Mode' al={DarkIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <ButtonMain text='Colorblind Mode' al={ColorblindIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
-
         </View>
-        <ButtonMain text='Log Out' stat='danger' sz='tiny'/>
+        <PopupCardButton />
       </Layout>
     </SafeAreaView>
   );

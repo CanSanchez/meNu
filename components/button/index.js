@@ -2,13 +2,15 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Layout, Icon} from '@ui-kitten/components';
 
+
 export const ButtonMain = ({
   text = "Press Me",
   bgcolor = "black",
   ar = "",
   al="",
   sz="",
-  stat=""
+  stat="",
+  func=""
 }) => (
     <Button 
     style={styles.button} 
@@ -16,7 +18,8 @@ export const ButtonMain = ({
     accessoryRight={ar} 
     accessoryLeft={al}
     size={sz}
-    status={stat}>
+    status={stat}
+    onPress={func}>
       {text}
     </Button>
 );

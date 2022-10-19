@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
 import { ActivityCard } from './components/activity card';
 
@@ -15,4 +15,8 @@ export const ActivityScreen = () => {
       </Layout>
     </SafeAreaView>
   );
-};
+}
+
+const styles = StyleSheet.create({
+  
+})

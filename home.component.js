@@ -6,7 +6,7 @@ import { ButtonMain } from './components/Button'
 import { TutorialCard } from './components/TutorialCard';
 import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
 import { StyleSheet } from 'react-native';
-import { HeaderTitle } from './components/header';
+import { HeaderTitle } from './components/Header';
 
 export const HomeScreen = () => {
 

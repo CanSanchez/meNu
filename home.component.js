@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { InputSimpleUsageShowcase } from './components/form'
-import { ButtonMain } from './components/button'
+import { InputSimpleUsageShowcase } from './components/Form'
+import { ButtonMain } from './components/Button'
 import { TutorialCard } from './components/TutorialCard';
 import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
 import { StyleSheet } from 'react-native';

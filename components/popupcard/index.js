@@ -4,15 +4,19 @@ import { Button, Card, Modal, Text } from '@ui-kitten/components';
 import { ButtonMain } from '../Button';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from '../../home.component';
+import { HomeScreen } from '../../pages/home.component';
 
-export const PopupCardButton = ({navigation}) => {
+export const PopupCardButton = ({
+  btntxt,
+  txt,
+  subtxt
+}) => {
 
   const [visible, setVisible] = React.useState(false);
 
   return (
     <View>
-      <ButtonMain func={() => setVisible(true)} text='Log Out' stat='danger' sz='tiny'/>
+      <ButtonMain func={() => setVisible(true)} text={btntxt} stat='danger' sz='tiny'/>
 
       <Modal
         visible={visible}
@@ -20,8 +24,8 @@ export const PopupCardButton = ({navigation}) => {
         onBackdropPress={() => setVisible(false)}>
         <Card disabled={true}>
             <View style={{margin: 10}}>
-            <Text category='h4'>Come back soon 😻</Text>
-            <Text category='s1'>Are you sure you want to log out?</Text>
+            <Text category='h4'>{txt}</Text>
+            <Text category='s1'>{subtxt}</Text>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between', margin: 10}}>
                 <Button onPress={() => setVisible(false)}>

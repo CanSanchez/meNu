@@ -4,10 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigation, BottomNavigationTab, Layout, Text, IconRegistry, Icon } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
-import { HomeScreen } from '../../home.component';
-import { CalendarScreen } from '../../calendar.component';
-import { ProfileScreen } from '../../profile.component';
-import { ActivityScreen } from '../../activities.component';
+import { HomeScreen } from '../../pages/home.component';
+import { CalendarScreen } from '../../pages/calendar.component';
+import { ProfileScreen } from '../../pages/profile.component';
+import { ActivityScreen } from '../../pages/activities.component';
+import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 
 
 const { Navigator, Screen } = createBottomTabNavigator();

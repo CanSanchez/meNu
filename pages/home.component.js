@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { InputSimpleUsageShowcase } from './components/Form'
-import { ButtonMain } from './components/Button'
-import { TutorialCard } from './components/TutorialCard';
-import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
+import { InputSimpleUsageShowcase } from '../components/Form'
+import { ButtonMain } from '../components/Button'
+import { TutorialCard } from '../components/TutorialCard';
+import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
-import { HeaderTitle } from './components/Header';
+import { HeaderTitle } from '../components/header';
 
 export const HomeScreen = () => {
 

@@ -1,26 +1,36 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { ActivityCard } from './components/activitycard';
-import { CategoryButoon } from './components/categorybutton';
+import { Button, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
+import { CategoryButton } from './components/CategoryButton';
 import { ActivityCard } from './components/ActivityCard';
+import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
+
 
 export const ActivityScreen = () => {
 
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNavigationSimpleUsageShowcase />
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <CategoryButoon text='Indoor'></CategoryButoon>
-      <CategoryButoon text='Outdoor'></CategoryButoon>
-      <CategoryButoon text='Creative'></CategoryButoon>
-      <CategoryButoon text='Self Care'></CategoryButoon>
+      <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
+      <CategoryButton status='success' text='Creative' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
       </Layout>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  
+
 })
+
+const StarIcon = (props) => (
+  <Icon {...props} name='star'/>
+);
+
+const HeartIcon = (props) => (
+  <Icon {...props} name='heart'/>
+);

@@ -9,6 +9,7 @@ import { CalendarScreen } from '../../pages/calendar.component';
 import { ProfileScreen } from '../../pages/profile.component';
 import { ActivityScreen } from '../../pages/activities.component';
 import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
+import { NotificationScreen } from '../../pages/notificationsettings.components';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();

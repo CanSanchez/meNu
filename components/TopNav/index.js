@@ -1,9 +1,14 @@
 import React from 'react';
 import { Icon, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 
 const NotIcon = (props) => (
   <Icon {...props} name='bell' fill="#7161EF"/>
+);
+
+const LogoIcon = (props) => (
+  <Image {...props} style={{ width:30, height: 41}} source={require('../../assets/Logo.png')}/>
 );
 
 const SaveIcon = (props) => (
@@ -24,7 +29,8 @@ const renderRightActions = () => (
 
 export const TopNavigationSimpleUsageShowcase = () => (
     <TopNavigation
-        accessoryRight={renderRightActions} />
+        accessoryRight={renderRightActions}
+        accessoryLeft={LogoIcon} />
 
 
 );

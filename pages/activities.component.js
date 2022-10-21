@@ -4,8 +4,6 @@ import { Button, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/compone
 import { CategoryButton } from '../components/CategoryButton';
 import { ActivityCard } from '../components/ActivityCard';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
-
-
 export const ActivityScreen = () => {
 
 
@@ -34,3 +32,6 @@ const StarIcon = (props) => (
 const HeartIcon = (props) => (
   <Icon {...props} name='heart'/>
 );
+
+  
+

@@ -6,9 +6,10 @@ import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
 import { ToggleSimpleUsageShowcase } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
+// import { Link } from '@react-navigation/native';
 // import { StyleSheet, View } from 'react-native';
 
-export const ProfileScreen = () => {
+export const AccountSettingsScreen = () => {
 
 
   return (
@@ -16,17 +17,15 @@ export const ProfileScreen = () => {
       <Divider />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
         <AvatarProfile />
-        <Text category='h4' style={{color: 'black'}}>Username</Text>
-        <ButtonMain text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
+        <Text category='s2' style={{color: 'black', textDecorationLine: 'underline'}}>Update Profile Photo</Text>
         <View style={{margin: 10}}>
-            <Text category='s2'>Content</Text>
-            <ButtonMain text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
-            <Text category='s2'>Preferences</Text>
-            <ActionListItem styl={actionstyle} tle='Notification' al={NotifIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
+            <Text category='s2'>Account Information</Text>
+            <ActionListItem styl={classicstyle} tle='Full Name' desc='Michelle Smith' ar={ChevronRightIcon}></ActionListItem>
+            <ActionListItem styl={classicstyle} tle='Date of Birth' desc='November 27, 1975' ar={ChevronRightIcon}></ActionListItem>
+            <ActionListItem styl={classicstyle} tle='E-mail' desc='mich_smith@gmail.com' ar={ChevronRightIcon}></ActionListItem>
+            <ActionListItem styl={classicstyle} tle='Password' desc='********' ar={ChevronRightIcon}></ActionListItem>
         </View>
-        <PopupCardButton btntxt='Log Out' txt='Come back soon 😻' subtxt='Are you sure you want to log out?'/>
+        <PopupCardButton btntxt='Delete Account' txt='We will miss you 🥺' subtxt='Are you sure you want to delete your account?'/>
       </Layout>
     </SafeAreaView>
   );
@@ -51,10 +50,10 @@ const DarkIcon = (props) => (
 const ColorblindIcon = (props) => (
     <Icon {...props} name='eye'/>
   );
-
-const actionstyle = StyleSheet.create({
-  backgroundColor: '#FFF3D3',
-  borderRadius: '25%',
-  marginTop: "2%",
-  marginBottom: '2%',
-  width: "80%"
+  
+  const classicstyle = StyleSheet.create({
+    backgroundColor: '#FFF3D3',
+    marginTop: "2%",
+    marginBottom: '2%',
+    width: "80%"
+  });

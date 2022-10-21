@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout } from '@ui-kitten/components';
-import { CalendarSimpleUsageShowcase } from './components/Calendar';
-import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
+import { CalendarSimpleUsageShowcase } from '../components/Calendar';
+import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 
 export const CalendarScreen = () => {
 

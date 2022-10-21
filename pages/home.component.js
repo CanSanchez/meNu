@@ -1,33 +1,40 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { InputSimpleUsageShowcase } from './components/Form'
-import { ButtonMain } from './components/Button'
-import { TutorialCard } from './components/TutorialCard';
-import { TopNavigationSimpleUsageShowcase } from './components/TopNav';
+import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
-import { HeaderTitle } from './components/Header';
+import { HeaderTitle } from '../components/Header';
+import { useFonts, FredokaOne_400Regular } from '@expo-google-fonts/fredoka-one';
+import { TextCard } from '../components/TextCard';
+import { Image } from 'react-native';
 
 export const HomeScreen = () => {
-
+  const [fontsLoaded] = useFonts({
+    FredokaOne_400Regular,
+  });
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
-      <TopNavigationSimpleUsageShowcase />
 
-      <Divider/>
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
-        <HeaderTitle />
-        <TutorialCard style={styles.card}/>
-        <InputSimpleUsageShowcase />
-        <ButtonMain />
-        
-      </Layout>
-    </SafeAreaView>
-  );
-};
+  <><TopNavigationSimpleUsageShowcase />
+  <Layout style={styles.layout}>
+    <HeaderTitle/>
+    <Image style={{width:69, height:60, margin:10}} source={require('/Users/shaelynlorch/meNu/assets/Bearface.png')}/>
+    <TextCard/>
+
+
+    </Layout></>
+
+)
+
+}
 
 const styles = StyleSheet.create({
+  layout:{
+    flex: 1,
+    alignItems:'center',
+
+
+  }
   
 })
 

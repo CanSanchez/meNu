@@ -1,9 +1,9 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { Button, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
-import { CategoryButton } from '../components/CategoryButton';
-import { ActivityCard } from '../components/ActivityCard';
+import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
+import { CategoryButoon } from '../components/categorybutton';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
+
 export const ActivityScreen = () => {
 
 
@@ -11,6 +11,7 @@ export const ActivityScreen = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <TopNavigationSimpleUsageShowcase />
       <Divider/>
+      <TopNavigationSimpleUsageShowcase />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
       <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>

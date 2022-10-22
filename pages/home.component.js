@@ -13,15 +13,12 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1}}>
-      <TopNavigationSimpleUsageShowcase />
-
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
         <HeaderTitle />
         <TutorialCard style={styles.card}/>
         <InputSimpleUsageShowcase />
-        <ButtonMain />
-        
+        <ButtonMain />   
       </Layout>
     </SafeAreaView>
   );

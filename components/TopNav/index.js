@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 const NotIcon = (props) => (
   <Icon {...props} name='bell' fill="#7161EF"/>
@@ -17,14 +17,18 @@ const NotAction = () => (
 const renderRightActions = () => (
     <React.Fragment>
       <TopNavigationAction icon={NotIcon}/>
-      <TopNavigationAction icon={SaveIcon}/>
-      
+      <TopNavigationAction icon={SaveIcon}/> 
     </React.Fragment>
   );
 
 export const TopNavigationSimpleUsageShowcase = () => (
     <TopNavigation
-        accessoryRight={renderRightActions} />
+        accessoryRight={renderRightActions}
+        accessoryLeft ={LogoPrimary}
+        style={{
+          backgroundColor: '#FFFEF4',
+          paddingTop: 20
+        }} />
 
 
 );
@@ -42,3 +46,12 @@ const styles = StyleSheet.create({
        
     }
 });
+
+const LogoPrimary = () => (
+  <View style={{paddingLeft: 15}}>
+    <Image
+        style={{ width: 20 , height: 27.5, objectFit: 'cover' }}
+        source={require('../../assets/logo/logoprimary.png')}
+      />
+  </View>
+);

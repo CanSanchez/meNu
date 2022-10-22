@@ -1,15 +1,15 @@
 import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BottomNavigation, BottomNavigationTab, Layout, Text, IconRegistry, Icon } from '@ui-kitten/components';
-import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import * as eva from '@eva-design/eva';
+import { Button, BottomNavigation, BottomNavigationTab, Layout, Text, IconRegistry, Icon } from '@ui-kitten/components';
 import { HomeScreen } from '../../pages/home.component';
 import { CalendarScreen } from '../../pages/calendar.component';
 import { ProfileScreen } from '../../pages/profile.component';
 import { ActivityScreen } from '../../pages/activities.component';
 import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 import { NotificationScreen } from '../../pages/notificationsettings.components';
+import { TopNavigationSimpleUsageShowcase } from '../TopNav';
+
 
 //Bottom navigation bar
 
@@ -28,10 +28,19 @@ const BottomTabBar = ({ navigation, state }) => (
 
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
-    <Screen name='Home' component={HomeScreen}/>
-    <Screen name='Activities' component={ActivityScreen}/>
-    <Screen name='Calendar' component={CalendarScreen}/>
-    <Screen name='Profile' component={ProfileScreen}/>
+    <Screen name='Home' component={HomeScreen} options={{
+      header: TopNavigationSimpleUsageShowcase
+    }}
+    />
+    <Screen name='Activities' component={ActivityScreen} options={{
+      header: TopNavigationSimpleUsageShowcase
+    }}/>
+    <Screen name='Calendar' component={CalendarScreen} options={{
+      header: TopNavigationSimpleUsageShowcase
+    }}/>
+    <Screen name='Profile' component={ProfileScreen} options={{
+      header: TopNavigationSimpleUsageShowcase
+    }}/>
   </Navigator>
 );
 
@@ -60,3 +69,16 @@ const UserIcon = (props) => (
   <Icon {...props} name='person-outline'/>
 );
 
+const NotIcon = (props) => (
+  <Icon {...props} name='bell' fill="#7161EF"/>
+);
+
+const HeaderStyle = () => ({
+  headerStyle: {
+    backgroundColor: '#FFFEF4',
+  },
+  headerTintColor: 'black',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  }
+});

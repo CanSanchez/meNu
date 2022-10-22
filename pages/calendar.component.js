@@ -2,16 +2,17 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout } from '@ui-kitten/components';
 import { CalendarSimpleUsageShowcase } from '../components/Calendar';
-import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 
 export const CalendarScreen = () => {
 
   return (
-    <><TopNavigationSimpleUsageShowcase /><SafeAreaView style={{ flex: 1 }}>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFEF4" }}>
       <Divider />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <CalendarSimpleUsageShowcase />
       </Layout>
-    </SafeAreaView></>
+    </SafeAreaView>
+    </Layout>
   );
 };

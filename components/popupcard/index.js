@@ -6,6 +6,8 @@ import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../../pages/home.component';
 
+//Popupcard with buttons
+
 export const PopupCardButton = ({
   btntxt,
   txt,
@@ -17,7 +19,7 @@ export const PopupCardButton = ({
   return (
     <View>
       <ButtonMain func={() => setVisible(true)} text={btntxt} stat='danger' sz='tiny'/>
-
+{/* Popup */}
       <Modal
         visible={visible}
         backdropStyle={styles.backdrop}

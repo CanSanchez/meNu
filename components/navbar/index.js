@@ -11,14 +11,9 @@ import { ActivityScreen } from '../../pages/activities.component';
 import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 import { NotificationScreen } from '../../pages/notificationsettings.components';
 
+//Bottom navigation bar
 
 const { Navigator, Screen } = createBottomTabNavigator();
-
-//const ActivitiesScreen = () => (
-  //<Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    //<Text category='h1'>Activities</Text>
-  //</Layout>
-//);
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
@@ -45,6 +40,9 @@ export const AppNavigator = () => (
     <TabNavigator />
   </NavigationContainer>
 );
+
+
+//icons
 
 const HomeIcon = (props) => (
   <Icon {...props} name='home-outline'/>

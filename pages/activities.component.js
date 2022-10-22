@@ -9,18 +9,30 @@ export const ActivityScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNavigationSimpleUsageShowcase />
       <Divider/>
       <TopNavigationSimpleUsageShowcase />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <CategoryButoon text='Indoor'></CategoryButoon>
-      <CategoryButoon text='Outdoor'></CategoryButoon>
-      <CategoryButoon text='Creative'></CategoryButoon>
-      <CategoryButoon text='Self Care'></CategoryButoon>
+      <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
+      <CategoryButton status='success' text='Creative' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
       </Layout>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  
+
 })
+
+const StarIcon = (props) => (
+  <Icon {...props} name='star'/>
+);
+
+const HeartIcon = (props) => (
+  <Icon {...props} name='heart'/>
+);
+
+  
+

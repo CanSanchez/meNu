@@ -60,4 +60,3 @@ const actionstyle = StyleSheet.create({
   marginTop: "2%",
   marginBottom: '2%',
   width: "80%"
-});

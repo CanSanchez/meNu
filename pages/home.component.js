@@ -7,6 +7,8 @@ import { HeaderTitle } from '../components/Header';
 import { useFonts, FredokaOne_400Regular } from '@expo-google-fonts/fredoka-one';
 import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
+import { RecActivities } from '../components/RecActivities';
+import { Reminders } from '../components/Reminders';
 
 export const HomeScreen = () => {
   const [fontsLoaded] = useFonts({
@@ -17,9 +19,14 @@ export const HomeScreen = () => {
 
   <><TopNavigationSimpleUsageShowcase />
   <Layout style={styles.layout}>
-    <HeaderTitle/>
+    <HeaderTitle />
     <Image style={{width:69, height:60, margin:10}} source={require('/Users/shaelynlorch/meNu/assets/Bearface.png')}/>
     <TextCard/>
+    <RecActivities />
+    <Layout style={{top:100, backgroundColor:'transparent'}}>
+      <Reminders />
+    </Layout>
+    
 
 
     </Layout></>

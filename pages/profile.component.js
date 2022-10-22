@@ -6,6 +6,7 @@ import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
 import { ToggleSimpleUsageShowcase } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
+import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 // import { StyleSheet, View } from 'react-native';
 
 export const ProfileScreen = () => {
@@ -14,7 +15,8 @@ export const ProfileScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
+      <TopNavigationSimpleUsageShowcase />
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <AvatarProfile />
         <Text category='h4' style={{color: 'black'}}>Username</Text>
         <ButtonMain text='Edit Account' ar={ChevronRightIcon}></ButtonMain>

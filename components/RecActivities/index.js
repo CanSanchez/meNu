@@ -16,7 +16,7 @@ export const RecActivities = ({
     return (
         <><Text style={{padding:10,marginRight:170}}>Recommended Activities</Text><Layout style={styles.cont}>
             <Layout style={{alignItems:"center", flex:1}}>
-                <Image style={{ width: 106, height: 100, marginLeft:10 }} source={require('/Users/shaelynlorch/meNu/assets/yoga.jpeg')}></Image>
+                <Image style={{ width: 106, height: 100 }} source={require('/Users/shaelynlorch/meNu/assets/yoga.jpeg')}></Image>
                     <Text style={styles.text}>Yoga</Text>
                 
             </Layout>
@@ -46,7 +46,6 @@ const styles=StyleSheet.create({
     },
     text: {
         textAlign:"center",
-        overflow:"hidden",
         paddingTop:10
     
     },

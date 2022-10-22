@@ -12,13 +12,14 @@ export const Reminders = () => {
 
     return ( 
         <Layout style={{backgroundColor:'transparent'}}>
-            <Card style={styles.card}>
+            <Text style={{paddingTop:10}}>Reminders</Text>
+            <Card style={styles.recard}>
                 <Radio checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>
                 Mediation and mindfulness (Yoga)</Radio>
                 <Text style={{paddingLeft:32}}>8:00am</Text>
             </Card>
-            <Card style={styles.card}>
+            <Card style={styles.recard}>
                 <Radio checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>Breakfast with kids</Radio>
                 <Text style={{paddingLeft:32}}>Check emails for 15 mins</Text>
@@ -31,16 +32,12 @@ export const Reminders = () => {
 }
 
 styles=StyleSheet.create({
-    card: {
+    recard: {
         width:310,
         height: 60,
         backgroundColor:'#FFEFE7',
         borderRadius:45,
         margin:10
-        
-        
-        
-
 
     }
 })

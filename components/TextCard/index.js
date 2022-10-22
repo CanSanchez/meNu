@@ -5,7 +5,7 @@ import { Image } from 'react-native';
 
 export const TextCard = () => {
 
-    return <Card style={styles.card}>
+    return <Card style={styles.tcard}>
         <Text> “Being a single parent is not a life full of struggles, but  a journey for the strong."
         </Text>
     </Card>
@@ -14,7 +14,7 @@ export const TextCard = () => {
 }
 
 styles = StyleSheet.create({
-    card: {
+    tcard: {
         width: 300,
         height: 100,
         backgroundColor:"#DDD9FF",

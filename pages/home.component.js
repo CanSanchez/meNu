@@ -23,13 +23,8 @@ export const HomeScreen = () => {
     <Image style={{width:69, height:60, margin:10}} source={require('/Users/shaelynlorch/meNu/assets/Bearface.png')}/>
     <TextCard/>
     <RecActivities />
-    <Layout style={{top:100, backgroundColor:'transparent'}}>
-      <Reminders />
-    </Layout>
-    
-
-
-    </Layout></>
+    <Reminders />
+  </Layout></>
 
 )
 

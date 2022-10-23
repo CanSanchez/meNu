@@ -3,6 +3,8 @@ import { FlexStyleProps, PropsService } from '@ui-kitten/components/devsupport';
 import { StyleSheet } from 'react-native';
 import React from 'react';
 import { Card, Text } from '@ui-kitten/components';
+import { Image } from 'react-native';
+
 
 
 export const TutorialCard = ({
@@ -11,6 +13,9 @@ export const TutorialCard = ({
 
     return (
         <><Card style={styles.card}>
+            <Layout style={styles.layout}>
+                 <Image style={styles.image} source={require('../../assets/Bearface.png')}></Image>
+            </Layout>
             <Text category='h6' style={styles.text}>Track Your Mood</Text>
             <Text style={styles.text}>We will assist your mental health professional analyse and help you.</Text>
         </Card>
@@ -33,7 +38,8 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius:50,
         backgroundColor:"#F8F386",
-
+        display:'flex',
+        justifyContent:'center'
     },
 
     text: {
@@ -52,6 +58,16 @@ const styles = StyleSheet.create({
        flexDirection: 'row',
        paddingTop:10,
        paddingBottom:30
+    },
+    image: {
+        width:64,
+        height:56,
+        
+    },
+    layout: {
+        alignItems:'center',
+        backgroundColor:'#F8F386',
+        padding:20
     }
 
 })

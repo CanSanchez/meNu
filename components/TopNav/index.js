@@ -6,6 +6,10 @@ const NotIcon = (props) => (
   <Icon {...props} name='bell' fill="#7161EF"/>
 );
 
+const LogoIcon = (props) => (
+  <Image {...props} style={{ width:30, height: 41}} source={require('../../assets/Logo.png')}/>
+);
+
 const SaveIcon = (props) => (
     <Icon {...props} name="bookmark" fill="#7161EF"/>
 );
@@ -29,6 +33,7 @@ export const TopNavigationSimpleUsageShowcase = () => (
           backgroundColor: '#FFFEF4',
           paddingTop: 20
         }} />
+
 
 
 );

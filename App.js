@@ -4,7 +4,6 @@ import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './components/NavBar';
 import 'react-native-gesture-handler';
-import styled from 'styled-components';
 
 export default () => (
   <>

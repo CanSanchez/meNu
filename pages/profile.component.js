@@ -13,7 +13,7 @@ export const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <AvatarProfile />
         <Text category='h4' style={{color: 'black'}}>Username</Text>
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
@@ -58,3 +58,4 @@ const actionstyle = StyleSheet.create({
   marginBottom: '2%',
   width: "80%"
 });
+

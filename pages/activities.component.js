@@ -1,8 +1,9 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { CategoryButoon } from '../components/categorybutton';
+import { CategoryButton } from '../components/categorybutton';
 import { ActivityCard } from '../components/ActivityCard';
+import { Icon } from '@ui-kitten/components';
 
 export const ActivityScreen = () => {
 
@@ -11,10 +12,10 @@ export const ActivityScreen = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <CategoryButoon text='Indoor'></CategoryButoon>
-      <CategoryButoon text='Outdoor'></CategoryButoon>
-      <CategoryButoon text='Creative'></CategoryButoon>
-      <CategoryButoon text='Self Care'></CategoryButoon>
+      <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
+      <CategoryButton status='success' text='Creative' ar={StarIcon}></CategoryButton>
+      <CategoryButton status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
       </Layout>
     </SafeAreaView>
   );
@@ -23,3 +24,11 @@ export const ActivityScreen = () => {
 const styles = StyleSheet.create({
   
 })
+
+const StarIcon = (props) => (
+  <Icon {...props} name='star'/>
+);
+
+const HeartIcon = (props) => (
+  <Icon {...props} name='heart'/>
+);

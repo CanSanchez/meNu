@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Button, Layout, Icon } from '@ui-kitten/components';
 
 
-export const CategoryButoon = ({
+export const CategoryButton = ({
   text = "Indoor",
   bc = "black",
   func="", 
@@ -12,7 +12,8 @@ export const CategoryButoon = ({
     <View style={styles.container}>
     <Button 
     style={styles.button} 
-    backgroundColor={bc} 
+    backgroundColor={bc}
+    accessoryRight={ar} 
     onPress={func}>
       {text}
     </Button>

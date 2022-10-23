@@ -8,7 +8,7 @@ import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 // import { StyleSheet, View } from 'react-native';
 
-export const NotificationScreen = () => {
+export const NotificationScreen = ({ navigation }) => {
 
 
   return (

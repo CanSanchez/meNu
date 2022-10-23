@@ -10,7 +10,7 @@ export const ButtonMain = ({
   al="", //optional accessory/icon to left
   sz="", //optional size
   stat="", //optional color change
-  func="" //function props
+  func= console.log('empty') //function props
 }) => (
     <Button 
     style={styles.button} 

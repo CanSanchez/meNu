@@ -8,7 +8,7 @@ import { ActionListItem } from '../components/ActionList';
 // import { Link } from '@react-navigation/native';
 // import { StyleSheet, View } from 'react-native';
 
-export const AccountSettingsScreen = () => {
+export const AccountSettingsScreen = ({ navigation }) => {
 
 
   return (

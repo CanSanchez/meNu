@@ -9,7 +9,8 @@ export const ActionListItem = ({
     desc="", //optional description props
     al="", //optional icon/accessory to the left props
     ar="", //optional icon/accessory to the right props
-    styl={} //optional custom styling
+    styl={}, //optional custom styling
+    func= console.log('not a button')
 }) => (
   <ListItem
     title={tle}
@@ -17,6 +18,7 @@ export const ActionListItem = ({
     accessoryLeft={al}
     accessoryRight={ar}
     style={styl}
+    onPress={func}
   />
 );
 

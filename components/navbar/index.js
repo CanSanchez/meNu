@@ -9,6 +9,9 @@ import { ActivityScreen } from '../../pages/activities.component';
 import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 import { NotificationScreen } from '../../pages/notificationsettings.components';
 import { TopNavigationSimpleUsageShowcase } from '../TopNav';
+// import ProfileScreen from '../../pages/test';
+import MyStack from '../../pages/test';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 //Bottom navigation bar
@@ -28,7 +31,7 @@ const BottomTabBar = ({ navigation, state }) => (
 
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
-    <Screen name='Home' component={HomeScreen} options={{
+    <Screen name='Home' component={HomeStackScreen} options={{
       header: TopNavigationSimpleUsageShowcase
     }}
     />
@@ -38,7 +41,7 @@ const TabNavigator = () => (
     <Screen name='Calendar' component={CalendarScreen} options={{
       header: TopNavigationSimpleUsageShowcase
     }}/>
-    <Screen name='Profile' component={ProfileScreen} options={{
+    <Screen name='Profile' component={ProfileStackScreen} options={{
       header: TopNavigationSimpleUsageShowcase
     }}/>
   </Navigator>
@@ -82,3 +85,33 @@ const HeaderStyle = () => ({
     fontWeight: 'bold',
   }
 });
+
+
+const ProfileStack = createStackNavigator();
+
+const ProfileStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name='Profile' component={ProfileScreen} options={{
+      headerTransparent: true
+    }}></ProfileStack.Screen>
+    <ProfileStack.Screen name='Account Settings' component={AccountSettingsScreen} options={{
+      headerTransparent: true
+    }}></ProfileStack.Screen>
+    <ProfileStack.Screen name='Notifications' component={NotificationScreen} options={{
+      headerTransparent: true
+    }}></ProfileStack.Screen>
+    <ProfileStack.Screen name='Home' component={HomeScreen} options={{
+      headerTransparent: true
+    }}></ProfileStack.Screen>
+  </ProfileStack.Navigator>
+  );
+
+const HomeStack = createStackNavigator();
+
+const HomeStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name='Home' component={HomeScreen} options={{
+      headerTransparent: true
+    }}></ProfileStack.Screen>
+  </ProfileStack.Navigator>
+  );

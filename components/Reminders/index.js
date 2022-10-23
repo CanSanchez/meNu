@@ -11,7 +11,7 @@ export const Reminders = () => {
     const [checked, setChecked] = React.useState(false);
 
     return ( 
-        <Layout style={{backgroundColor:'transparent'}}>
+        <Layout style={{backgroundColor:'transparent', position:'absolute', marginTop:420}}>
             <Text style={{paddingTop:10}}>Reminders</Text>
             <Card style={styles.recard}>
                 <Radio checked={checked}

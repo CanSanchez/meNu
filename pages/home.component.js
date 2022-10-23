@@ -10,6 +10,7 @@ import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
 import { Reminders } from '../components/Reminders';
 
+
 export const HomeScreen = () => {
   const [fontsLoaded] = useFonts({
     FredokaOne_400Regular,
@@ -17,14 +18,15 @@ export const HomeScreen = () => {
 
   return (
 
-  <><TopNavigationSimpleUsageShowcase />
-  <Layout style={styles.layout}>
-    <HeaderTitle />
-    <Image style={{width:69, height:60, margin:10}} source={require('/Users/shaelynlorch/meNu/assets/Bearface.png')}/>
-    <TextCard/>
-    <RecActivities />
-    <Reminders />
-  </Layout></>
+    
+    <><TopNavigationSimpleUsageShowcase />
+      <Layout style={styles.layout}>
+        <HeaderTitle headertext='Welcome back, Jennifer!' />
+        <Image style={{ width: 69, height: 60, margin: 10 }} source={require('../assets/Bearface.png')} />
+        <TextCard />
+        <RecActivities />
+        <Reminders />
+      </Layout></>
 
 )
 

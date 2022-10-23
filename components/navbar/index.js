@@ -9,8 +9,6 @@ import { ActivityScreen } from '../../pages/activities.component';
 import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 import { NotificationScreen } from '../../pages/notificationsettings.components';
 import { TopNavigationSimpleUsageShowcase } from '../TopNav';
-// import ProfileScreen from '../../pages/test';
-import MyStack from '../../pages/test';
 import { createStackNavigator } from '@react-navigation/stack';
 
 

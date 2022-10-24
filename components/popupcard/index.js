@@ -6,10 +6,13 @@ import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../../pages/home.component';
 
+//Popupcard with buttons
+
 export const PopupCardButton = ({
   btntxt,
   txt,
-  subtxt
+  subtxt,
+  navigation
 }) => {
 
   const [visible, setVisible] = React.useState(false);
@@ -17,7 +20,7 @@ export const PopupCardButton = ({
   return (
     <View>
       <ButtonMain func={() => setVisible(true)} text={btntxt} stat='danger' sz='tiny'/>
-
+{/* Popup */}
       <Modal
         visible={visible}
         backdropStyle={styles.backdrop}
@@ -28,7 +31,7 @@ export const PopupCardButton = ({
             <Text category='s1'>{subtxt}</Text>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between', margin: 10}}>
-                <Button onPress={() => setVisible(false)}>
+                <Button onPress={() => alert('You have been logged out')}>
                     Yes
                 </Button>
                 <Button onPress={() => setVisible(false)}>
@@ -46,18 +49,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });
-
-
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default App;

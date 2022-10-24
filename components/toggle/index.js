@@ -1,7 +1,9 @@
 import React from 'react';
 import { Toggle } from '@ui-kitten/components';
 
-export const ToggleSimpleUsageShowcase = () => {
+//Toggle button with use state
+
+export const ToggleButton = () => {
 
   const [checked, setChecked] = React.useState(false);
 

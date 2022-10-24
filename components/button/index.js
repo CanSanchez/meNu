@@ -6,11 +6,11 @@ import { Button, Layout, Icon} from '@ui-kitten/components';
 export const ButtonMain = ({
   text = "Press Me",
   bgcolor = "black",
-  ar = "",
-  al="",
-  sz="",
-  stat="",
-  func=""
+  ar = "", //optional accessory/icon to right
+  al="", //optional accessory/icon to left
+  sz="", //optional size
+  stat="", //optional color change
+  func= console.log('empty') //function props
 }) => (
     <Button 
     style={styles.button} 

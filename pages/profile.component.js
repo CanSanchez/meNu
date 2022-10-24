@@ -1,32 +1,29 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
-import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
+import { Text, Divider, Layout, Button, Icon } from '@ui-kitten/components';
 import { AvatarProfile } from '../components/Avatar';
 import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
-import { ToggleSimpleUsageShowcase } from '../components/Toggle';
+import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
-import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
-// import { StyleSheet, View } from 'react-native';
 
-export const ProfileScreen = () => {
+export const ProfileScreen = ({ navigation }) => {
 
 
   return (
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
-      <TopNavigationSimpleUsageShowcase />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <AvatarProfile />
         <Text category='h4' style={{color: 'black'}}>Username</Text>
-        <ButtonMain text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
+        <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
         <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>
             <ButtonMain text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <Text category='s2'>Preferences</Text>
-            <ActionListItem styl={actionstyle} tle='Notification' al={NotifIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleSimpleUsageShowcase}></ActionListItem>
+            <ActionListItem func={() => navigation.push('Notifications')} styl={actionstyle} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
+            <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>
+            <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
         </View>
         <PopupCardButton btntxt='Log Out' txt='Come back soon 😻' subtxt='Are you sure you want to log out?'/>
       </Layout>
@@ -60,4 +57,4 @@ const actionstyle = StyleSheet.create({
   marginTop: "2%",
   marginBottom: '2%',
   width: "80%"
-})
+});

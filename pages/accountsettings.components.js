@@ -4,12 +4,11 @@ import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/component
 import { AvatarProfile } from '../components/Avatar';
 import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
-import { ToggleSimpleUsageShowcase } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 // import { Link } from '@react-navigation/native';
 // import { StyleSheet, View } from 'react-native';
 
-export const AccountSettingsScreen = () => {
+export const AccountSettingsScreen = ({ navigation }) => {
 
 
   return (

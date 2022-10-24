@@ -8,6 +8,7 @@ import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 // import { StyleSheet, View } from 'react-native';
 import { FaveItemCard } from '../components/FaveCard';
+import { FlatList } from 'react-native';
 
 export const FaveScreen = ({ navigation }) => {
 
@@ -16,18 +17,9 @@ export const FaveScreen = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
-        <View style={{margin: 10, flexDirection: 'column'}}>
-        <ScrollView>
-        {/* <List
-            contentContainerStyle={styles.productList}
-            numColumns={2}
-            renderItem={FaveItemCard}
-            /> */}  
-        <FaveItemCard></FaveItemCard>
-        <FaveItemCard></FaveItemCard>
-        <FaveItemCard></FaveItemCard>
-        <FaveItemCard></FaveItemCard>
-        </ScrollView>
+        <View style={{flexDirection: 'column'}}>
+            <FaveItemCard />
+            <FaveItemCard />
         </View>
       </Layout>
     </SafeAreaView>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet, Image, View } from 'react-native';
+import { FaveScreen } from '../../pages/favourites.components';
 
 const NotIcon = (props) => (
   <Icon {...props} name='bell' fill="#7161EF"/>
@@ -14,10 +15,10 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
-const renderRightActions = () => (
+const renderRightActions = ( navigation ) => (
     <React.Fragment>
       <TopNavigationAction icon={NotIcon}/>
-      <TopNavigationAction icon={SaveIcon}/> 
+      <TopNavigationAction onPress={() => navigation.push('Favourites')} icon={SaveIcon}/> 
     </React.Fragment>
   );
 

@@ -15,32 +15,54 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
+<<<<<<< HEAD
 const renderRightActions = ( navigation ) => (
     <React.Fragment>
+=======
+const renderRightActions = () => (
+
+    <React.Fragment >
+>>>>>>> c8caf2acb3529fce14e4797750c0eff414bed61e
       <TopNavigationAction icon={NotIcon}/>
       <TopNavigationAction onPress={() => navigation.push('Favourites')} icon={SaveIcon}/> 
     </React.Fragment>
-  );
+)
 
-export const TopNavigationSimpleUsageShowcase = () => (
+export const TopNavigationSimpleUsageShowcase = () => {
+
+  return (
     <TopNavigation
         accessoryRight={renderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{
-          backgroundColor: '#FFFEF4',
+          backgroundColor: '#FFFFFF',
           paddingTop: 20
-        }} />
+        }} >
+    </TopNavigation>
 
+  )
+}
+  
+   
+  
+  
+    
 
+<<<<<<< HEAD
 );
-
+=======
 
 const TopNavigationStyling = () => (
-  <TopNavigation
+>>>>>>> c8caf2acb3529fce14e4797750c0eff414bed61e
+
+
+    <TopNavigation
     title={evaProps => <Text {...evaProps}>Title</Text>}
     subtitle={evaProps => <Text {...evaProps}>Subtitle</Text>}
   />
-);
+  
+)
+  
 
 const styles = StyleSheet.create({
     icon: {

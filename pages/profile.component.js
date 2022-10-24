@@ -19,7 +19,7 @@ export const ProfileScreen = ({ navigation }) => {
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
         <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>
-            <ButtonMain text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
+            <ButtonMain func={() => navigation.push('Favourites')} text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <Text category='s2'>Preferences</Text>
             <ActionListItem func={() => navigation.push('Notifications')} styl={actionstyle} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
             <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>

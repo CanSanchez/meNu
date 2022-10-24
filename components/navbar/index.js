@@ -10,7 +10,7 @@ import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
 import { NotificationScreen } from '../../pages/notificationsettings.components';
 import { TopNavigationSimpleUsageShowcase } from '../TopNav';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { FaveScreen } from '../../pages/favourites.components';
 
 //Bottom navigation bar
 
@@ -98,7 +98,7 @@ const ProfileStackScreen = () => (
     <ProfileStack.Screen name='Notifications' component={NotificationScreen} options={{
       headerTransparent: true
     }}></ProfileStack.Screen>
-    <ProfileStack.Screen name='Home' component={HomeScreen} options={{
+    <ProfileStack.Screen name='Favourites' component={FaveScreen} options={{
       headerTransparent: true
     }}></ProfileStack.Screen>
   </ProfileStack.Navigator>

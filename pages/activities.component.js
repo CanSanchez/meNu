@@ -12,6 +12,7 @@ export const ActivityScreen = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ActivityCard />
       <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
       <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
       <CategoryButton status='success' text='Creative' ar={StarIcon}></CategoryButton>

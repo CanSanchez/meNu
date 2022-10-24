@@ -5,11 +5,14 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './components/NavBar';
 import 'react-native-gesture-handler';
 
+
 export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={eva.light}>
       <AppNavigator/>
+    
     </ApplicationProvider>
+
   </>
 );

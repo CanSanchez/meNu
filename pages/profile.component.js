@@ -58,4 +58,3 @@ const actionstyle = StyleSheet.create({
   marginBottom: '2%',
   width: "80%"
 });
-

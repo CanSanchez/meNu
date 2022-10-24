@@ -19,11 +19,12 @@ const NotAction = () => (
 );
 
 const renderRightActions = () => (
-    <React.Fragment>
+
+    <React.Fragment >
       <TopNavigationAction icon={NotIcon}/>
       <TopNavigationAction icon={SaveIcon}/> 
     </React.Fragment>
-  );
+)
 
 export const TopNavigationSimpleUsageShowcase = () => (
     <TopNavigation
@@ -33,18 +34,24 @@ export const TopNavigationSimpleUsageShowcase = () => (
           backgroundColor: '#FFFEF4',
           paddingTop: 20
         }} />
+    <TopNavigation 
+          accessoryRight={renderRightActions}
+          accessoryLeft={LogoIcon} />
+  
 
-
-
-);
-
+)
+    
 
 const TopNavigationStyling = () => (
-  <TopNavigation
+
+
+    <TopNavigation
     title={evaProps => <Text {...evaProps}>Title</Text>}
     subtitle={evaProps => <Text {...evaProps}>Subtitle</Text>}
   />
-);
+  
+)
+  
 
 const styles = StyleSheet.create({
     icon: {

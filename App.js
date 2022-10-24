@@ -10,9 +10,7 @@ import 'react-native-gesture-handler';
 
 
 
-export default ({
-  
-}) => (
+export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={eva.light}>

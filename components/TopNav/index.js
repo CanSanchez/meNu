@@ -26,21 +26,26 @@ const renderRightActions = () => (
     </React.Fragment>
 )
 
-export const TopNavigationSimpleUsageShowcase = () => (
+export const TopNavigationSimpleUsageShowcase = () => {
+
+  return (
     <TopNavigation
         accessoryRight={renderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{
-          backgroundColor: '#FFFEF4',
+          backgroundColor: '#FFFFFF',
           paddingTop: 20
-        }} />
-    <TopNavigation 
-          accessoryRight={renderRightActions}
-          accessoryLeft={LogoIcon} />
-  
+        }} >
+    </TopNavigation>
 
-)
+  )
+}
+  
+   
+  
+  
     
+
 
 const TopNavigationStyling = () => (
 

@@ -9,7 +9,6 @@ export const ActivityScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TopNavigationSimpleUsageShowcase />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
       <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>

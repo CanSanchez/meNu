@@ -19,6 +19,6 @@ styles = StyleSheet.create({
         width: 300,
         height: 100,
         borderRadius:20,
-        backgroundColor:"#DDD9FF",   
+        backgroundColor:"#DDD9FF"   
     }
 })

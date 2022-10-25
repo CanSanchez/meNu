@@ -11,6 +11,7 @@ import { NotificationScreen } from '../../pages/notificationsettings.components'
 import { TopNavigationSimpleUsageShowcase } from '../TopNav';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FaveScreen } from '../../pages/favourites.components';
+import { ActivityCardScreen } from '../../pages/activitycards.component';
 
 //Bottom navigation bar
 
@@ -107,19 +108,28 @@ const ProfileStackScreen = () => (
 const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name='Home' component={HomeScreen} options={{
+  <HomeStack.Navigator>
+    <HomeStack.Screen name='Home' component={HomeScreen} options={{
       headerTransparent: true
-    }}></ProfileStack.Screen>
-  </ProfileStack.Navigator>
+    }}></HomeStack.Screen>
+     <HomeStack.Screen name='Favourites' component={FaveScreen} options={{
+      headerTransparent: true
+    }}></HomeStack.Screen>
+     <HomeStack.Screen name='Notifications' component={NotificationScreen} options={{
+      headerTransparent: true
+    }}></HomeStack.Screen>
+  </HomeStack.Navigator>
   );
 
   const ActivityStack = createStackNavigator();
 
   const ActivityStackScreen = () => (
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen name='Activities' component={ActivityScreen} options={{
+    <ActivityStack.Navigator>
+      <ActivityStack.Screen name='Activities' component={ActivityScreen} options={{
         headerTransparent: true
-      }}></ProfileStack.Screen>
-    </ProfileStack.Navigator>
+      }}></ActivityStack.Screen>
+      <ActivityStack.Screen name='Activity Card' component={ActivityCardScreen} options={{
+        headerTransparent: true
+      }}></ActivityStack.Screen>
+   </ActivityStack.Navigator>
     );

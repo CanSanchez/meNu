@@ -16,23 +16,18 @@ export const ActivityCard = () => {
 
 const styles = StyleSheet.create({
     acard: {
-        width:277,
-        height:452,
+        width: 300,
+        height: 400,
         display:"flex",
         padding: 20,
         borderRadius:50,
         backgroundColor:"#FFF3D3",
-
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     text: {
         textAlign:'center',
-        padding:5,
+        marginTop:15,
     },
-
-    picture: {
-        display: "flex",
-        justifyContent: "center",
-    }
-
 })

@@ -15,7 +15,7 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
-const renderRightActions = ( navigation ) => (
+const renderRightActions = ( {navigation} ) => (
     <React.Fragment>
       <TopNavigationAction icon={NotIcon}/>
       <TopNavigationAction onPress={() => navigation.push('Favourites')} icon={SaveIcon}/> 

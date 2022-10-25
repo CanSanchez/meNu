@@ -15,7 +15,7 @@ export const LoginScreen = () => {
     <SafeAreaView style={{ flex: 1}}>
       <TopNavigationSimpleUsageShowcase />
 
-      <Layout style={{margin:100, flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
+      <Layout style={{  flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
         <HeaderTitle />
         <TutorialCard style={styles.card}/>
         <InputSimpleUsageShowcase />

@@ -13,9 +13,16 @@ export const CalendarSimpleUsageShowcase = () => {
           Selected date: {date.toLocaleDateString()}
         </Text>
         <Calendar
+          style={styles.calendar}
           date={date}
           onSelect={nextDate => setDate(nextDate)}
         />
       </React.Fragment>
     );
   };
+
+  const styles = StyleSheet.create ({
+    calendar: {
+      borderRadius:50
+    }
+  });

@@ -4,11 +4,7 @@ import { Card, Text, Modal, Icon } from "@ui-kitten/components";
 import { ButtonMain } from "../Button";
 import { ActivityCard } from "../ActivityCard";
 
-export const ActivityPopup = ({
-    btntxt,
-    txt,
-    subtxt
-  }) => {
+export const ActivityPopup = () => {
   
     const [visible, setVisible] = React.useState(false);
   

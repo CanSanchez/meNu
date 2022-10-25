@@ -18,7 +18,7 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
-const renderRightActions = () => (
+const renderRightActions = ({}) => (
 
     <React.Fragment >
       <TopNavigationAction icon={NotIcon}/>
@@ -26,10 +26,11 @@ const renderRightActions = () => (
     </React.Fragment>
 )
 
-export const TopNavigationSimpleUsageShowcase = () => {
+export const TopNavigationSimpleUsageShowcase = ({}) => {
 
   return (
     <TopNavigation
+    
         accessoryRight={renderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{

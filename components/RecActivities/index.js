@@ -9,14 +9,12 @@ const SaveIcon = (props) => (
     <Icon {...props} name='bookmark-outline' fill="#434343"/>
   );
 
-export const RecActivities = ({
-
-}) => {
+export const RecActivities = ({navigation}) => {
 
     return (
         <><Text style={{padding:10,marginRight:170}}>Recommended Activities</Text><Layout style={styles.cont}>
             <Layout>
-                <Image style={{ width: 106, height: 100 }} source={require('../../assets/yoga.jpeg')}></Image>
+                <Image  style={{ width: 106, height: 100 }} source={require('../../assets/yoga.jpeg')}></Image>
                     <Text style={styles.text}>Yoga</Text>
                 
             </Layout>

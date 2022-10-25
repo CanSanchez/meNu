@@ -4,16 +4,16 @@ import { Button, Divider, Layout, TopNavigation, Icon} from '@ui-kitten/componen
 import { CategoryButton } from '../components/CategoryButton';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 
-export const ActivityScreen = () => {
+export const ActivityScreen = ({navigation}) => {
 
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <CategoryButton status='warning' ar={StarIcon}></CategoryButton>
-      <CategoryButton status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
-      <CategoryButton status='success' text='Creative' ar={StarIcon}></CategoryButton>
-      <CategoryButton status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
+      <CategoryButton func={() => navigation.push('Activity Card')} status='warning' ar={StarIcon}></CategoryButton>
+      <CategoryButton func={() => navigation.push('Activity Card')} status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
+      <CategoryButton func={() => navigation.push('Activity Card')} status='success' text='Creative' ar={StarIcon}></CategoryButton>
+      <CategoryButton func={() => navigation.push('Activity Card')} status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
       </Layout>
     </SafeAreaView>
   );

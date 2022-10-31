@@ -18,7 +18,7 @@ styles = StyleSheet.create({
     tcard: {
         width: 300,
         height: 100,
-        borderRadius:20,
+        borderRadius:30,
         backgroundColor:"#DDD9FF"   
     }
 })

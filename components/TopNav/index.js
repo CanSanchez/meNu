@@ -15,15 +15,16 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
-const renderRightActions = ( {navigation} ) => (
+const renderRightActions = () => (
     <React.Fragment>
       <TopNavigationAction icon={NotIcon}/>
-      <TopNavigationAction onPress={() => navigation.push('Favourites')} icon={SaveIcon}/> 
+      <TopNavigationAction icon={SaveIcon}/> 
     </React.Fragment>
   );
 
-export const TopNavigationSimpleUsageShowcase = () => (
-    <TopNavigation
+export const TopNavigationSimpleUsageShowcase = ({navigation}) => (
+    <TopNavigation 
+        func={() => navigation.push('Notifications')}
         accessoryRight={renderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{

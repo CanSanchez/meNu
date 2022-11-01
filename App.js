@@ -6,11 +6,14 @@ import { AppNavigator } from './components/NavBar';
 import 'react-native-gesture-handler';
 import styled from 'styled-components';
 
+
 export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={eva.light}>
       <AppNavigator/>
+    
     </ApplicationProvider>
+
   </>
 );

@@ -118,6 +118,10 @@ const HomeStackScreen = () => (
      <HomeStack.Screen name='Notifications' component={NotificationScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
+    <HomeStack.Screen name='Activities' component={ActivityScreen} options={{
+      headerTransparent: true
+    }}></HomeStack.Screen>
+
   </HomeStack.Navigator>
   );
 

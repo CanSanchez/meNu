@@ -20,7 +20,7 @@ const renderRightActions = () => (
       <TopNavigationAction icon={NotIcon}/>
       <TopNavigationAction icon={SaveIcon}/> 
     </React.Fragment>
-  );
+)
 
 export const TopNavigationSimpleUsageShowcase = ({navigation}) => (
     <TopNavigation 
@@ -28,27 +28,13 @@ export const TopNavigationSimpleUsageShowcase = ({navigation}) => (
         accessoryRight={renderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{
-          backgroundColor: '#FFFEF4',
+          backgroundColor: '#FFFFFF',
           paddingTop: 20
-        }} />
+        }} >
+    </TopNavigation>
 
-
-);
-
-
-const TopNavigationStyling = () => (
-  <TopNavigation
-    title={evaProps => <Text {...evaProps}>Title</Text>}
-    subtitle={evaProps => <Text {...evaProps}>Subtitle</Text>}
-  />
-);
-
-const styles = StyleSheet.create({
-    icon: {
-       
-    }
-});
-
+  )
+    
 const LogoPrimary = () => (
   <View style={{paddingLeft: 15}}>
     <Image

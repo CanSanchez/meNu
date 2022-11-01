@@ -5,14 +5,14 @@ import { Button, Layout, Icon } from '@ui-kitten/components';
 
 export const CategoryButton = ({
   text = "Indoor",
-  bc = "black",
+  status = "",
   func="", 
   ar = "",
 }) => (
     <View style={styles.container}>
     <Button 
     style={styles.button} 
-    backgroundColor={bc}
+    status={status}
     accessoryRight={ar} 
     onPress={func}>
       {text}
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     borderRadius:10,
     width: 225,
     height: 65,
-    backgroundColor:'blue'
   },
   text: {
     color:"wh",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Button, Card, Modal, Text, Layout, Icon } from '@ui-kitten/components';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -11,8 +11,9 @@ export const Reminders = () => {
     const [checked, setChecked] = React.useState(false);
 
     return ( 
-        <Layout style={{backgroundColor:'transparent', position:'absolute', marginTop:450}}>
-            <Text style={{paddingTop:10}}>Reminders</Text>
+        <Layout style={{backgroundColor:'transparent', marginBottom: 200, marginTop: 20}}>
+            <ScrollView>
+            <Text style={{fontWeight: 'bold'}}>Reminders</Text>
             <Card style={styles.recard}>
                 <Radio checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>
@@ -24,8 +25,7 @@ export const Reminders = () => {
                 onChange={nextChecked => setChecked(nextChecked)}>Breakfast with kids</Radio>
                 <Text style={{paddingLeft:32}}>Check emails for 15 mins</Text>
             </Card>
-          
-
+            </ScrollView>
         </Layout>
 
     )

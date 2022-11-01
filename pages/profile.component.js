@@ -15,7 +15,7 @@ export const ProfileScreen = ({ navigation }) => {
       <Divider />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
         <AvatarProfile />
-        <Text category='h4' style={{color: 'black'}}>Username</Text>
+        <Text category='h5' style={{color: 'black'}}>Michelle Smith</Text>
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
         <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>

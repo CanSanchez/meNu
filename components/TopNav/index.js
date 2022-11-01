@@ -15,14 +15,8 @@ const NotAction = () => (
   <TopNavigationAction icon={NotIcon}/>
 );
 
-<<<<<<< HEAD
 const renderRightActions = ( navigation ) => (
     <React.Fragment>
-=======
-const renderRightActions = () => (
-
-    <React.Fragment >
->>>>>>> c8caf2acb3529fce14e4797750c0eff414bed61e
       <TopNavigationAction icon={NotIcon}/>
       <TopNavigationAction onPress={() => navigation.push('Favourites')} icon={SaveIcon}/> 
     </React.Fragment>
@@ -44,32 +38,11 @@ export const TopNavigationSimpleUsageShowcase = () => {
 }
   
    
-  
-  
-    
-
-<<<<<<< HEAD
-);
-=======
-
-const TopNavigationStyling = () => (
->>>>>>> c8caf2acb3529fce14e4797750c0eff414bed61e
-
-
-    <TopNavigation
+<TopNavigation
     title={evaProps => <Text {...evaProps}>Title</Text>}
     subtitle={evaProps => <Text {...evaProps}>Subtitle</Text>}
-  />
-  
-)
-  
-
-const styles = StyleSheet.create({
-    icon: {
-       
-    }
-});
-
+/>
+    
 const LogoPrimary = () => (
   <View style={{paddingLeft: 15}}>
     <Image

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         height:260,
         display:"flex",
         padding: 20,
-        borderRadius:50,
+        borderRadius:30,
         backgroundColor:"#F8F386",
 
     },

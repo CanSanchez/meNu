@@ -3,9 +3,7 @@ import { Icon, Layout, Text, Card, TopNavigation, TopNavigationAction } from '@u
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
 
-export const TextCard = ({
-    bgcolor="#DDD9FF"
-}) => {
+export const TextCard = () => {
 
     return <Card style={styles.tcard}>
         <Text> “Being a single parent is not a life full of struggles, but  a journey for the strong."
@@ -19,8 +17,7 @@ styles = StyleSheet.create({
     tcard: {
         width: 300,
         height: 100,
-        borderRadius:20,
-        backgroundColor:"#DDD9FF",
-        
+        borderRadius:30,
+        backgroundColor:"#DDD9FF"   
     }
 })

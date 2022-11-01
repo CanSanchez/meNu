@@ -36,7 +36,7 @@ styles=StyleSheet.create({
         width:310,
         height: 60,
         backgroundColor:'#FFEFE7',
-        borderRadius:45,
+        borderRadius:30,
         margin:10
 
     }

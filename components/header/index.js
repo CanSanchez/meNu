@@ -14,7 +14,7 @@ export const HeaderTitle = ({
       });
 
     return (
-         <Text  category='h6' style={{color: "#434343", paddingTop: 20, paddingBottom:10, fontFamily: 'FredokaOne_400Regular', marginLeft:10, marginRight:10}}>{headertext}</Text>
+         <Text  category='h6' style={{color: "#434343", paddingTop: 30, paddingBottom:10, fontFamily: 'FredokaOne_400Regular', marginLeft:10, marginRight:10}}>{headertext}</Text>
 
     )
 

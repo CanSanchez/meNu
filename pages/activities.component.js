@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Icon} from '@ui-kitten/components';
-import { CategoryButton } from '../components/CategoryButton';
+import { CategoryButton } from '../components/categorybutton';
 
 export const ActivityScreen = () => {
 

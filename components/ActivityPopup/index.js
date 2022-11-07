@@ -4,7 +4,7 @@ import { Card, Text, Modal, Icon } from "@ui-kitten/components";
 import { ButtonMain } from "../Button";
 import { ActivityCard } from "../ActivityCard";
 
-export const ActivityPopup = () => {
+export const ActivityPopup = ({ navigation }) => {
   
     const [visible, setVisible] = React.useState(false);
   
@@ -25,9 +25,11 @@ export const ActivityPopup = () => {
               <Text style={{paddingTop:10}} category='s1'>Helps with back pain relief</Text>
               <Text style={{paddingTop:10}} category='s1'>Relaxes you</Text>
               <Text style={{paddingTop:10}} category='s1'>Gives you more energy</Text>
+              <Text style={styles.subheader} category='h6'>NEED TO BE PREPARED:</Text>
+              <Text style={{paddingTop:10}} category='s1'>Pilates mat</Text>
               </View>
               <View style={styles.buttondiv}>
-                  <ButtonMain style={styles.button} text="Add to Calendar" onPress={() => setVisible(false)}>
+                  <ButtonMain style={styles.button} text="Add to Reminder" func={() => navigation.push('Calendar')}>
                   </ButtonMain>
               </View>
           </Card>
@@ -44,24 +46,31 @@ export const ActivityPopup = () => {
     card: {
         width:350,
         height: 500,
+        display: "flex",
+        alignItems: "center",
     },
 
     buttondiv:{
-        paddingTop: 50
+        paddingTop:20
     },
 
     header:{
         display:"flex",
         justifyContent:"center",
-        paddingTop: 10,
-        paddingBottom: 10
+        padding:10,
+        paddingBottom: 20,
+        paddingLeft: 83,
     },
 
     picture: {
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 150,
         borderRadius: 30,
 
+    },
+
+    subheader: {
+      paddingTop: 20,
     }
 
   });

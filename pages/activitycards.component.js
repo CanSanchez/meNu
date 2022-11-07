@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, Divider, Layout, Icon } from '@ui-kitten/components';
 import { ActivityPopup } from '../components/ActivityPopup';
+import { FilterButtons } from '../components/FilterButtons';
 
 export const ActivityCardScreen = ({ navigation }) => {
 
@@ -11,11 +12,7 @@ export const ActivityCardScreen = ({ navigation }) => {
       <Divider/>
       
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <ButtonGroup style={styles.group} status='warning'>
-        <Button>15mins</Button>
-        <Button>30mins</Button>
-        <Button>60mins</Button>
-      </ButtonGroup>
+      <FilterButtons></FilterButtons>
       <ActivityPopup></ActivityPopup>
     </Layout>
     </SafeAreaView>

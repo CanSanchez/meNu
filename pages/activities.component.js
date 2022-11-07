@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Icon} from '@ui-kitten/components';
 import { CategoryButton } from '../components/CategoryButton';
 
-export const ActivityScreen = ({ navigation }) => {
+export const ActivityScreen = ({navigation}) => {
 
 
   return (

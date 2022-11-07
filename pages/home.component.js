@@ -10,6 +10,7 @@ import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
 import { Reminders } from '../components/Reminders';
 
+
 export const HomeScreen = () => {
   const [fontsLoaded] = useFonts({
     FredokaOne_400Regular,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems:'center',
     paddingTop:30,
-    backgroundColor: '#FFFEF4'
+    backgroundColor: '#FFFFFF'
   }
   
 })

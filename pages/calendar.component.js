@@ -7,8 +7,8 @@ import { Reminders } from '../components/Reminders';
 export const CalendarScreen = () => {
 
   return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFEF4" }}>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView>
       <Divider />
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

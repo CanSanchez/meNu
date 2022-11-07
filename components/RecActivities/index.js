@@ -12,16 +12,17 @@ const SaveIcon = (props) => (
     <Icon {...props} name='bookmark-outline' fill="#434343"/>
   );
 
-export const RecActivities = () => {
+export const RecActivities = ({ navigation }) => {
 
    
 
     return (
-        <><Text style={{padding:10,marginRight:170, fontWeight: 'bold'}}>Recommended Activities</Text><Layout style={styles.cont}>
+        <><Text style={{padding:10, marginRight:170, fontWeight: 'bold'}}>Recommended Activities</Text><Layout style={styles.cont}>
             <Layout style={{flex: 1}}>
                 <ScrollView horizontal={true}>
             <Layout>
                 <Image
+                 func={() => navigation.push('Notifications')}
                 style={{ width: 106, height: 100, borderRadius: 30 }} source={require('../../assets/yoga.jpeg')}></Image>
                     <Text style={styles.text}>Yoga</Text>
             </Layout>
@@ -49,6 +50,8 @@ const styles=StyleSheet.create({
     cont: {
         flex:1,
         flexDirection:"row",
+        marginTop:20,
+        marginBottom:20
         
     },
     text: {

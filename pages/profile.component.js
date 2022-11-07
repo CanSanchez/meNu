@@ -13,7 +13,7 @@ export const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
         <AvatarProfile />
         <Text category='h5' style={{color: 'black'}}>Michelle Smith</Text>
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>

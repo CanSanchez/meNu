@@ -12,11 +12,11 @@ export const LoginScreen = () => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF"}}>
       <TopNavigationSimpleUsageShowcase />
 
-      <Layout style={{margin:100, flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
-        <HeaderTitle />
+      <Layout style={{margin:100, flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+        <HeaderTitle category='h6'/>
         <TutorialCard style={styles.card}/>
         <InputSimpleUsageShowcase />
         <ButtonMain />

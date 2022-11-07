@@ -26,7 +26,7 @@ export const TopNavigationSimpleUsageShowcase = ({navigation}) => (
     <TopNavigation 
         func={() => navigation.push('Notifications')}
         accessoryRight={renderRightActions}
-        accessoryLeft ={LogoPrimary}
+        accessoryLeft={LogoPrimary}
         style={{
           backgroundColor: '#FFFFFF',
           paddingTop: 20

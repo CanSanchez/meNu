@@ -3,8 +3,7 @@ import { Icon, Layout, Text, Card, TopNavigation, TopNavigationAction } from '@u
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
 
-export const TextCard = ({
-}) => {
+export const TextCard = () => {
 
     return <Card style={styles.tcard}>
         <Text> “Being a single parent is not a life full of struggles, but  a journey for the strong."

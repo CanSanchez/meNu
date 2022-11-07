@@ -14,6 +14,7 @@ export const CalendarSimpleUsageShowcase = () => {
           Selected date: {date.toLocaleDateString()}
         </Text>
         <Calendar
+          style={{borderRadius: 30}}
           date={date}
           onSelect={nextDate => setDate(nextDate)}
         />

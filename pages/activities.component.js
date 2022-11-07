@@ -3,11 +3,12 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Icon} from '@ui-kitten/components';
 import { CategoryButton } from '../components/CategoryButton';
 
-export const ActivityScreen = ({navigation}) => {
+export const ActivityScreen = () => {
 
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <CategoryButton func={() => navigation.push('Activity Card')} status='warning' ar={StarIcon}></CategoryButton>
       <CategoryButton func={() => navigation.push('Activity Card')} status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>

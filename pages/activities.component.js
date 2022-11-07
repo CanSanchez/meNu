@@ -2,6 +2,8 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Icon} from '@ui-kitten/components';
 import { CategoryButton } from '../components/CategoryButton';
+import { FilterButtons } from '../components/FilterButtons';
+import { ActivityPopup } from '../components/ActivityPopup';
 
 export const ActivityScreen = ({navigation}) => {
 
@@ -10,10 +12,8 @@ export const ActivityScreen = ({navigation}) => {
     <SafeAreaView style={{ flex: 1 }}>
       <Divider/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <CategoryButton func={() => navigation.push('Activity Card')} status='warning' ar={StarIcon}></CategoryButton>
-      <CategoryButton func={() => navigation.push('Activity Card')} status='info' text='Outdoor' ar={HeartIcon}></CategoryButton>
-      <CategoryButton func={() => navigation.push('Activity Card')} status='success' text='Creative' ar={StarIcon}></CategoryButton>
-      <CategoryButton func={() => navigation.push('Activity Card')} status='danger' text='Self Care' ar={HeartIcon}></CategoryButton>
+      <FilterButtons></FilterButtons>
+      <ActivityPopup></ActivityPopup>
       </Layout>
     </SafeAreaView>
   );

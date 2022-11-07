@@ -5,11 +5,16 @@ import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image } from 'react-native';
 
+
+
+
 const SaveIcon = (props) => (
     <Icon {...props} name='bookmark-outline' fill="#434343"/>
   );
 
 export const RecActivities = () => {
+
+   
 
     return (
         <><Text style={{padding:10,marginRight:170, fontWeight: 'bold'}}>Recommended Activities</Text><Layout style={styles.cont}>
@@ -55,3 +60,4 @@ const styles=StyleSheet.create({
             }
 
 })
+

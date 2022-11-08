@@ -112,7 +112,7 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name='Create Account' component={CreateAccountScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
-    <HomeStack.Screen name='Home' component={HomeScreen} options={{
+    <HomeStack.Screen name='Homepage' component={HomeScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
      <HomeStack.Screen name='Favourites' component={FaveScreen} options={{

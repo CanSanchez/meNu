@@ -5,7 +5,7 @@ import { CategoryButton } from '../components/CategoryButton';
 import { FilterButtons } from '../components/FilterButtons';
 import { ActivityPopup } from '../components/ActivityPopup';
 
-export const ActivityScreen = () => {
+export const ActivityScreen = ({navigation}) => {
 
 
   return (

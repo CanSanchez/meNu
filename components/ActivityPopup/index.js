@@ -4,7 +4,7 @@ import { Card, Text, Modal, Icon } from "@ui-kitten/components";
 import { ButtonMain } from "../Button";
 import { ActivityCard } from "../ActivityCard";
 
-export const ActivityPopup = () => {
+export const ActivityPopup = ({ navigation }) => {
   
     const [visible, setVisible] = React.useState(false);
   
@@ -29,7 +29,7 @@ export const ActivityPopup = () => {
               <Text style={{paddingTop:10}} category='s1'>Pilates mat</Text>
               </View>
               <View style={styles.buttondiv}>
-                  <ButtonMain style={styles.button} text="Add to Calendar" onPress={() => setVisible(false)}>
+                  <ButtonMain style={styles.button} text="Add to Reminder" func={() => navigation.push('Calendar')}>
                   </ButtonMain>
               </View>
           </Card>

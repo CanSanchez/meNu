@@ -4,14 +4,16 @@ import { Card, Text } from '@ui-kitten/components';
 import { FlexStyleProps } from '@ui-kitten/components/devsupport';
 
 export const ActivityCard = ({
-    func=console.log('not a button')
+    fronttext="Pilates",
+    func=console.log('not a button'),
 }) => {
+    
 
     return (
         <Card style={styles.acard} onPress={func}>
             <Image style={styles.picture}
             source={require('../../assets/pilates.png')}></Image>
-            <Text category='h5' style={styles.text}>Pilates</Text>
+            <Text category='h5' style={styles.text}>{fronttext}</Text>
         </Card>
     )
 }

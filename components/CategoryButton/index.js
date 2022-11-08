@@ -1,6 +1,9 @@
 import React from 'react';
+import * as eva from '@eva-design/eva';
 import { StyleSheet, View } from 'react-native';
-import { Button, Layout, Icon } from '@ui-kitten/components';
+import { Button, Layout, Icon, ApplicationProvider } from '@ui-kitten/components';
+import { default as theme } from '../../custom-theme.json';
+
 
 
 export const CategoryButton = ({
@@ -9,6 +12,7 @@ export const CategoryButton = ({
   func="", 
   ar = "",
 }) => (
+    <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
     <View style={styles.container}>
     <Button 
     style={styles.button} 
@@ -18,6 +22,7 @@ export const CategoryButton = ({
       {text}
     </Button>
     </View>
+    </ApplicationProvider>
 );
 
 const styles = StyleSheet.create({

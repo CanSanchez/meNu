@@ -5,6 +5,7 @@ import { ButtonMain } from "../Button";
 import { ActivityCard } from "../ActivityCard";
 
 export const ActivityPopup = ({ 
+  source=require('../../assets/pilates.png'),
   fronttext='Pilates',
   h4="Pilates",
   list1="Improves strength and balance",
@@ -19,7 +20,8 @@ export const ActivityPopup = ({
     return (
       <View>
         <ActivityCard func={() => setVisible(true)}
-        fronttext={fronttext}/>
+        fronttext={fronttext}
+        source={source}/>
   
         <Modal
           visible={visible}
@@ -28,7 +30,7 @@ export const ActivityPopup = ({
           <Card disabled={true}
           style={styles.card}>
               <View>
-              <Image style={styles.picture} source={require('../../assets/pilates.png')}></Image>
+              <Image style={styles.picture} source={source}></Image>
               <Text style={styles.header} category='h4'>{h4}</Text>
               <Text category='s1'>{list1}</Text>
               <Text style={{paddingTop:10}} category='s1'>{list2}</Text>
@@ -57,6 +59,7 @@ export const ActivityPopup = ({
         height: 500,
         display: "flex",
         alignItems: "center",
+        borderRadius: 30,
     },
 
     buttondiv:{

@@ -18,6 +18,7 @@ export const ActivityCardScreen = ({ navigation }) => {
       </Layout>
       <Layout style={styles.layout}>
         <ActivityPopup
+        source={require('../assets/images/walk.jpeg')}
         fronttext='Take a Walk'
         h4='Take a Walk'
         list1='Improves circulation'
@@ -28,6 +29,7 @@ export const ActivityCardScreen = ({ navigation }) => {
       </Layout>
       <Layout style={styles.layout}>
         <ActivityPopup
+        source={require('../assets/images/cooking.jpeg')}
         fronttext='Cooking'
         h4='Cooking'
         list1='Improves management skills'

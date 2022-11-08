@@ -6,23 +6,23 @@ import { ActivityCard } from "../ActivityCard";
 
 export const ActivityPopup = ({ 
   source=require('../../assets/pilates.png'),
-  fronttext='Pilates',
   h4="Pilates",
+  fronttext="Pilates",
   list1="Improves strength and balance",
-  list2="Helps with back pain relief  ",
+  list2="Helps with back pain relief",
   list3="Relaxes you",
   list4="Gives you more energy",
   needs="Pilates mat",
+
   navigation }) => {
   
     const [visible, setVisible] = React.useState(false);
-  
+
     return (
       <View>
         <ActivityCard func={() => setVisible(true)}
         fronttext={fronttext}
         source={source}/>
-  
         <Modal
           visible={visible}
           backdropStyle={styles.backdrop}
@@ -59,7 +59,6 @@ export const ActivityPopup = ({
         height: 500,
         display: "flex",
         alignItems: "center",
-        borderRadius: 30,
     },
 
     buttondiv:{
@@ -69,11 +68,9 @@ export const ActivityPopup = ({
     header:{
         display:"flex",
         justifyContent:"center",
-        height: 40,
-        alignItems: 'center',
-        paddingTop:10,
-        paddingBottom:40
-
+        padding:10,
+        paddingBottom: 20,
+        paddingLeft: 83,
     },
 
     picture: {

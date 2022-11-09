@@ -4,11 +4,11 @@ import { StyleSheet, Image, View } from 'react-native';
 import { FaveScreen } from '../../pages/favourites.components';
 
 const NotIcon = (props) => (
-  <Icon {...props} name='bell' fill="#7161EF"/>
+  <Icon {...props} name='bell' fill="#E88C68"/>
 );
 
 const SaveIcon = (props) => (
-    <Icon {...props} name="bookmark" fill="#7161EF"/>
+    <Icon {...props} name="bookmark" fill="#E88C68"/>
 );
 
 const NotAction = () => (

@@ -7,8 +7,7 @@ import { PopupCardButton } from '../components/PopupCard';
 import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 
-export const ProfileScreen = ({ navigation }) => {
-
+export const ProfileScreen = ({ navigation }, props) => {
 
   return (
     <SafeAreaView style={{ flex: 1}}>
@@ -24,6 +23,7 @@ export const ProfileScreen = ({ navigation }) => {
             <ActionListItem func={() => navigation.push('Notifications')} styl={actionstyle} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
             <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>
             <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
+            <Button onPress={props.toggleTheme}>Switch Theme</Button>
         </View>
         <PopupCardButton btntxt='Log Out' txt='Come back soon 😻' subtxt='Are you sure you want to log out?'/>
       </Layout>

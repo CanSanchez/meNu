@@ -13,7 +13,7 @@ export const PopupCardButton = ({
   txt,
   subtxt,
   navigation
-}) => {
+}) => {sswaz/* z  1`1 */
 
   const [visible, setVisible] = React.useState(false);
 

@@ -11,22 +11,29 @@ import { RecActivities } from '../components/RecActivities';
 import { Reminders } from '../components/Reminders';
 
 
-export const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
   const [fontsLoaded] = useFonts({
     FredokaOne_400Regular,
   });
 
   return (
-    <>
-    <ScrollView scrollEventThrottle={200}>
-      <Layout style={styles.layout}>
-        <HeaderTitle headertext='Welcome back, Michelle!' />
-        <Image style={{ width: 69, height: 60, margin: 10 }} source={require('../assets/Bearface.png')} />
-        <TextCard />
-        <RecActivities />
-        <Reminders />
-      </Layout>
+    <><SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+      <ScrollView scrollEventThrottle={200}>
+        <TopNavigationSimpleUsageShowcase />
+        <Layout style={styles.layout}>
+          
+          
+          <HeaderTitle headertext='Welcome back, Michelle!'/>
+          <Image style={{ width: 69, height: 60, margin: 10 }} source={require('../assets/Bearface.png')} />
+          <TextCard />
+        
+          <RecActivities />
+          <Reminders />
+          
+        </Layout>
+        
       </ScrollView>
+      </SafeAreaView>
     </>
 )
 

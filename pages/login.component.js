@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { InputSimpleUsageShowcase } from '../components/Form'
+import { LoginForm } from '../components/Form'
 import { ButtonMain } from '../components/Button'
 import { TutorialCard } from '../components/TutorialCard/index.js';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
@@ -12,13 +12,14 @@ export const LoginScreen = () => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF"}}>
-      <TopNavigationSimpleUsageShowcase />
+    <SafeAreaView style={{ flex: 1}}>
+      
 
-      <Layout style={{margin:100, flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+      <Layout style={{margin:100, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <TopNavigationSimpleUsageShowcase />
         <HeaderTitle category='h6'/>
         <TutorialCard style={styles.card}/>
-        <InputSimpleUsageShowcase />
+        <LoginForm />
         <ButtonMain />
         
       </Layout>

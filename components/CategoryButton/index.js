@@ -1,23 +1,27 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Layout, Icon } from '@ui-kitten/components';
+import { Button, Layout, Icon, ApplicationProvider } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+import {default as theme} from '../../styles/theme.json';
 
 
 export const CategoryButton = ({
   text = "Indoor",
-  status = "",
+  stat = "",
   func="", 
   ar = "",
 }) => (
+  <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
     <View style={styles.container}>
     <Button 
     style={styles.button} 
-    status={status}
+    status={stat}
     accessoryRight={ar} 
     onPress={func}>
       {text}
     </Button>
     </View>
+  </ApplicationProvider>
 );
 
 const styles = StyleSheet.create({
@@ -34,7 +38,8 @@ const styles = StyleSheet.create({
     height: 65,
   },
   text: {
-    color:"wh",
+    color:"#000000",
     display:'flex',
   }
 });
+

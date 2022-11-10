@@ -50,6 +50,7 @@ export const FilterButtons = ({
     cont: {
         flex:1,
         flexDirection:"row",
+        paddingTop:20
         
     },
     button: {

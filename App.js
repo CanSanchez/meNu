@@ -39,7 +39,8 @@ export default function App() {
       {/* <ApplicationProvider {...eva} mapping={mapping} theme={themes[theme]}></ApplicationProvider> */}
       <ApplicationProvider {...eva} theme={{...eva.dark, ...theme}}>
         {/* <AppNavigator toggleTheme={toggleTheme} /> */}
-        <NavigationContainer>
+       {/* <NavigationContainer> */}
+       <AppNavigator>
           <Stack.Navigator initialRouteName="starting" screenOptions={{headerStyle: {
             backgroundColor: '#FDF1E1',
           }}}>
@@ -48,7 +49,8 @@ export default function App() {
             <Stack.Screen name="Signup" component={SignupScreen}/>
             <Stack.Screen name='Home' component={HomeScreen} />
           </Stack.Navigator>
-        </NavigationContainer>
+          </AppNavigator>
+       {/* </NavigationContainer> */}
       </ApplicationProvider>
     </>
   );

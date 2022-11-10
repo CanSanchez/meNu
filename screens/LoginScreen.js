@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity } from '
 import React, { useEffect, useState } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 import { Button } from '@ui-kitten/components';
-import { auth } from '../firebase/firebase.config';
+import { auth } from '../firebase/firebaseConfig';
 import { signInWithPopup, 
     GoogleAuthProvider, 
     createUserWithEmailAndPassword, 
@@ -10,41 +10,18 @@ import { signInWithPopup,
     signInWithEmailAndPassword,
     signOut 
    } from 'firebase/auth';
-import { useNavigation } from '@react-navigation/native';
 
-const LoginScreen = () => {
+export default function LoginScreen ({navigation}) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const navigation = useNavigation()
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, user => {
-            if (user) {
-            navigation.navigate('Homepage')
-            }
-        })
-
-        return unsubscribe
-    }, [])
-
-    const handleSignUp = () => {
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredentials => {
-            const user = userCredentials.user;
-            console.log('Registered with:', user.email)
-        })
-        .catch(error => alert(error.message))
+    const createUser = async () => {
+        const user = await createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const handleLogin = () => {
-        signInWithEmailAndPassword(auth, email, password)
-        .then(userCredentials => {
-            const user = userCredentials.user;
-            console.log('Logged in with:', user.email)
-        })
-        .catch(error => alert(error.message))
+    const logIn = async () => {
+        const user = await signInWithEmailAndPassword(auth, email, password)
     }
 
   return (
@@ -70,13 +47,13 @@ const LoginScreen = () => {
 
         <View style={styles.buttonContainer}>
             <Button
-                onPress={handleLogin}
+                onPress={logIn}
                 style={styles.button}
             >
                 <Text style={styles.buttonText}>Login</Text>
             </Button>
             <Button
-                onPress={handleSignUp}
+                onPress={createUser}
                 style={[styles.button, styles.buttonOutline]}
                 appearance='outline'
             >
@@ -88,7 +65,6 @@ const LoginScreen = () => {
   )
 }
 
-export default LoginScreen
 
 const styles = StyleSheet.create({
     container:{

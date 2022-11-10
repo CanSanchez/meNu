@@ -16,31 +16,38 @@ export default function LoginScreen ({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const createUser = async () => {
-        const user = await createUserWithEmailAndPassword(auth, email, password)
-    }
-
     const logIn = async () => {
-        const user = await signInWithEmailAndPassword(auth, email, password)
-    }
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            if (auth) {
+                navigation.navigate('Home')
+            }
+          } catch (err) {
+            console.error(err);
+            alert('Sorry wrong password or email');
+          }
+    };
 
   return (
     <KeyboardAvoidingView 
         style={styles.container}
         behavior="padding"
     >
+        <Text>Welcome back</Text>
         <View style={styles.inputContainer}>
             <TextInput 
                 placeholder='Email'
                 value={email}
                 onChangeText ={ text => setEmail(text)}   
                 style={styles.input}
+                autoCapitalize='none'
             />
              <TextInput 
                 placeholder='Password'
                 value={password}
                 onChangeText ={ text => setPassword(text)}   
                 style={styles.input}
+                autoCapitalize='none'
                 secureTextEntry 
             />
         </View>
@@ -51,13 +58,6 @@ export default function LoginScreen ({navigation}) {
                 style={styles.button}
             >
                 <Text style={styles.buttonText}>Login</Text>
-            </Button>
-            <Button
-                onPress={createUser}
-                style={[styles.button, styles.buttonOutline]}
-                appearance='outline'
-            >
-                <Text style={styles.buttonOutlineText}>Register</Text>
             </Button>
         </View>
 
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#FDF1E1'
     },
     inputContainer:{
         width: '80%'
@@ -100,7 +101,8 @@ const styles = StyleSheet.create({
 
     },
     buttonOutline:{
-
+        borderWidth: 2,
+        backgroundColor: 'transparent'
     },
     buttonOutlineText:{},
 })

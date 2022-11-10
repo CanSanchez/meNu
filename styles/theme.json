@@ -43,7 +43,17 @@
     "color-danger-600": "#DB4E63",
     "color-danger-700": "#B73555",
     "color-danger-800": "#932247",
-    "color-danger-900": "#7A143F"
+    "color-danger-900": "#7A143F",
+    "background-basic-color-1": "$color-basic-100",
+    "background-basic-color-2": "$color-basic-200",
+    "background-basic-color-3": "$color-basic-300",
+    "background-basic-color-4": "$color-basic-400",
+  
+    "border-basic-color-1": "$color-basic-100",
+    "border-basic-color-2": "$color-basic-200",
+    "border-basic-color-3": "$color-basic-300",
+    "border-basic-color-4": "$color-basic-400",
+    "border-basic-color-5": "$color-basic-500"
   }
 
   

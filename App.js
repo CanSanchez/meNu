@@ -9,26 +9,46 @@ import styled from 'styled-components';
 import { default as theme } from './styles/theme.json'; // <-- Import app theme
 import { mapping, light, dark } from '@eva-design/eva';
 
-const white = {...eva.light, ...theme};
-const black = {...eva.dark, ...theme};
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const themes = { white, black };
+import WelcomeScreen from "./screens/WelcomeScreen";
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+import { HomeScreen } from './pages/home.component';
 
-export default App = () => {
+// const white = {...eva.light, ...theme};
+// const black = {...eva.dark, ...theme};
+
+// const themes = { white, black };
+
+export default function App() {
     
-  const [theme, setTheme] = React.useState('white');
+  // const [theme, setTheme] = React.useState('white');
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'white' ? 'black' : 'white';
-    setTheme(nextTheme);
-    console.log(nextTheme)
-  };
+  // const toggleTheme = () => {
+  //   const nextTheme = theme === 'white' ? 'black' : 'white';
+  //   setTheme(nextTheme);
+  //   console.log(nextTheme)
+  // };
+  const Stack = createStackNavigator();
 
   return (
     <>
       <IconRegistry icons={EvaIconsPack}/>
-      <ApplicationProvider {...eva} mapping={mapping} theme={themes[theme]}>
-        <AppNavigator toggleTheme={toggleTheme} />
+      {/* <ApplicationProvider {...eva} mapping={mapping} theme={themes[theme]}></ApplicationProvider> */}
+      <ApplicationProvider {...eva} theme={{...eva.dark, ...theme}}>
+        {/* <AppNavigator toggleTheme={toggleTheme} /> */}
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="starting" screenOptions={{headerStyle: {
+            backgroundColor: '#FDF1E1',
+          }}}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+            <Stack.Screen name="Login" component={LoginScreen}/>
+            <Stack.Screen name="Signup" component={SignupScreen}/>
+            <Stack.Screen name='Home' component={HomeScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ApplicationProvider>
     </>
   );

@@ -10,7 +10,7 @@ const { Navigator, Screen } = createStackNavigator();
 
 export default function GuestNavigator() {
   return (
-    <NavigationContainer screenOptions={{ headerShown: false }}>
+    <NavigationContainer screenOptions={{ headerShown: 'false' }}>
       <Stack.Screen name="Register" component={SignupScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Welcome" component={WelcomeScreen} />

@@ -7,8 +7,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/logo/logosplash.png",
-      "resizeMode": "contain",
+      "image": "./assets/images-login/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#E88C68"
     },
     "updates": {

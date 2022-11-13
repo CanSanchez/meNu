@@ -30,7 +30,7 @@ export const CalendarCard = ({
       <Icon name="close-outline" fill="#434343" style={{width:23, height:23}}
       onPress={handleClickClose}
       />
-      <Text style={{paddingLeft:260}}>Add</Text>
+      <Text onPress={handleClickClose} style={{paddingLeft:260}}>Add</Text>
     </Layout>
     <Card style={{display:"flex", width:320, height:100, borderRadius:30, backgroundColor: "#F4C5AE", marginTop:5  }}>
       <Input size="small" placeholder='Title' style={{marginBottom:5, backgroundColor:"#ffffff", borderRadius:30}}></Input>

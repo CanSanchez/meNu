@@ -17,6 +17,10 @@ export const CalendarScreen = () => {
 
   const [open, setOpen] = useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(current => !current);
+}
+
   return (
     <ScrollView scrollEventThrottle={200}>
       
@@ -29,7 +33,7 @@ export const CalendarScreen = () => {
         <TopNavigationSimpleUsageShowcase />
         <Layout style={{paddingTop:40}}>
         
-          <Icon onPress={()=>setOpen(true)} name="plus-circle-outline" fill="#434343" style={{width:23, height:23, paddingLeft:725, marginBottom:15}} />
+          <Icon onPress={handleClickOpen} name="plus-circle-outline" fill="#434343" style={{width:23, height:23, paddingLeft:725, marginBottom:15}} />
         </Layout>
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           

@@ -4,14 +4,16 @@ import { Card, Text } from '@ui-kitten/components';
 import { FlexStyleProps } from '@ui-kitten/components/devsupport';
 
 export const ActivityCard = ({
-    func=console.log('not a button')
+    func=console.log('not a button'),
+    fronttxt="Pilates",
+    source=require('../../assets/yoga.jpeg'),
 }) => {
 
     return (
         <Card style={styles.acard} onPress={func}>
             <Image style={styles.picture}
-            source={require('../../assets/pilates.png')}></Image>
-            <Text category='h5' style={styles.text}>Pilates</Text>
+            source={source}></Image>
+            <Text category='h5' style={styles.text}>{fronttxt}</Text>
         </Card>
     )
 }
@@ -32,4 +34,10 @@ const styles = StyleSheet.create({
         textAlign:'center',
         marginTop:15,
     },
+
+    picture: {
+        height: 290,
+        width: 240,
+        borderRadius: 30,
+    }
 })

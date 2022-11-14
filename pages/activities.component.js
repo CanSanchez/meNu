@@ -7,7 +7,7 @@ import { ActivityPopup } from '../components/ActivityPopup';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export const ActivityScreen = () => {
+export const ActivityScreen = ({navigation}) => {
 
 
   return ( 

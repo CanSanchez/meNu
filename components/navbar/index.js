@@ -13,6 +13,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { FaveScreen } from '../../pages/favourites.components';
 import { ActivityCardScreen } from '../../pages/activitycards.component';
 import { CreateAccountScreen } from '../../pages/newaccount.component';
+import LoginScreen from '../../screens/LoginScreen';
+import WelcomeScreen from '../../screens/WelcomeScreen';
 //Bottom navigation bar
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -109,10 +111,13 @@ const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-    <HomeStack.Screen name='Create Account' component={CreateAccountScreen} options={{
+     <HomeStack.Screen name='Welcome' component={WelcomeScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
-    <HomeStack.Screen name='Home' component={HomeScreen} options={{
+    <HomeStack.Screen name='Login' component={LoginScreen} options={{
+      headerTransparent: true
+    }}></HomeStack.Screen>
+    <HomeStack.Screen name='Homepage' component={HomeScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
      <HomeStack.Screen name='Favourites' component={FaveScreen} options={{

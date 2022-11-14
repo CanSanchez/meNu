@@ -7,6 +7,7 @@ import { TutorialCard } from '../components/TutorialCard/index.js';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
 import { HeaderTitle } from '../components/Header';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const LoginScreen = () => {
 
@@ -21,7 +22,6 @@ export const LoginScreen = () => {
         <TutorialCard style={styles.card}/>
         <LoginForm />
         <ButtonMain />
-        
       </Layout>
     </SafeAreaView>
   );

@@ -7,14 +7,15 @@ import { useFonts, FredokaOne_400Regular } from '@expo-google-fonts/fredoka-one'
 
 
 export const HeaderTitle = ({
-    headertext="Welcome To MEnU!"
+    headertext="Welcome To MEnU!",
+    category="h4"
 }) => {
     const [fontsLoaded] = useFonts({
         FredokaOne_400Regular,
       });
 
     return (
-         <Text  category='h6' style={{color: "#434343", paddingTop: 30, paddingBottom:10, fontFamily: 'FredokaOne_400Regular', marginLeft:10, marginRight:10}}>{headertext}</Text>
+         <Text  category={category} style={{color: "#434343", paddingTop: 60, paddingBottom:10, fontFamily: 'FredokaOne_400Regular', marginLeft:10, marginRight:10}}>{headertext}</Text>
     )
 
 }

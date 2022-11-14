@@ -6,9 +6,10 @@ import { Button, Divider, Layout, TopNavigation, Icon, ApplicationProvider} from
 import { CategoryButton } from '../components/CategoryButton';
 import { FilterButtons } from '../components/FilterButtons';
 import { ActivityPopup } from '../components/ActivityPopup';
+import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const ActivityScreen = ({navigation}) => {
-
 
   return (
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>

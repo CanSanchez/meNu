@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
-import { InputSimpleUsageShowcase } from '../components/Form'
+import { LoginForm } from '../components/Form'
 import { ButtonMain } from '../components/Button'
 import { TutorialCard } from '../components/TutorialCard/index.js';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
@@ -17,6 +17,7 @@ import { signInWithPopup,
          signInWithEmailAndPassword,
          signOut 
         } from 'firebase/auth';
+
 
 const UserIcon = (props) => (
   <Icon {...props} name='person-outline'/>
@@ -86,19 +87,14 @@ export const CreateAccountScreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={{ flex: 1}}>
-      <ScrollView showsVerticalScrollIndicator='false'>
-      <Layout style={{  flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
-          <HeaderTitle />
-          <TutorialCard style={styles.card}/>
-          <HeaderTitle headertext='Create Account'/>
-          <InputSimpleUsageShowcase 
-            onChangeText={(event) => {
-              setLoginEmail(event.target.value)
-            }}
-          />
-          <InputSimpleUsageShowcase placeholder='Password'/>
-          <ButtonMain text="Log In" func={() => navigation.push('Homepage')}/>
-          <ButtonMain text="Log In with Google" func={GoogleSignIn()}/>
+    <TopNavigationSimpleUsageShowcase />
+      <Layout style={{  flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+       
+        <HeaderTitle />
+        <TutorialCard style={styles.card}/>
+        <HeaderTitle  headertext='Create Account'/>
+        <LoginForm />
+        <ButtonMain text="Log In" func={() => navigation.push('Home')}/>
       </Layout>
       </ScrollView>
     </SafeAreaView>

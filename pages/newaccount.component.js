@@ -87,15 +87,16 @@ export const CreateAccountScreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={{ flex: 1}}>
-    <TopNavigationSimpleUsageShowcase />
-      <Layout style={{  flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
-       
-        <HeaderTitle />
-        <TutorialCard style={styles.card}/>
-        <HeaderTitle  headertext='Create Account'/>
-        <LoginForm />
-        <ButtonMain text="Log In" func={() => navigation.push('Home')}/>
-      </Layout>
+      <ScrollView>
+      <TopNavigationSimpleUsageShowcase />
+        <Layout style={{  flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+        
+          <HeaderTitle />
+          <TutorialCard style={styles.card}/>
+          <HeaderTitle  headertext='Create Account'/>
+          <LoginForm />
+          <ButtonMain text="Log In" func={() => navigation.push('Home')}/>
+        </Layout>
       </ScrollView>
     </SafeAreaView>
   );

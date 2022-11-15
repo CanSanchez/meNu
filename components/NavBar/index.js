@@ -33,17 +33,17 @@ const BottomTabBar = ({ navigation, state }) => (
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase, headerTransparent: true
+      headerTransparent: true
     }}
     />
     <Screen name='Activities' component={ActivityStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase, headerTransparent: true
+     headerTransparent: true
     }}/>
     <Screen name='Calendar' component={CalendarScreen} options={{
-      header: TopNavigationSimpleUsageShowcase, headerTransparent: true
+      headerTransparent: true
     }}/>
     <Screen name='Profile' component={ProfileStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase, headerTransparent: true
+      headerTransparent: true
     }}/>
   </Navigator>
 );
@@ -79,7 +79,7 @@ const NotIcon = (props) => (
 
 const HeaderStyle = () => ({
   headerStyle: {
-    backgroundColor: '#FFFEF4',
+    backgroundColor: '#FFFFFF',
   },
   headerTintColor: 'black',
   headerTitleStyle: {
@@ -129,6 +129,7 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name='Activities' component={ActivityScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
+    
 
   </HomeStack.Navigator>
   );

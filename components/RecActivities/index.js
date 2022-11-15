@@ -21,9 +21,7 @@ export const RecActivities = ({ navigation }) => {
             <Layout style={{flex: 1}}>
                 <ScrollView horizontal={true}>
             <Layout>
-                <Image
-                 func={() => navigation.push('Notifications')}
-                style={{ width: 106, height: 100, borderRadius: 30 }} source={require('../../assets/yoga.jpeg')}></Image>
+                <Image style={{ width: 106, height: 100, borderRadius: 30 }} source={require('../../assets/yoga.jpeg')}></Image>
                     <Text style={styles.text}>Yoga</Text>
             </Layout>
             <Layout >

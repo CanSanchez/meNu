@@ -7,8 +7,22 @@ import { PopupCardButton } from '../components/PopupCard';
 import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
+import { useAuth } from '../contexts/AuthContext';
 
 export const ProfileScreen = ({ navigation }, props) => {
+
+  const { logout } = useAuth()
+
+  const logOut = async () => {
+    try {
+        await 
+        logout()
+    }  catch (err) {
+        console.error(err);
+        alert(err)
+      }
+}
+
 
   return (
     <SafeAreaView style={{ flex: 1}}>
@@ -27,7 +41,7 @@ export const ProfileScreen = ({ navigation }, props) => {
             <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
             <Button onPress={props.toggleTheme}>Switch Theme</Button>
         </View>
-        <PopupCardButton btntxt='Log Out' txt='Come back soon 😻' subtxt='Are you sure you want to log out?'/>
+        <Button onPress={logOut}>Log Out</Button>
       </Layout>
     </SafeAreaView>
   );

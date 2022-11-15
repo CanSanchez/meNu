@@ -8,6 +8,7 @@ import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { useAuth } from '../contexts/AuthContext';
+import { useFonts } from 'expo-font';
 
 export const ProfileScreen = ({ navigation }, props) => {
 
@@ -23,6 +24,15 @@ export const ProfileScreen = ({ navigation }, props) => {
       }
 }
 
+const [loaded] = useFonts({
+  Poppins: require('../assets/fonts/Poppins-Regular.ttf'),
+  PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
+  PoppinsMedium: require('../assets/fonts/Poppins-Medium.ttf')
+});
+
+if (!loaded) {
+  return null;
+}
 
   return (
     <SafeAreaView style={{ flex: 1}}>
@@ -30,7 +40,7 @@ export const ProfileScreen = ({ navigation }, props) => {
       <TopNavigationSimpleUsageShowcase/>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
         <AvatarProfile />
-        <Text category='h5' style={{color: 'black'}}>Michelle Smith</Text>
+        <Text category='h5' style={{color: 'black', fontFamily:'PoppinsMedium'}}>Michelle Smith</Text>
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
         <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>

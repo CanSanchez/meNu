@@ -16,6 +16,8 @@ import WelcomeScreen from "./screens/WelcomeScreen";
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import { HomeScreen } from './pages/home.component';
+import GuestNavigator from './navigations/GuestNavigator';
+import { AuthProvider, AuthContext } from './contexts/AuthContext';
 
 // const white = {...eva.light, ...theme};
 // const black = {...eva.dark, ...theme};
@@ -31,7 +33,8 @@ export default function App() {
   //   setTheme(nextTheme);
   //   console.log(nextTheme)
   // };
-  const Stack = createStackNavigator();
+  // const Stack = createStackNavigator();
+  const [isSignedIn, setSignIn] = useState(false)
 
   return (
     <>
@@ -39,18 +42,17 @@ export default function App() {
       {/* <ApplicationProvider {...eva} mapping={mapping} theme={themes[theme]}></ApplicationProvider> */}
       <ApplicationProvider {...eva} theme={{...eva.dark, ...theme}}>
         {/* <AppNavigator toggleTheme={toggleTheme} /> */}
-       {/* <NavigationContainer> */}
-       <AppNavigator>
-          <Stack.Navigator initialRouteName="starting" screenOptions={{headerStyle: {
-            backgroundColor: '#FDF1E1',
-          }}}>
-            <Stack.Screen name="Welcome" component={WelcomeScreen}/>
-            <Stack.Screen name="Login" component={LoginScreen}/>
-            <Stack.Screen name="Signup" component={SignupScreen}/>
-            <Stack.Screen name='Home' component={HomeScreen} />
-          </Stack.Navigator>
-          </AppNavigator>
-       {/* </NavigationContainer> */}
+        <AuthProvider>
+     <NavigationContainer>
+     <AuthContext.Consumer>
+     {({currentUser}) => currentUser ? (
+        <AppNavigator />    
+      ): (
+        <GuestNavigator />
+      )}
+    </AuthContext.Consumer>
+        </NavigationContainer>
+        </AuthProvider>
       </ApplicationProvider>
     </>
   );

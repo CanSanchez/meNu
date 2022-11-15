@@ -15,6 +15,7 @@ import {
     addDoc,
     doc,
  } from "firebase/firestore";
+import { useAuth } from '../contexts/AuthContext';
 
 
    export default function SignupScreen ({navigation}) {
@@ -27,10 +28,19 @@ import {
     const [users, setUsers] = useState([]);
     const usersCollectionRef = collection(db, "users");
 
+    const { signup } = useAuth()
+
     const createUser = async () => {
-        const user = await addDoc(usersCollectionRef, { name: newName, lastName: newLastName, email: email });
-        createUserWithEmailAndPassword(auth, email, password);
-        
+        try {
+            const user = await 
+            signup(email, password);
+            addDoc(usersCollectionRef, { name: newName, lastName: newLastName, email: email });
+            alert('Sign up successful! Please log in');
+            navigation.navigate('Login');
+        }  catch (err) {
+            console.error(err);
+            alert('Invalid email or email is already in use')
+          }
     }
 
     const GoogleSignIn = () => {
@@ -96,7 +106,6 @@ import {
             <Button
                 onPress={()=>{
                     createUser();
-                    navigation.navigate('Login')
                 }}
                 style={styles.button}
             >

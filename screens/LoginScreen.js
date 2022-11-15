@@ -3,28 +3,33 @@ import React, { useEffect, useState } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 import { Button } from '@ui-kitten/components';
 import { auth } from '../firebase/firebaseConfig';
-import { signInWithPopup, 
-    GoogleAuthProvider, 
-    createUserWithEmailAndPassword, 
+import {
     onAuthStateChanged, 
-    signInWithEmailAndPassword,
-    signOut 
+    signInWithEmailAndPassword, 
    } from 'firebase/auth';
+import { Loader } from '../components/Loader';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function LoginScreen ({navigation}) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isLoading, setLoading] = useState(false)
+
+    const { login } = useAuth()
 
     const logIn = async () => {
+        setLoading(true)
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            await
+            login(email, password);
             if (auth) {
-                navigation.navigate('Home')
+                setLoading(false);
             }
           } catch (err) {
             console.error(err);
             alert('Sorry wrong password or email');
+            setLoading(false);
           }
     };
 
@@ -33,34 +38,35 @@ export default function LoginScreen ({navigation}) {
         style={styles.container}
         behavior="padding"
     >
-        <Text>Welcome back</Text>
-        <View style={styles.inputContainer}>
-            <TextInput 
-                placeholder='Email'
-                value={email}
-                onChangeText ={ text => setEmail(text)}   
-                style={styles.input}
-                autoCapitalize='none'
-            />
-             <TextInput 
-                placeholder='Password'
-                value={password}
-                onChangeText ={ text => setPassword(text)}   
-                style={styles.input}
-                autoCapitalize='none'
-                secureTextEntry 
-            />
-        </View>
-
-        <View style={styles.buttonContainer}>
-            <Button
-                onPress={logIn}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>Login</Text>
-            </Button>
-        </View>
-
+        {isLoading ? 
+            ( 
+            <View style={styles.container}>
+                <Loader />
+            </View>
+            ):(
+        <><Text>Welcome back</Text><View style={styles.inputContainer}>
+                      <TextInput
+                          placeholder='Email'
+                          value={email}
+                          onChangeText={text => setEmail(text)}
+                          style={styles.input}
+                          autoCapitalize='none' />
+                      <TextInput
+                          placeholder='Password'
+                          value={password}
+                          onChangeText={text => setPassword(text)}
+                          style={styles.input}
+                          autoCapitalize='none'
+                          secureTextEntry />
+                  </View><View style={styles.buttonContainer}>
+                          <Button
+                              onPress={logIn}
+                              style={styles.button}
+                          >
+                              <Text style={styles.buttonText}>Login</Text>
+                          </Button>
+                      </View></>
+        )}
     </KeyboardAvoidingView>
   )
 }

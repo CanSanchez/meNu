@@ -6,14 +6,16 @@ import LoginScreen from '../screens/LoginScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import SignupScreen from '../screens/SignupScreen';
 
-const { Navigator, Screen } = createStackNavigator();
+const GuestStack = createStackNavigator();
 
 export default function GuestNavigator() {
   return (
-    <NavigationContainer screenOptions={{ headerShown: 'false' }}>
-      <Stack.Screen name="Register" component={SignupScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
-    </NavigationContainer>
+    <GuestStack.Navigator initialRouteName="starting" screenOptions={{headerStyle: {
+      backgroundColor: '#FDF1E1',
+    }}}>
+      <GuestStack.Screen name="Welcome" component={WelcomeScreen}/>
+      <GuestStack.Screen name="Login" component={LoginScreen}/>
+      <GuestStack.Screen name="Signup" component={SignupScreen}/>
+    </GuestStack.Navigator>
   );
 }

@@ -1,20 +1,16 @@
 import React from 'react';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button, BottomNavigation, BottomNavigationTab, Layout, Text, IconRegistry, Icon } from '@ui-kitten/components';
-import { HomeScreen } from '../../pages/home.component';
-import { CalendarScreen } from '../../pages/calendar.component';
-import { ProfileScreen } from '../../pages/profile.component';
-import { ActivityScreen } from '../../pages/activities.component';
-import {  AccountSettingsScreen } from '../../pages/accountsettings.components'
-import { NotificationScreen } from '../../pages/notificationsettings.components';
-import { TopNavigationSimpleUsageShowcase } from '../TopNav';
+import { HomeScreen } from '../pages/home.component';
+import { CalendarScreen } from '../pages/calendar.component';
+import { ProfileScreen } from '../pages/profile.component';
+import { ActivityScreen } from '../pages/activities.component';
+import {  AccountSettingsScreen } from '../pages/accountsettings.components'
+import { NotificationScreen } from '../pages/notificationsettings.components';
 import { createStackNavigator } from '@react-navigation/stack';
-import { FaveScreen } from '../../pages/favourites.components';
-import { ActivityCardScreen } from '../../pages/activitycards.component';
-import { CreateAccountScreen } from '../../pages/newaccount.component';
-import LoginScreen from '../../screens/LoginScreen';
-import WelcomeScreen from '../../screens/WelcomeScreen';
+import { FaveScreen } from '../pages/favourites.components';
+import { ActivityCardScreen } from '../pages/activitycards.component';
+
 //Bottom navigation bar
 
 const { Navigator, Screen } = createBottomTabNavigator();

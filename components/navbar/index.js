@@ -49,9 +49,7 @@ const TabNavigator = () => (
 );
 
 export const AppNavigator = () => (
-  <NavigationContainer>
     <TabNavigator />
-  </NavigationContainer>
 );
 
 
@@ -111,12 +109,6 @@ const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-     <HomeStack.Screen name='Welcome' component={WelcomeScreen} options={{
-      headerTransparent: true
-    }}></HomeStack.Screen>
-    <HomeStack.Screen name='Login' component={LoginScreen} options={{
-      headerTransparent: true
-    }}></HomeStack.Screen>
     <HomeStack.Screen name='Homepage' component={HomeScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>

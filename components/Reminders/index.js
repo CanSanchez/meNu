@@ -11,7 +11,9 @@ export const Reminders = () => {
     const [checked, setChecked] = React.useState(false);
 
     return ( 
-        <Layout style={{backgroundColor:'transparent', marginBottom: 200, marginTop: 20}}>
+        <Layout style={{backgroundColor:'transparent', marginBottom: 200, marginTop: 20,flex: 1,
+        flexDirection: 'column',
+        alignItems:'center',}}>
             <ScrollView>
             <Text style={{fontWeight: 'bold'}}>Reminders</Text>
             <Card style={styles.recard}>
@@ -35,7 +37,7 @@ styles=StyleSheet.create({
     recard: {
         width:310,
         height: 60,
-        backgroundColor:'#FFEFE7',
+        backgroundColor:'#E7E6DE',
         borderRadius:30,
         margin:10
 

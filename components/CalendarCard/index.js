@@ -25,9 +25,10 @@ export const CalendarCard = ({
   };
   
 
-  return <Card style={{width:360, height:430, borderRadius:35, alignItems:"center", position:"absolute", display: close ? 'none' : 'flex'}}>
+  return <Card style={{width:360, height:430, borderRadius:35, alignItems:"center", position:"absolute",
+  display: close ? 'none' : 'flex'}}>
     <Layout style={{flex:1, flexDirection:"row"}}>
-      <Icon name="close-outline" fill="#434343" style={{width:23, height:23}}
+      <Icon name="close-outline" fill="#434343" style={{width:23, height:23, }}
       onPress={handleClickClose}
       />
       <Text onPress={handleClickClose} style={{paddingLeft:260}}>Add</Text>

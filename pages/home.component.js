@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, Card } from '@ui-kitten/components';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
@@ -9,13 +9,24 @@ import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
 import { Reminders } from '../components/Reminders';
+import LottieView from 'lottie-react-native';
+import { useRef } from 'react';
+import { useEffect } from 'react';
+
 
 
 export const HomeScreen = ({navigation}) => {
+
+
   const [fontsLoaded] = useFonts({
     FredokaOne_400Regular,
   });
 
+  const animation = useRef(null);
+  useEffect(() => {
+    // You can control the ref programmatically, rather than using autoPlay
+    // animation.current?.play();
+  }, []);
   
 
   return (
@@ -26,7 +37,17 @@ export const HomeScreen = ({navigation}) => {
           
           
           <HeaderTitle headertext='Welcome back, Michelle!'/>
-          <Image style={{ width: 69, height: 60, margin: 10 }} source={require('../assets/Bearface.png')} />
+        <View style={styles.animationContainer}/>
+          <LottieView
+            autoPlay
+            ref={animation}
+            style={{
+              width: 150,
+              height: 150
+              
+            }}
+            source={require('../assets/animations/wavingbear.json')}
+          />
           <TextCard />
         
         

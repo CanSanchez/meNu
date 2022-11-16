@@ -1,13 +1,25 @@
 import { StyleSheet, Image, View} from 'react-native';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Text } from '@ui-kitten/components';
-import { FlexStyleProps } from '@ui-kitten/components/devsupport';
+import { useFonts } from 'expo-font'
+
 
 export const ActivityCard = ({
     func=console.log('not a button'),
     fronttxt="Pilates",
     source=require('../../assets/yoga.jpeg'),
 }) => {
+
+    const [visible, setVisible] = React.useState(false);
+    const [loaded] = useFonts({
+      Poppins: require('../../assets/fonts/Poppins-Regular.ttf'),
+      PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf'),
+      PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf')
+    });
+
+    if (!loaded) {
+      return null;
+    }
 
     return (
         <Card style={styles.acard} onPress={func}>
@@ -25,7 +37,7 @@ const styles = StyleSheet.create({
         display:"flex",
         padding: 20,
         borderRadius:30,
-        backgroundColor:"#FFF3D3",
+        backgroundColor:"#F8F386",
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -33,6 +45,7 @@ const styles = StyleSheet.create({
     text: {
         textAlign:'center',
         marginTop:15,
+        fontFamily:'PoppinsBold'
     },
 
     picture: {
@@ -40,4 +53,4 @@ const styles = StyleSheet.create({
         width: 240,
         borderRadius: 30,
     }
-})
+});

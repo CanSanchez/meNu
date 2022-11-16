@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Layout, Icon} from '@ui-kitten/components';
+import { Button, Layout, Icon, Text} from '@ui-kitten/components';
+import { useFonts } from 'expo-font';
 
 
 export const ButtonMain = ({
@@ -11,7 +12,20 @@ export const ButtonMain = ({
   sz="", //optional size
   stat="", //optional color change
   func= console.log('empty') //function props
-}) => (
+}) => {
+
+  const [loaded] = useFonts({
+    Poppins: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
+
+  return (
     <Button 
     style={styles.button} 
     bgcolor={bgcolor} 
@@ -20,9 +34,9 @@ export const ButtonMain = ({
     size={sz}
     status={stat}
     onPress={func}>
-      {text}
+    <Text style={{fontFamily:"Poppins"}}>{text}</Text>
     </Button>
-);
+)};
 
 const styles = StyleSheet.create({
   container: {
@@ -32,10 +46,11 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 5,
-    borderRadius:'30px'
+    borderRadius:'30px',
   },
   text: {
-    color:"white"
+    color:"white",
+
   }
 });
 

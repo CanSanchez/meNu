@@ -13,7 +13,7 @@ export const TextCard = () => {
 
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     tcard: {
         width: 300,
         height: 100,

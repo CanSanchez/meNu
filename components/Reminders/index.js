@@ -33,7 +33,7 @@ export const Reminders = () => {
     )
 }
 
-styles=StyleSheet.create({
+const styles=StyleSheet.create({
     recard: {
         width:310,
         height: 60,

@@ -24,7 +24,8 @@ export const ProfileScreen = ({ navigation }, props) => {
 }
 
 
-  return (
+  return (<Layout style={{flex:1}}>
+
     <SafeAreaView style={{ flex: 1}}>
       
       <TopNavigationSimpleUsageShowcase/>
@@ -44,6 +45,7 @@ export const ProfileScreen = ({ navigation }, props) => {
         <Button onPress={logOut}>Log Out</Button>
       </Layout>
     </SafeAreaView>
+    </Layout>
   );
 };
 

@@ -1,5 +1,5 @@
 import  React from 'react';
-import { Icon, Layout, Text, Card, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
+import { Icon, Layout, Text, View, Card, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
 

@@ -31,8 +31,9 @@ export const HomeScreen = ({navigation}) => {
 
   return (
     <><SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+      <TopNavigationSimpleUsageShowcase />
       <ScrollView scrollEventThrottle={200}>
-        <TopNavigationSimpleUsageShowcase />
+        
         <Layout style={styles.layout}>
           
           

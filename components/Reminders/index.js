@@ -15,17 +15,17 @@ export const Reminders = () => {
         flexDirection: 'column',
         alignItems:'center',}}>
             <ScrollView>
-            <Text style={{fontWeight: 'bold'}}>Reminders</Text>
+            <Text style={{fontWeight: 'bold', color: 'black'}}>Reminders</Text>
             <Card style={styles.recard}>
                 <Radio checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>
                 Mediation and mindfulness (Yoga)</Radio>
-                <Text style={{paddingLeft:32}}>8:00am</Text>
+                <Text style={{paddingLeft:32, color: 'black'}}>8:00am</Text>
             </Card>
             <Card style={styles.recard}>
                 <Radio checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>Breakfast with kids</Radio>
-                <Text style={{paddingLeft:32}}>Check emails for 15 mins</Text>
+                <Text style={{paddingLeft:32, color: "black"}}>Check emails for 15 mins</Text>
             </Card>
             </ScrollView>
         </Layout>

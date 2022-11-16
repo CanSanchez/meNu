@@ -17,7 +17,7 @@ export const RecActivities = ({ navigation }) => {
    
 
     return (
-        <><Text style={{padding:10, marginRight:170, fontWeight: 'bold'}}>Recommended Activities</Text><Layout style={styles.cont}>
+        <><Text style={{padding:10, marginRight:170, fontWeight: 'bold', color:"black"}}>Recommended Activities</Text><Layout style={styles.cont}>
             <Layout style={{flex: 1}}>
                 <ScrollView horizontal={true}>
             <Layout>
@@ -54,7 +54,8 @@ const styles=StyleSheet.create({
     },
     text: {
         textAlign:"center",
-        paddingTop:10
+        paddingTop:10,
+        color: 'black'
     
     },
     icon: {

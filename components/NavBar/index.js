@@ -12,7 +12,9 @@ import { TopNavigationSimpleUsageShowcase } from '../TopNav';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FaveScreen } from '../../pages/favourites.components';
 import { ActivityCardScreen } from '../../pages/activitycards.component';
-
+import { CreateAccountScreen } from '../../pages/newaccount.component';
+import LoginScreen from '../../screens/LoginScreen';
+import WelcomeScreen from '../../screens/WelcomeScreen';
 //Bottom navigation bar
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -31,25 +33,23 @@ const BottomTabBar = ({ navigation, state }) => (
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerTransparent: true
     }}
     />
     <Screen name='Activities' component={ActivityStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+     headerTransparent: true
     }}/>
     <Screen name='Calendar' component={CalendarScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerTransparent: true
     }}/>
     <Screen name='Profile' component={ProfileStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerTransparent: true
     }}/>
   </Navigator>
 );
 
 export const AppNavigator = () => (
-  <NavigationContainer>
     <TabNavigator />
-  </NavigationContainer>
 );
 
 
@@ -77,7 +77,7 @@ const NotIcon = (props) => (
 
 const HeaderStyle = () => ({
   headerStyle: {
-    backgroundColor: '#FFFEF4',
+    backgroundColor: '#FFFFFF',
   },
   headerTintColor: 'black',
   headerTitleStyle: {
@@ -109,7 +109,7 @@ const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-    <HomeStack.Screen name='Home' component={HomeScreen} options={{
+    <HomeStack.Screen name='Homepage' component={HomeScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
      <HomeStack.Screen name='Favourites' component={FaveScreen} options={{
@@ -121,6 +121,7 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name='Activities' component={ActivityScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
+    
 
   </HomeStack.Navigator>
   );

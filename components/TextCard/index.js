@@ -2,11 +2,22 @@ import  React from 'react';
 import { Icon, Layout, Text, View, Card, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
+import { useFonts } from 'expo-font';
 
 export const TextCard = () => {
 
+    const [loaded] = useFonts({
+        Poppins: require('../../assets/fonts/Poppins-Regular.ttf'),
+        PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf'),
+        PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf')
+      });
+    
+      if (!loaded) {
+        return null;
+      }
+
     return <Card style={styles.tcard}>
-        <Text> “Being a single parent is not a life full of struggles, but  a journey for the strong."
+        <Text style={{fontFamily:"Poppins"}}> “Being a single parent is not a life full of struggles, but  a journey for the strong."
         </Text>
     </Card>
 

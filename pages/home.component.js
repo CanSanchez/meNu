@@ -4,7 +4,7 @@ import { Button, Divider, Layout, TopNavigation, Card } from '@ui-kitten/compone
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
 import { HeaderTitle } from '../components/Header';
-import { useFonts, FredokaOne_400Regular } from '@expo-google-fonts/fredoka-one';
+
 import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
@@ -17,11 +17,10 @@ import { useEffect } from 'react';
 
 export const HomeScreen = ({navigation}) => {
 
-
   const [fontsLoaded] = useFonts({
     FredokaOne_400Regular,
   });
-
+  
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay

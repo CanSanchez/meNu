@@ -28,9 +28,9 @@ export const CalendarScreen = () => {
       
 
       <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
-            
+         <TopNavigationSimpleUsageShowcase />   
       <ScrollView>
-        <TopNavigationSimpleUsageShowcase />
+        
         <Layout style={{paddingTop:40}}>
         
           <Icon onPress={handleClickOpen} name="plus-circle-outline" fill="#434343" style={{width:23, height:23, paddingLeft:725, marginBottom:15}} />

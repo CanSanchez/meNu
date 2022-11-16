@@ -1,5 +1,5 @@
 import  React from 'react';
-import { Icon, Layout, Text, Card, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
+import { Icon, Layout, Text, View, Card, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 import { Image } from 'react-native';
 import { useFonts } from 'expo-font';
@@ -24,12 +24,13 @@ export const TextCard = () => {
 
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     tcard: {
         width: 300,
         height: 100,
         borderRadius:30,
-        backgroundColor:"#DDD9FF",
+        backgroundColor:"#E88C68",
+        opacity:0.70,
         margin:20  
     }
 })

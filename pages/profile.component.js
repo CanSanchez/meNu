@@ -34,7 +34,8 @@ if (!loaded) {
   return null;
 }
 
-  return (
+  return (<Layout style={{flex:1}}>
+
     <SafeAreaView style={{ flex: 1}}>
       
       <TopNavigationSimpleUsageShowcase/>
@@ -54,6 +55,7 @@ if (!loaded) {
         <Button onPress={logOut}>Log Out</Button>
       </Layout>
     </SafeAreaView>
+    </Layout>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
-import { Button, Divider, Layout, TopNavigation, Card } from '@ui-kitten/components';
+import { Button, Divider, Layout, TopNavigation, Card, ApplicationProvider } from '@ui-kitten/components';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { StyleSheet } from 'react-native';
 import { HeaderTitle } from '../components/Header';
-
+import * as eva from '@eva-design/eva';
 import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
@@ -12,6 +12,7 @@ import { Reminders } from '../components/Reminders';
 import LottieView from 'lottie-react-native';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { default as theme } from '../styles/theme.json';
 
 
 
@@ -26,15 +27,15 @@ export const HomeScreen = ({navigation}) => {
   }, []);
   
 
-  return (
-    <><SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+  return ( <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFEF4" }}>
       <TopNavigationSimpleUsageShowcase />
       <ScrollView scrollEventThrottle={200}>
         
         <Layout style={styles.layout}>
           
           
-          <HeaderTitle headertext='Welcome back, Michelle!'/>
+          <HeaderTitle onPress={() => navigation.navigate('Activities')} headertext='Welcome back, Michelle!'/>
         <View style={styles.animationContainer}/>
           <LottieView
             autoPlay
@@ -56,7 +57,8 @@ export const HomeScreen = ({navigation}) => {
         
       </ScrollView>
       </SafeAreaView>
-    </>
+    </ApplicationProvider>
+    
 )
 
 }

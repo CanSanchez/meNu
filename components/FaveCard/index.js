@@ -32,7 +32,8 @@ export const FaveItemCard = () => (
             margin: 8,
             minWidth: 200,
             maxHeight: 200,
-            backgroundColor: 'white',
+            backgroundColor: '#F4C5AE',
+            borderRadius:30
           },
           itemHeader: {
             height: 135,

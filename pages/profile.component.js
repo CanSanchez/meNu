@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
-import { Text, Divider, Layout, Button, Icon } from '@ui-kitten/components';
+import { Text, Divider, Layout, Button, Icon, ApplicationProvider } from '@ui-kitten/components';
 import { AvatarProfile } from '../components/Avatar';
 import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
@@ -9,6 +9,9 @@ import { ActionListItem } from '../components/ActionList';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { useAuth } from '../contexts/AuthContext';
 import { useFonts } from 'expo-font';
+import { default as theme } from '../styles/theme.json';
+import { HeaderTitle } from '../components/Header';
+import * as eva from '@eva-design/eva';
 
 export const ProfileScreen = ({ navigation }, props) => {
 
@@ -34,7 +37,9 @@ if (!loaded) {
   return null;
 }
 
-  return (<Layout style={{flex:1}}>
+  return ( <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
+    
+  <Layout style={{flex:1}}>
 
     <SafeAreaView style={{ flex: 1, backgroundColor:"#FFFEF4"}}>
       
@@ -50,12 +55,13 @@ if (!loaded) {
             <ActionListItem func={() => navigation.push('Notifications')} styl={actionstyle} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
             <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>
             <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
-            <Button onPress={props.toggleTheme}>Switch Theme</Button>
+            <Button style={{borderRadius:30}} onPress={props.toggleTheme}>Switch Theme</Button>
         </View>
-        <Button onPress={logOut}>Log Out</Button>
+        <Button style={{borderRadius:30}} onPress={logOut}>Log Out</Button>
       </Layout>
     </SafeAreaView>
     </Layout>
+    </ApplicationProvider>
   );
 };
 

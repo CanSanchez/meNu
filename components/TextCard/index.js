@@ -17,7 +17,7 @@ export const TextCard = () => {
       }
 
     return <Card style={styles.tcard}>
-        <Text style={{fontFamily:"Poppins"}}> “Being a single parent is not a life full of struggles, but  a journey for the strong."
+        <Text style={{fontFamily:"PoppinsMedium", color: 'white'}}> “Being a single parent is not a life full of struggles, but a journey for the strong."
         </Text>
     </Card>
 

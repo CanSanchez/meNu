@@ -37,28 +37,25 @@ const styles = StyleSheet.create({
 
 })
 
-const StarIcon = (props) => (
-  <Icon {...props} name='star'/>
-);
-
-const HeartIcon = (props) => (
-  <Icon {...props} name='heart'/>
-);
 
 const SelfCare = (props) => (
-  <Image {...props}  source={require('../assets/selfcare.png')} style={{width:50, height:50, marginLeft:55}}/>
+  <Image {...props}  source={require('../assets/selfcare.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
 )
 
 const Indoor = (props) => (
-  <Image {...props}  source={require('../assets/indoor.png')} style={{width:50, height:50, marginLeft:65}}/>
+  <Image {...props}  source={require('../assets/indoor.png')} 
+  style={{width:50, height:50, marginLeft:65}}/>
 )
 
 const Outdoor = (props) => (
-  <Image {...props}  source={require('../assets/outdoor.png')} style={{width:50, height:50, marginLeft:55}}/>
+  <Image {...props}  source={require('../assets/outdoor.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
 )
 
 const Creative = (props) => (
-  <Image {...props}  source={require('../assets/creative.png')} style={{width:50, height:50, marginLeft:55}}/>
+  <Image {...props}  source={require('../assets/creative.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
 )
 
 

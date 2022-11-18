@@ -1,12 +1,14 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import { Button, Divider, Layout, Icon, View } from '@ui-kitten/components';
+import { Button, Divider, Layout, Icon, View, ApplicationProvider  } from '@ui-kitten/components';
 import { CalendarSimpleUsageShowcase } from '../components/Calendar';
 import { Reminders } from '../components/Reminders';
 import { CalendarCard } from '../components/CalendarCard';
 import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { ButtonMain } from '../components/Button';
 import { useState } from 'react';
+import * as eva from '@eva-design/eva';
+import { default as theme } from '../styles/theme.json';
 
 const PlusIcon = (props) => (
   <Icon {...props} name='plus-circle-outline' fill="#434343" />
@@ -21,7 +23,7 @@ export const CalendarScreen = () => {
     setOpen(current => !current);
 }
 
-  return (
+  return ( <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
     
       
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
@@ -51,6 +53,6 @@ export const CalendarScreen = () => {
       </ScrollView>
     </SafeAreaView>
     </Layout>
-  
+  </ApplicationProvider>
   );
 };

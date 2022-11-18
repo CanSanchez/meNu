@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         borderRadius:30,
         backgroundColor:"#E88C68",
         opacity:0.70,
-        margin:20  
+        margin:20,
+        marginTop:-20  
     }
 })

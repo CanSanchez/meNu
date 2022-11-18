@@ -19,6 +19,15 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
+  style={{
+    backgroundColor:"#FFFEF4", shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: -1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+  }}
     selectedIndex={state.index}
     onSelect={index => navigation.navigate(state.routeNames[index])}>
     <BottomNavigationTab title='Home' icon={HomeIcon}/>
@@ -31,17 +40,17 @@ const BottomTabBar = ({ navigation, state }) => (
 const TabNavigator = () => (
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerShown: false
     }}
     />
     <Screen name='Activities' component={ActivityStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerShown: false
     }}/>
     <Screen name='Calendar' component={CalendarScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerShown: false
     }}/>
     <Screen name='Profile' component={ProfileStackScreen} options={{
-      header: TopNavigationSimpleUsageShowcase
+      headerShown: false
     }}/>
   </Navigator>
 );

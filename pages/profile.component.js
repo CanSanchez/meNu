@@ -36,10 +36,10 @@ if (!loaded) {
 
   return (<Layout style={{flex:1}}>
 
-    <SafeAreaView style={{ flex: 1}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor:"#FFFEF4"}}>
       
       <TopNavigationSimpleUsageShowcase/>
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
         <AvatarProfile />
         <Text category='h5' style={{color: 'black', fontFamily:'PoppinsMedium'}}>Michelle Smith</Text>
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>

@@ -17,9 +17,7 @@ import { useEffect } from 'react';
 
 export const HomeScreen = ({navigation}) => {
 
-  const [fontsLoaded] = useFonts({
-    FredokaOne_400Regular,
-  });
+ 
   
   const animation = useRef(null);
   useEffect(() => {
@@ -51,7 +49,7 @@ export const HomeScreen = ({navigation}) => {
           <TextCard />
         
         
-          <RecActivities/>
+          <RecActivities />
           <Reminders />
           
         </Layout>
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems:'center',
     paddingTop:30,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFEF4'
   }
   
 })

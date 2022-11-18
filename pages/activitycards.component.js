@@ -11,12 +11,12 @@ export const ActivityCardScreen = ({ navigation }) => {
 
   return (
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
-      <SafeAreaView style={{ flex: 1 }}>
-      <Divider/>
-      <Layout style={{flex:1, justifyContent:"center", alignItems:"center"}}>
+      <SafeAreaView style={{ flex: 1, backgroundColor:'#FFFEF4' }}>
+     
+      <Layout style={{flex:1, justifyContent:"center", alignItems:"center", backgroundColor:'#FFFEF4'}}>
         <FilterButtons style={{flex:1}}/>
       <ScrollView horizontal={true}>
-        <Layout style={{flex: 1, flexDirection:"row", height: 300}}>
+        <Layout style={{flex: 1, flexDirection:"row", height: 300, backgroundColor:'#FFFEF4'}}>
           <Layout style={styles.cont}>
               <ActivityPopup></ActivityPopup>
           </Layout>
@@ -57,5 +57,6 @@ const styles = StyleSheet.create({
   cont: {
     flex: 1,
     marginLeft: 35,
+    backgroundColor:'#FFFEF4'
   }
 })

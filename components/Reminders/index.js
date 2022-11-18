@@ -17,7 +17,7 @@ export const Reminders = () => {
             <ScrollView>
             <Text style={{fontWeight: 'bold', color: 'black'}}>Reminders</Text>
             <Card style={styles.recard}>
-                <Radio checked={checked}
+                <Radio  checked={checked}
                 onChange={nextChecked => setChecked(nextChecked)}>
                 Mediation and mindfulness (Yoga)</Radio>
                 <Text style={{paddingLeft:32, color: 'black'}}>8:00am</Text>

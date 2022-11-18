@@ -50,16 +50,19 @@ export const FilterButtons = ({
     cont: {
         flex:1,
         flexDirection:"row",
-        paddingTop:20
+        paddingTop:20,
+        backgroundColor:'#FFFEF4'
         
     },
     button: {
         textAlign:"center",
-        paddingTop: 60
+        paddingTop: 60,
+        backgroundColor:'#FFFEF4'
     
     },
     filter1:{
-        padding:10
+        padding:10,
+        backgroundColor:'#FFFEF4'
     }
 
 

@@ -36,10 +36,22 @@ const styles = StyleSheet.create({
     borderRadius:30,
     width: 225,
     height: 65,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    justifyContent:"left"
+    
+    
   },
   text: {
     color:"#000000",
     display:'flex',
+    justifyContent:"left",
+    
   }
 });
 

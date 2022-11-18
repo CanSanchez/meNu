@@ -22,20 +22,20 @@ export const CalendarScreen = () => {
 }
 
   return (
-    <ScrollView scrollEventThrottle={200}>
+    
       
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF' }}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4' }}>
       
 
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFEF4" }}>
          <TopNavigationSimpleUsageShowcase />   
       <ScrollView>
         
-        <Layout style={{paddingTop:40}}>
+        <Layout style={{paddingTop:40, backgroundColor:'#FFFEF4'}}>
         
           <Icon onPress={handleClickOpen} name="plus-circle-outline" fill="#434343" style={{width:23, height:23, paddingLeft:725, marginBottom:15}} />
         </Layout>
-        <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'#FFFEF4' }}>
           
             <CalendarSimpleUsageShowcase />
         
@@ -51,6 +51,6 @@ export const CalendarScreen = () => {
       </ScrollView>
     </SafeAreaView>
     </Layout>
-  </ScrollView>
+  
   );
 };

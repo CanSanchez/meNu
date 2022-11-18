@@ -39,7 +39,7 @@ export const TopNavigationSimpleUsageShowcase = () => (
         accessoryRight={RenderRightActions}
         accessoryLeft ={LogoPrimary}
         style={{
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#FFFEF4',
           position: 'fixed'
           
         }} >

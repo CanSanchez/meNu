@@ -34,7 +34,19 @@ export const ActionListItem = ({
     description={desc}
     accessoryLeft={al}
     accessoryRight={ar}
-    style={styl}
+    style={styles.actionstyle}
     onPress={func}
   />
+
+  
 )};
+
+const styles = StyleSheet.create({
+  actionstyle: {  
+    backgroundColor: '#FFF3D3',
+    borderRadius: '25%',
+    marginTop: "2%",
+    marginBottom: '2%',
+    width: "80%"
+  }
+})

@@ -11,7 +11,7 @@ const GuestStack = createStackNavigator();
 export default function GuestNavigator() {
   return (
     <GuestStack.Navigator initialRouteName="starting" screenOptions={{headerStyle: {
-      backgroundColor: '#FDF1E1',
+      backgroundColor: '#FFFEF4',
     }}}>
       <GuestStack.Screen name="Welcome" component={WelcomeScreen}/>
       <GuestStack.Screen name="Login" component={LoginScreen}/>

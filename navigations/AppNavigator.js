@@ -1,29 +1,14 @@
-
-import React from 'react';
+import { HomeDrawerNavigator } from '../navigations/DrawerNavigator';
 import { NavigationContainer } from '@react-navigation/native';
-import { AuthProvider, AuthContext } from '../providers/AuthProvider';
-import MainNavigator from './MainNavigator';
-import GuestNavigator from './GuestNavigator';
-import { useState } from 'react';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 
-// function AppNavigator() {
+const { Navigator, Screen } = createStackNavigator();
 
-//   const [isSignedIn, setSignIn] = useState(true)
+export const AppNavigator = () => (
 
-//     return (
-//         <NavigationContainer>
-          
-//         {isSignedIn ? (<MainNavigator />):(<GuestNavigator />)}
-          
-//         </NavigationContainer>
-//     );
-//   }
+    <Navigator headerMode='none'>
+      <Screen name={'Drawer'} component={HomeDrawerNavigator}/>
+    </Navigator>
 
-  const [isSignedIn, setSignIn] = useState(false)
-
-  export const AppNavigator = () => (
-    <NavigationContainer>
-        {isSignedIn ? (<MainNavigator />):(<GuestNavigator />)}
-    </NavigationContainer>
-  );
-  
+);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
 import { Text, Divider, Layout, TopNavigation, Icon } from '@ui-kitten/components';
 import { AvatarProfile } from '../components/Avatar';
@@ -8,20 +8,57 @@ import { ActionListItem } from '../components/ActionList';
 // import { Link } from '@react-navigation/native';
 // import { StyleSheet, View } from 'react-native';
 
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { useAuth } from '../contexts/AuthContext';
+
 export const AccountSettingsScreen = ({ navigation }) => {
 
+  //getting data from backend
+  const { currentUser } = useAuth()
+  const db = getFirestore();
+  const [user,setUser] = useState([]);
+
+  useEffect(() => {
+
+
+    const fetchUser = async () => {
+
+      const q = query(collection(db, "users"), where("email", '==', currentUser.email));
+
+          const querySnapshot = await getDocs(q);
+    
+          const dbuser = [];
+
+      querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+      dbuser.push({
+        ...doc.data(),
+        id:doc.id
+      });
+    });
+    setUser([
+      ...dbuser
+    ]);
+  };
+    fetchUser();
+    // alert(user.map(o=>o.lastName))
+  }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFEF4'}}>
       <Divider />
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
         <AvatarProfile />
         <Text category='s2' style={{color: 'black', textDecorationLine: 'underline'}}>Update Profile Photo</Text>
         <View style={{margin: 10}}>
             <Text category='s2'>Account Information</Text>
-            <ActionListItem styl={classicstyle} tle='Full Name' desc='Michelle Smith' ar={ChevronRightIcon}></ActionListItem>
-            <ActionListItem styl={classicstyle} tle='Date of Birth' desc='November 27, 1975' ar={ChevronRightIcon}></ActionListItem>
-            <ActionListItem styl={classicstyle} tle='E-mail' desc='mich_smith@gmail.com' ar={ChevronRightIcon}></ActionListItem>
+            {user.map(o=>   
+            <ActionListItem styl={classicstyle} tle='Full Name' desc={`${o.name} ${o.lastName}`} ar={ChevronRightIcon}></ActionListItem>
+            )}
+            {user.map(o=>  
+            <ActionListItem styl={classicstyle} tle='E-mail' desc={`${o.email}`} ar={ChevronRightIcon}></ActionListItem>
+            )}
             <ActionListItem styl={classicstyle} tle='Password' desc='********' ar={ChevronRightIcon}></ActionListItem>
         </View>
         <PopupCardButton btntxt='Delete Account' txt='We will miss you 🥺' subtxt='Are you sure you want to delete your account?'/>

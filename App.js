@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { AppNavigator } from './components/NavBar';
+import { AppNavigator } from './navigations/AppNavigator';
 import { ActivityNavigator } from './components/RecActivities';
 import 'react-native-gesture-handler';
 import styled from 'styled-components';
@@ -18,6 +18,8 @@ import SignupScreen from './screens/SignupScreen';
 import { HomeScreen } from './pages/home.component';
 import GuestNavigator from './navigations/GuestNavigator';
 import { AuthProvider, AuthContext } from './contexts/AuthContext';
+import 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // const white = {...eva.light, ...theme};
 // const black = {...eva.dark, ...theme};
@@ -34,14 +36,14 @@ export default function App() {
   //   console.log(nextTheme)
   // };
   // const Stack = createStackNavigator();
-  const [isSignedIn, setSignIn] = useState(false)
 
   return (
     <>
       <IconRegistry icons={EvaIconsPack}/>
       {/* <ApplicationProvider {...eva} mapping={mapping} theme={themes[theme]}></ApplicationProvider> */}
-      <ApplicationProvider {...eva} theme={{...eva.dark, ...theme}}>
+      <ApplicationProvider {...eva} theme={{...eva.light, ...theme}}>
         {/* <AppNavigator toggleTheme={toggleTheme} /> */}
+        <SafeAreaProvider>
         <AuthProvider>
      <NavigationContainer>
      <AuthContext.Consumer>
@@ -53,6 +55,7 @@ export default function App() {
     </AuthContext.Consumer>
         </NavigationContainer>
         </AuthProvider>
+        </SafeAreaProvider>
       </ApplicationProvider>
     </>
   );

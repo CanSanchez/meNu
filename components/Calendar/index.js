@@ -9,7 +9,6 @@ export const CalendarSimpleUsageShowcase = () => {
   
     return (
       <React.Fragment>
-        <Text category='h6' style={{paddingBottom: '5%', paddingTop: '5%'}}> Calendar</Text>
         <Text category='h6' style={{paddingBottom: '5%'}}>
           Selected date: {date.toLocaleDateString()}
         </Text>

@@ -1,103 +1,86 @@
 import React, { useState, useEffect } from 'react';
 import * as eva from '@eva-design/eva';
 import { default as theme } from '../styles/theme.json';
-import { SafeAreaView, StyleSheet, ScrollView, View } from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Button, ButtonGroup, Divider, Layout, Icon, ApplicationProvider } from '@ui-kitten/components';
 import { ActivityPopup } from '../components/ActivityPopup';
 import { FilterButtons } from '../components/FilterButtons';
 
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
-
-export const ActivityCardScreen = ({ navigation }) => {
+export const ActivityCardScreen = ({ navigation, route }) => {
 
   const db = getFirestore();
+
+  // console.log("activity params", route.params)
+  
   const [activities,setActivities] = useState([]);
+
 
   useEffect(() => {
 
-
+    
     const fetchActivities = async () => {
 
-          const querySnapshot = await getDocs(collection(db, "activities"));
+      const q = query(collection(db, "activities"), where("activityCategory", '==', route.params.cat));
+
+      const querySnapshot = await getDocs(q);
     
-          const dbactivities = [];
+      const dbactivities = [];
 
       querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-      dbactivities.push({
-        ...doc.data(),
-        id:doc.id
+        console.log(doc.id, " => ", doc.data());
+        dbactivities.push({
+          ...doc.data(),
+          id:doc.id
+        });
       });
-    });
-    setActivities([
-      ...dbactivities
-    ]);
-  };
+      setActivities([
+        ...dbactivities
+      ]);
+    };
     fetchActivities();
     // alert(activities.map(o=>o.category))
   }, []);
 
     
   return (
-    <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
-      <SafeAreaView style={{ flex: 1 }}>
-      <Divider/>
-      <Layout style={{flex:1, justifyContent:"center", alignItems:"center"}}>
-        <FilterButtons style={{flex:1}}/>
-      <ScrollView horizontal={true}>
-        <Layout style={{flex: 1, flexDirection:"row", height: 300}}>
-          <Layout style={styles.cont}>
-          {activities.map(o=>
-              <ActivityPopup
-              source={{uri:o.activityImage}}
-              fronttxt={o.activityName}
-              ></ActivityPopup>
-          )}
-          </Layout>
-          
-          <Layout style={styles.cont}>
-          {activities.map(o=>
-              <ActivityPopup
+    <SafeAreaView style={styles.layout}>
+      <Layout style={styles.container}>
+        <FilterButtons />
+        <Text style={styles.title}>{route.params.cat} Activities</Text>
+        <ScrollView horizontal={true} style={{margin:0}}>
+            {activities.map(o=>
+                <ActivityPopup
                 source={{uri:o.activityImage}}
                 fronttxt={o.activityName}
-                list1='Increases core strength'
-                list2='Increases energy'
-                list3='Decreases stress'
-                list4='Reduces menstrual pain'
-                need='Pilates mat'
-              >  
-              </ActivityPopup>
-)}
-          </Layout>
-
-          <Layout style={styles.cont}>
-             <ActivityPopup
-                source={require('../assets/images/stretching.jpeg')}
-                fronttxt='Stretching'
-                list1='Improves achiness'
-                list2='Decreases your risk of injuries'
-                list3='Increases muscle blood flow'
-                list4='Helps you relax'
-                need='Nil'
-             >
-             </ActivityPopup>
-          </Layout>
-
-        </Layout>
-          
-      </ScrollView>
+                list1={o.activityDescription}
+                ></ActivityPopup>
+            )}
+        </ScrollView>
       </Layout>
-     </SafeAreaView>
-    </ApplicationProvider>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  cont: {
+  layout:{
     flex: 1,
-    marginLeft: 35,
+    flexDirection: 'column',
+    alignItems:'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFEF4',
+  },
+  container:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent'
+  },
+  title: {
+    fontSize: '20%',
+    fontWeight: 'bold'
   }
 })

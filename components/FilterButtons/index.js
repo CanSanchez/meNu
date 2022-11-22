@@ -7,7 +7,7 @@ export const FilterButtons = ({
     func="", 
     ar = "",
   }) => (
-        <><Layout style={styles.cont}>
+        <Layout style={styles.cont}>
             <Layout style={styles.button}>
                 <ScrollView horizontal={true}>
                     <Layout style={styles.filter1}>
@@ -41,22 +41,17 @@ export const FilterButtons = ({
                 </ScrollView>
             </Layout>
         </Layout>
-        
-        
-        </>
   );
 
   const styles=StyleSheet.create({
     cont: {
         flex:1,
         flexDirection:"row",
-        paddingTop:20
-        
+        marginBottom: 20
     },
     button: {
         textAlign:"center",
         paddingTop: 60
-    
     },
     filter1:{
         padding:10

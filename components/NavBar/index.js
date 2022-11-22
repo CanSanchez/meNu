@@ -39,7 +39,7 @@ const TabNavigator = () => (
     <Screen name='Activitiespage' component={ActivityStackScreen} options={{
       // header: TopNavigationSimpleUsageShowcase
     }}/>
-    <Screen name='Calendarpage' component={CalendarScreen} options={{
+    <Screen name='Calendarpage' component={CalendarStackScreen} options={{
       // header: TopNavigationSimpleUsageShowcase
     }}/>
     <Screen name='Profilepage' component={ProfileStackScreen} options={{
@@ -118,7 +118,7 @@ const HomeStackScreen = () => (
      <HomeStack.Screen name='Notifications' component={NotificationScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
-    <HomeStack.Screen name='Activities' component={ActivityScreen} options={{
+    <HomeStack.Screen name='Activities' component={ActivityCardScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
     <HomeStack.Screen name='Notifications Screen' component={NotificationScreenPage} options={{
@@ -138,4 +138,15 @@ const HomeStackScreen = () => (
         headerTransparent: true
       }}></ActivityStack.Screen>
    </ActivityStack.Navigator>
+    );
+
+
+  const CalendarStack = createStackNavigator();
+
+  const CalendarStackScreen = () => (
+    <CalendarStack.Navigator>
+      <CalendarStack.Screen name='Calendar' component={CalendarScreen} options={{
+        headerTransparent: true
+      }}></CalendarStack.Screen>
+   </CalendarStack.Navigator>
     );

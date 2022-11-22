@@ -13,9 +13,9 @@ export const HeaderTitle = ({
         FredokaOne_400Regular,
       });
 
+    //   fontFamily: 'FredokaOne_400Regular'
     return (
-         <Text  category='h3' style={{color: "#434343", paddingTop: 20, paddingBottom:10, fontFamily: 'FredokaOne_400Regular', marginLeft:10, marginRight:10}}>{headertext}</Text>
-
+         <Text  category='h3' style={{color: "#434343", paddingTop: 20, paddingBottom:10, marginLeft:10, marginRight:10}}>{headertext}</Text>
     )
 
 }

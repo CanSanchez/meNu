@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as eva from '@eva-design/eva';
 import { default as theme } from '../styles/theme.json';
 import { SafeAreaView, StyleSheet, View, Image, KeyboardAvoidingView} from 'react-native';
@@ -10,16 +10,26 @@ import { TopNav, TopNavigationSimpleUsageShowcase } from '../components/TopNav';
 import { ScrollView } from 'react-native-gesture-handler';
 import Svg from 'react-native-svg';
 
-export const ActivityScreen = ({navigation}) => {
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+
+
+export const ActivityScreen = ({ navigation }) => {
+
+  const db = getFirestore();
+
+  const handleSubmit = async (cat) => {
+    console.log(cat)
+    navigation.push('Activity Card', {cat})
+  }
 
   return (
       <SafeAreaView style={styles.layout}>
         <TopNav />
         <Layout style={styles.layout}>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='info' ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='success' text='Outdoor' ar={HeartIcon}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='warning' text='Creative' ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='danger' text='Self Care' ar={StarIcon}></CategoryButton>
+        <CategoryButton func={() => handleSubmit('Indoor')} stat='info' ar={StarIcon}></CategoryButton>
+        <CategoryButton func={() => handleSubmit('Outdoor')} stat='success' text='Outdoor' ar={HeartIcon}></CategoryButton>
+        <CategoryButton func={() => handleSubmit('Creative')} stat='warning' text='Creative' ar={StarIcon}></CategoryButton>
+        <CategoryButton func={() => handleSubmit('Self-Care')} stat='danger' text='Self Care' ar={StarIcon}></CategoryButton>
         </Layout>
       </SafeAreaView>
   );

@@ -5,7 +5,7 @@ import { SafeAreaView, StyleSheet, ScrollView, View } from 'react-native';
 import { Button, ButtonGroup, Divider, Layout, Icon, ApplicationProvider } from '@ui-kitten/components';
 import { ActivityPopup } from '../components/ActivityPopup';
 import { FilterButtons } from '../components/FilterButtons';
-
+import Swiper from 'react-native-swiper';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 

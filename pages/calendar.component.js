@@ -24,9 +24,10 @@ export const CalendarScreen = () => {
 
   return (
     <SafeAreaView style={{backgroundColor: '#FFFEF4'}}>
+      <TopNav />  
     <ScrollView scrollEventThrottle={200}>
       <Layout style={styles.layout}>
-         <TopNav />   
+          
         {/* <Layout style={{paddingTop:40}}>
         
           <Icon onPress={handleClickOpen} name="plus-circle-outline" fill="#434343" style={{width:23, height:23, paddingLeft:725, marginBottom:15}} />

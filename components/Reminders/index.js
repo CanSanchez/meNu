@@ -9,6 +9,7 @@ import { Radio } from '@ui-kitten/components';
 export const Reminders = () => {
 
     const [checked, setChecked] = React.useState(false);
+    const [notChecked, setNotChecked] = React.useState(false);
 
     return ( 
         <Layout style={{backgroundColor:'transparent', marginBottom: 200, marginTop: 20,flex: 1,
@@ -23,8 +24,8 @@ export const Reminders = () => {
                 <Text style={{paddingLeft:32, color: 'black'}}>8:00am</Text>
             </Card>
             <Card style={styles.recard}>
-                <Radio checked={checked}
-                onChange={nextChecked => setChecked(nextChecked)}>Breakfast with kids</Radio>
+                <Radio checked={notChecked}
+                onChange={nextNotChecked => setNotChecked(nextNotChecked)}>Breakfast with kids</Radio>
                 <Text style={{paddingLeft:32, color: "black"}}>Check emails for 15 mins</Text>
             </Card>
             </ScrollView>

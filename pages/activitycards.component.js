@@ -45,7 +45,10 @@ export const ActivityCardScreen = ({ navigation, route }) => {
     // alert(activities.map(o=>o.category))
   }, []);
 
-    
+  // const filterDuration =  async (time) => {
+
+  // }
+
   return (
     <SafeAreaView style={styles.layout}>
       <Layout style={styles.container}>
@@ -56,6 +59,7 @@ export const ActivityCardScreen = ({ navigation, route }) => {
                 <ActivityPopup
                 source={{uri:o.activityImage}}
                 fronttxt={o.activityName}
+                duration={o.activityDuration}
                 list1={o.activityDescription}
                 ></ActivityPopup>
             )}

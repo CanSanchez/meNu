@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Button, Card, Modal, Text, Layout, Icon } from '@ui-kitten/components';
 import { NavigationContainer} from '@react-navigation/native';
@@ -19,9 +19,8 @@ export const Reminders = ({
     const query = collection(db, path);
     const [docs] = useCollectionData(query);
 
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState(false);
 
-    
 
     return ( 
         <Layout style={styles.layout}>
@@ -30,6 +29,7 @@ export const Reminders = ({
             <Card style={styles.recard} key={Math.random()}>
                 <Layout style={styles.container}>
                     <Radio 
+                        key={Math.random()}
                         checked={checked}
                         style={{margin: 0}}
                         onChange={nextChecked => setChecked(nextChecked)}>
@@ -47,7 +47,7 @@ export const Reminders = ({
 const styles=StyleSheet.create({
     recard: {
         width:310,
-        backgroundColor:'#F8C8A5',
+        // backgroundColor:'#F8C8A5',
         borderRadius:30,
         marginTop:20
     },
@@ -56,9 +56,10 @@ const styles=StyleSheet.create({
         flexDirection: 'column',
         alignItems:'center',
         justifyContent: 'center',
-        backgroundColor: '#FFFEF4'
-      },
-      container:{
+        backgroundColor: 'transparent',
+        margin: 15
+    },
+    container:{
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -69,11 +70,9 @@ const styles=StyleSheet.create({
     },
     time:{
         paddingLeft:5, 
-        color: '#252525',
         fontWeight: 'bold'
     },
     title:{
         paddingLeft:7, 
-        color: '#252525'
     }
 })

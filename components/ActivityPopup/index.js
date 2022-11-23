@@ -16,6 +16,12 @@ export const ActivityPopup = ({ navigation,
   need="Pilates mat"
 
 }) => {
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+      setOpen(current => !current);
+  }
   
     const [visible, setVisible] = React.useState(false);
     const [loaded] = useFonts({
@@ -46,27 +52,8 @@ export const ActivityPopup = ({ navigation,
               <Text style={styles.header} category='h4'>{fronttxt}</Text>
               
               <View style={{ flexDirection: 'row' }}>
-              {/* <Icon name='checkmark' fill='green' width={24} height={24} style={styles.icon} /> */}
               <Text category='s1' style={{fontFamily:'Poppins', textAlign: 'center'}}>{list1}</Text>
               </View>
-
-              {/* <View style={{ flexDirection: 'row' }}>
-              <Icon name='checkmark' fill='green' width={24} height={24} style={styles.icon} />
-              <Text category='s1' style={{fontFamily:'Poppins'}}>{list2}</Text>
-              </View>
-
-              <View style={{ flexDirection: 'row' }}>
-              <Icon name='checkmark' fill='green' width={24} height={24} style={styles.icon} />
-              <Text category='s1' style={{fontFamily:'Poppins'}}>{list3}</Text>
-              </View>
-
-              <View style={{ flexDirection: 'row' }}>
-              <Icon name='checkmark' fill='green' width={24} height={24} style={styles.icon} />
-              <Text category='s1' style={{fontFamily:'Poppins'}}>{list4}</Text>
-              </View>
-
-              <Text style={styles.subheader} category='h6'>NEED TO BE PREPARED:</Text>
-              <Text style={{paddingTop:10, fontFamily:'Poppins'}} category='s1'>{need}</Text>*/}
               </Layout>
               <View style={styles.buttondiv}>
                   <ButtonMain style={styles.button} text="Add to Reminder" func={() => navigation.push('Calendar')}>
@@ -80,7 +67,7 @@ export const ActivityPopup = ({ navigation,
 
   const styles = StyleSheet.create({
     backdrop: {
-      backgroundColor: '#FFFFF6',
+      // backgroundColor: '#FFFFF6',
     },
 
     card: {

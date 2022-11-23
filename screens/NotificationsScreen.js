@@ -21,7 +21,7 @@ export const NotificationScreenPage = ({navigation}) => {
         style={styles.container}
         behavior="padding"
     >
-      <SafeAreaView style={{backgroundColor: '#FDF1E1'}}>
+      <SafeAreaView>
       <TopNav />
       <ScrollView scrollEventThrottle={200}>
         

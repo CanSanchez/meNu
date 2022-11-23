@@ -57,6 +57,7 @@ export const ActivityCardScreen = ({ navigation, route }) => {
         <ScrollView horizontal={true} style={{margin:0}}>
             {activities.map(o=>
                 <ActivityPopup
+                key={Math.random()}
                 source={{uri:o.activityImage}}
                 fronttxt={o.activityName}
                 duration={o.activityDuration}

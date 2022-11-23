@@ -43,7 +43,7 @@ export const ActionListItem = ({
 
 const styles = StyleSheet.create({
   actionstyle: {  
-    backgroundColor: '#FFF3D3',
+    // backgroundColor: '#FFF3D3',
     borderRadius: '25%',
     marginTop: "2%",
     marginBottom: '2%',

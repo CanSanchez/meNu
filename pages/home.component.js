@@ -54,11 +54,7 @@ export const HomeScreen = () => {
     // alert(user.map(o=>o.lastName))
   }, []);
 
-  //fetching reminders
-  const reminders = collection(db, 'users')
-  const [docs] = useCollectionData(reminders)
-  console.log( user.id,"=>>>",docs)
-//Notification & favourites drawer navigation
+  //Notification & favourites drawer navigation
   const navigation = useNavigation();
 
   //right rendering of top navigation
@@ -85,6 +81,8 @@ export const HomeScreen = () => {
       </>
   )
 
+  const [checked, onChange] = useState(false);
+
   return (
     <KeyboardAvoidingView 
         style={styles.container}
@@ -96,7 +94,6 @@ export const HomeScreen = () => {
         accessoryRight={renderDrawerAction}
         accessoryLeft={renderLefttActions}
         style={{
-          backgroundColor: 'transparent',
           position: 'fixed'
         }} 
         />
@@ -158,31 +155,30 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems:'center',
     paddingTop:30,
-    backgroundColor: '#FFFEF4'
   },
   container:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFEF4'
+    // backgroundColor: '#FFFEF4'
   },
   cont: {
     flex:1,
     flexDirection:"row",
     marginTop:20,
     marginBottom:20,
-    backgroundColor: 'transparent'
+    // backgroundColor: 'transparent'
   },
   text: {
     textAlign:"center",
     paddingTop:10,
-    color: 'black'
+    // color: 'black'
   },
   subtitle: {
     fontSize: '18%',
     textAlign: 'left',
     fontWeight: 'bold', 
-    color:"#252525",
+    // color:"#252525",
     alignSelf: 'flex-start',
     marginLeft: '7%'
   }

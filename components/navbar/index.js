@@ -118,8 +118,8 @@ const HomeStackScreen = () => (
      <HomeStack.Screen name='Notifications' component={NotificationScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
-    <HomeStack.Screen name='Activities' component={ActivityCardScreen} options={{
-      headerTransparent: true
+    <HomeStack.Screen name='Activities' component={ActivityStackScreen} options={{
+      headerShown: false
     }}></HomeStack.Screen>
     <HomeStack.Screen name='Notifications Screen' component={NotificationScreenPage} options={{
       headerTransparent: true

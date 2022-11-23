@@ -8,6 +8,7 @@ export const ActivityCard = ({
     func=console.log('not a button'),
     fronttxt="Pilates",
     source=require('../../assets/yoga.jpeg'),
+    duration= '15 minutes'
 }) => {
 
     const [visible, setVisible] = React.useState(false);
@@ -26,6 +27,7 @@ export const ActivityCard = ({
             <Image style={styles.picture}
             source={source}></Image>
             <Text category='h5' style={styles.text}>{fronttxt}</Text>
+            <Text category='h5' style={styles.duration}>{duration}</Text>
         </Card>
     )
 }
@@ -45,6 +47,13 @@ const styles = StyleSheet.create({
     text: {
         textAlign:'center',
         marginTop:15,
+        fontFamily:'PoppinsBold'
+    },
+
+    duration:{
+        fontSize: '15%',
+        color: 'grey',
+        textAlign:'center',
         fontFamily:'PoppinsBold'
     },
 

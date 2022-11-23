@@ -15,6 +15,8 @@ import { useNavigation, DrawerActions } from "@react-navigation/native";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
 
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
 
 export const HomeScreen = () => {
 
@@ -22,6 +24,8 @@ export const HomeScreen = () => {
   const { currentUser } = useAuth()
   const db = getFirestore();
   const [user,setUser] = useState([]);
+
+  
 
   useEffect(() => {
     //fetching user
@@ -37,8 +41,8 @@ export const HomeScreen = () => {
       // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
         dbuser.push({
-          ...doc.data(),
-          id:doc.id
+          id:doc.id,
+          ...doc.data()
         });
       });
       setUser([
@@ -46,9 +50,14 @@ export const HomeScreen = () => {
       ]);
     };
     fetchUser();
+    
     // alert(user.map(o=>o.lastName))
   }, []);
 
+  //fetching reminders
+  const reminders = collection(db, 'users')
+  const [docs] = useCollectionData(reminders)
+  console.log( user.id,"=>>>",docs)
 //Notification & favourites drawer navigation
   const navigation = useNavigation();
 
@@ -91,10 +100,13 @@ export const HomeScreen = () => {
           position: 'fixed'
         }} 
         />
-        <ScrollView scrollEventThrottle={200}>   
+        <ScrollView
+          showsVerticalScrollIndicator={false} 
+          scrollEventThrottle={200}>   
           <Layout style={styles.layout}>
           {user.map(o=>    
-            <HeaderTitle headertext={`Welcome back, ${o.name}`}/>
+            <HeaderTitle headertext={`Welcome back, ${o.name}`}
+             />
           )}
             <View style={styles.animationContainer}/>
             {/* <LottieView
@@ -108,9 +120,9 @@ export const HomeScreen = () => {
               source={require('../assets/animations/wavingbear.json')}
             /> */}
             <TextCard />
-            <Text style={{padding:10, marginRight:170, fontWeight: 'bold', color:"black"}}>Recommended Activities</Text>
+            <Text style={styles.subtitle}>Recommended Activities</Text>
             <Layout style={styles.cont}>
-                <ScrollView horizontal={true}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                   <RecActivities func={()=>navigation.push('Activities')}/>
                   <RecActivities
                     title='Reading'
@@ -126,7 +138,12 @@ export const HomeScreen = () => {
                     func={()=>navigation.push('Activities')}/>
                 </ScrollView>
             </Layout>
-            <Reminders />
+            <Text style={styles.subtitle}>Reminders</Text>
+            {user.map(o=>  
+            <Reminders
+             path={`users/${o.id}/reminders`}
+            />
+            )}
           </Layout>
         </ScrollView>
       </SafeAreaView>
@@ -148,21 +165,29 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFEF4'
-},
-cont: {
-  flex:1,
-  flexDirection:"row",
-  marginTop:20,
-  marginBottom:20,
-  backgroundColor: 'transparent'
-},
-text: {
-  textAlign:"center",
-  paddingTop:10,
-  color: 'black'
-}
-  
-})
+  },
+  cont: {
+    flex:1,
+    flexDirection:"row",
+    marginTop:20,
+    marginBottom:20,
+    backgroundColor: 'transparent'
+  },
+  text: {
+    textAlign:"center",
+    paddingTop:10,
+    color: 'black'
+  },
+  subtitle: {
+    fontSize: '18%',
+    textAlign: 'left',
+    fontWeight: 'bold', 
+    color:"#252525",
+    alignSelf: 'flex-start',
+    marginLeft: '7%'
+  }
+    
+  })
 
 //icon rendering
 const NotIcon = (props) => (

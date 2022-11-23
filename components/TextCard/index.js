@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#E88C68",
         opacity:0.70,
         margin:10,
+        marginBottom: 20,
         padding: 10  
     },
     quote: {

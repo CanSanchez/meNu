@@ -9,6 +9,7 @@ export const ActivityPopup = ({ navigation,
   source=require('../../assets/images/painting.jpeg'),
   fronttxt="Yoga",
   list1="Improves strength and balance",
+  duration="",
   list2="Helps with back pain relief",
   list3="Relaxes you",
   list4="Gives you more energy",
@@ -31,6 +32,7 @@ export const ActivityPopup = ({ navigation,
       <Layout style={styles.container}>
         <ActivityCard func={() => setVisible(true)}
         fronttxt={fronttxt}
+        duration={duration}
         source={source}/>
 
         <Modal

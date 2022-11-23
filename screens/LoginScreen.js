@@ -54,7 +54,12 @@ export default function LoginScreen ({navigation}) {
               </View>
           ) : (
 
-
+            <ImageBackground
+            source={require('../assets/images-login/D6ED5F4DF0A578B2.png')}
+                resizeMode={'fill'}
+                style={{ flex: 1, width: '100%', height:'100%', justifyContent: 'center',
+                alignItems: 'center'}}
+            >
               <><Image style={{ width: 250, height: 23, marginTop: 30 }} source={require('../assets/logo/welcome.png')} /><Swiper>
                   <TutorialCard source={require('../assets/Group.png')} headertxt="Self Care" cardtxt="Moms can select from various self care activities." />
                   <TutorialCard source={require('../assets/plants.png')} headertxt="Activities" cardtxt="We will provide you with a set of activities you can complete on your own or with your child(ren)." />
@@ -82,7 +87,7 @@ export default function LoginScreen ({navigation}) {
                           <Text style={styles.buttonText}>Login</Text>
                       </Button>
                   </View></>
-
+            </ImageBackground>
 
           )}
   </KeyboardAvoidingView></>
@@ -99,7 +104,8 @@ const styles = StyleSheet.create({
     },
     inputContainer:{
         width: '80%',
-        height:'15%'
+        height:'25%',
+        paddingTop:30
 
     },
     input:{
@@ -114,14 +120,12 @@ const styles = StyleSheet.create({
     },
     buttonContainer:{
         width: '60%',
-        
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,
-        marginBottom: 70
+        marginBottom: 110
     },
     button:{
-        width: '80%',
+        width: '70%',
         padding: 15,
         borderRadius: 30,
         alignItems: 'center',

@@ -11,7 +11,7 @@ export default function WelcomeScreen({navigation}) {
         >
              <ImageBackground
                 source={require('../assets/images-login/D6ED5F4DF0A578B2.png')}
-                resizeMode={'cover'}
+                resizeMode={'fill'}
                 style={{ flex: 1, width: '100%', height:'100%', justifyContent: 'center',
                 alignItems: 'center', }}>
                 <View style={styles.imgContainer}>

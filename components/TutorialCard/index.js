@@ -61,14 +61,14 @@ export const TutorialCard = ({
 const styles = StyleSheet.create({
     card: {
         width:240,
-        height:320,
+        height:290,
         display:"flex",
-        padding: 20,
+        padding: 10,
         borderRadius:30,
         backgroundColor:"#E5AB94",
         justifyContent:'center',
         alignItems:'center',
-        marginTop:50,
+        marginTop:25,
         marginLeft:'19%'
 
     },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     text: {
         textAlign:'left',
         paddingBottom:5,
-        marginLeft:-25,
+        marginLeft:-10,
         paddingRight:-25
         
         

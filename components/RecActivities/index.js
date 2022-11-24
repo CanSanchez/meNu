@@ -56,7 +56,7 @@ const styles=StyleSheet.create({
     text: {
         textAlign:"center",
         paddingTop:10,
-        color: 'black'
+        // color: 'black'
     },
     icon: {
             }

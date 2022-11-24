@@ -46,9 +46,9 @@ export const AccountSettingsScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFEF4'}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <Divider />
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <AvatarProfile />
         <Text category='s2' style={{color: 'black', textDecorationLine: 'underline'}}>Update Profile Photo</Text>
         <View style={{margin: 10}}>
@@ -88,7 +88,7 @@ const ColorblindIcon = (props) => (
   );
   
   const classicstyle = StyleSheet.create({
-    backgroundColor: '#FFF3D3',
+    // backgroundColor: '#FFF3D3',
     marginTop: "2%",
     marginBottom: '2%',
     width: "80%"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, View, StyleSheet, KeyboardAvoidingView } from 'react-native';
-import { Text, Divider, Layout, Button, Icon } from '@ui-kitten/components';
+import { SafeAreaView, View, StyleSheet, KeyboardAvoidingView, Image } from 'react-native';
+import { Text, Divider, Layout, Button, Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { AvatarProfile } from '../components/Avatar';
 import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
@@ -8,17 +8,18 @@ import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
 import { TopNav } from '../components/TopNav';
 import { useFonts } from 'expo-font';
+import { useNavigation, DrawerActions } from "@react-navigation/native";
+
 
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
 
-export const ProfileScreen = ({ navigation }, props) => {
+export const ProfileScreen = (props) => {
 
-//getting data from backend
+  //getting data from backend
   const { currentUser, logout } = useAuth()
   const db = getFirestore();
   const [user,setUser] = useState([]);
-
 
   const logOut = async () => {
     try {
@@ -31,7 +32,6 @@ export const ProfileScreen = ({ navigation }, props) => {
 }
 
 useEffect(() => {
-
 
   const fetchUser = async () => {
 
@@ -67,9 +67,45 @@ if (!loaded) {
   return null;
 }
 
+//Notification & favourites drawer navigation
+const navigation = useNavigation();
+
+//right rendering of top navigation
+const renderDrawerAction = () => (
+  <>
+    <TopNavigationAction 
+      icon={NotIcon} 
+      onPress={() => 
+      navigation.dispatch(DrawerActions.openDrawer())}
+    />
+    <TopNavigationAction 
+      icon={SaveIcon} 
+      onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+    />
+  </>
+)
+
+//left rendering of top navigation
+const renderLefttActions = ({navigation}) => (
+    <>
+    <TopNavigationAction 
+    icon={LogoPrimary}
+    />
+    </>
+)
+
+
   return (
     <SafeAreaView style={styles.layout}>
-      <TopNav />
+      <TopNavigation 
+        alignment="center"
+        accessoryRight={renderDrawerAction}
+        accessoryLeft={renderLefttActions}
+        style={{
+          position: 'fixed',
+          width: '100%'
+        }} 
+        />
       <Layout style={styles.container}>
       
         <AvatarProfile />
@@ -118,14 +154,33 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems:'center',
+    width: '100%',
     backgroundColor: '#FFFEF4'
   },
   container:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'transparent'
+    width: '100%'
+    // backgroundColor: 'transparent'
 }
   
 });
 
+//icon rendering
+const NotIcon = (props) => (
+  <Icon {...props} name='bell' fill="#E88C68" />
+);
+
+const SaveIcon = (props) => (
+  <Icon {...props}  name="bookmark" fill="#E88C68" />
+);
+
+const LogoPrimary = ({navigation}) => (
+  <View style={{paddingLeft: 15}}>
+    <Image 
+        style={{  width: 26 , height: 35, objectFit: 'cover' }}
+        source={require('../assets/logo/Logo.png')}
+      />
+  </View>
+);

@@ -47,7 +47,7 @@ export default function App() {
         <AuthProvider>
      <NavigationContainer>
      <AuthContext.Consumer>
-     {({currentUser}) => currentUser ? (
+      {({currentUser}) => currentUser ? (
         <AppNavigator />    
       ): (
         <GuestNavigator />

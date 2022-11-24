@@ -12,15 +12,19 @@ import { TopNavigationSimpleUsageShowcase } from '../TopNav';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FaveScreen } from '../../pages/favourites.components';
 import { ActivityCardScreen } from '../../pages/activitycards.component';
+
 import { CreateAccountScreen } from '../../pages/newaccount.component';
 import LoginScreen from '../../screens/LoginScreen';
 import WelcomeScreen from '../../screens/WelcomeScreen';
+import { NotificationScreenPage } from '../../screens/NotificationsScreen';
+
 //Bottom navigation bar
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
+    style={{paddingBottom: '5%'}}
     selectedIndex={state.index}
     onSelect={index => navigation.navigate(state.routeNames[index])}>
     <BottomNavigationTab title='Home' icon={HomeIcon}/>
@@ -31,6 +35,7 @@ const BottomTabBar = ({ navigation, state }) => (
 );
 
 const TabNavigator = () => (
+
   <Navigator tabBar={props => <BottomTabBar {...props} />}>
     <Screen name='Home' component={HomeStackScreen} options={{
       headerTransparent: true
@@ -45,6 +50,13 @@ const TabNavigator = () => (
     <Screen name='Profile' component={ProfileStackScreen} options={{
       headerTransparent: true
     }}/>
+
+  <Navigator screenOptions={{headerShown:false}} tabBar={props => <BottomTabBar {...props} />}>
+    <Screen name='Homepage' component={HomeStackScreen} />
+    <Screen name='Activitiespage' component={ActivityStackScreen} />
+    <Screen name='Calendarpage' component={CalendarStackScreen} />
+    <Screen name='Profilepage' component={ProfileStackScreen} />
+
   </Navigator>
 );
 
@@ -77,7 +89,11 @@ const NotIcon = (props) => (
 
 const HeaderStyle = () => ({
   headerStyle: {
+
     backgroundColor: '#FFFFFF',
+
+    // backgroundColor: '#FFFEF4',
+
   },
   headerTintColor: 'black',
   headerTitleStyle: {
@@ -118,10 +134,15 @@ const HomeStackScreen = () => (
      <HomeStack.Screen name='Notifications' component={NotificationScreen} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
-    <HomeStack.Screen name='Activities' component={ActivityScreen} options={{
+    <HomeStack.Screen name='Activities' component={ActivityStackScreen} options={{
+      headerShown: false
+    }}></HomeStack.Screen>
+    <HomeStack.Screen name='Notifications Screen' component={NotificationScreenPage} options={{
       headerTransparent: true
     }}></HomeStack.Screen>
+
     
+
 
   </HomeStack.Navigator>
   );
@@ -137,4 +158,15 @@ const HomeStackScreen = () => (
         headerTransparent: true
       }}></ActivityStack.Screen>
    </ActivityStack.Navigator>
+    );
+
+
+  const CalendarStack = createStackNavigator();
+
+  const CalendarStackScreen = () => (
+    <CalendarStack.Navigator>
+      <CalendarStack.Screen name='Calendar' component={CalendarScreen} options={{
+        headerTransparent: true
+      }}></CalendarStack.Screen>
+   </CalendarStack.Navigator>
     );

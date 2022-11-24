@@ -6,13 +6,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image } from 'react-native';
 import { Radio } from '@ui-kitten/components';
 
-import { collection, getFirestore } from "@firebase/firestore";
+import { collection, getFirestore, where } from "@firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export const Reminders = ({
     time="8:00am",
     title="Crafting with Chloe",
-    path
+    path,
+    date
 }) => {
 
     const db = getFirestore();
@@ -34,7 +35,7 @@ export const Reminders = ({
                         style={{margin: 0}}
                         onChange={nextChecked => setChecked(nextChecked)}>
                     </Radio>
-                    <Text style={styles.time}>{time}</Text>
+                    <Text style={styles.time}>{doc.time}</Text>
                     <Text style={styles.title}>{doc.title}</Text> 
                 </Layout>
             </Card>

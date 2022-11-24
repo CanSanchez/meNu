@@ -10,7 +10,9 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export const CalendarCard = ({
   placeholder="date",
-  path
+  path,
+  date,
+  eventtitle
 }) => {
 
   //const connect to backend
@@ -20,11 +22,12 @@ export const CalendarCard = ({
   
 
   const [title, setTitle] = useState("");
+  const [time, setTime] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     console.log(title)
-    await addDoc(query, { title: title, date: date });
+    await addDoc(query, { title: title, date: date, time: time });
     setClose(current => !current);
   }
 
@@ -36,12 +39,12 @@ export const CalendarCard = ({
 }
 
   
-  const [date, setDate] = React.useState(new Date());
+  const [chosendate, setChosenDate] = useState(date);
   
   return <Layout 
             style={{
             width:340, 
-            height:430, 
+            height:300, 
             borderRadius:35, 
             alignItems:"center", 
             justifyContent: 'center',
@@ -50,7 +53,7 @@ export const CalendarCard = ({
             // borderColor: 'black',
             display: close ? 'none' : 'flex',
             flexDirection: 'column'}}>
-          <Layout style={{alignSelf:'flex-end', marginRight: 20, marginBottom: 60, backgroundColor: 'transparent'}}>
+          <Layout style={{alignSelf:'flex-end', marginRight: 20, backgroundColor: 'transparent'}}>
             <Icon name="close-outline" fill="#434343" style={{width:23, height:23 }}
             onPress={handleClickClose}
             />
@@ -60,12 +63,13 @@ export const CalendarCard = ({
                 onChangeText ={ text => setTitle(text)}    size="small" placeholder='Title' style={styles.input}></TextInput>
             {/* date time picker */}
            <Datepicker
+              style={styles.input}
               placeholder='Pick Date'
-              date={date}
-              onSelect={nextDate => setDate(nextDate)}
+              date={chosendate}
+              onSelect={nextDate => setChosenDate(nextDate)}
               accessoryRight={CalendarIcon}
             />
-            <Input accessoryRight={TimeIcon} size="small" placeholder='Time' style={styles.input}></Input>
+            <TextInput onChangeText ={ text => setTime(text)} accessoryRight={TimeIcon} size="small" placeholder='Time' style={styles.input}></TextInput>
             <Button style={styles.addBtn} onPress={handleSubmit}>Add</Button>
           </Layout>
             
@@ -100,8 +104,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     textAlign: 'center',
     textAlignVertical: 'center',
-    marginTop: 100
-  }, 
+    marginTop: 10
+  }
   })
 
 //icons

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, KeyboardAvoidingView, Text, Image } from 'react-native';
 import { Button, Divider, Layout, Icon, View, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
-import { CalendarSimpleUsageShowcase } from '../components/Calendar';
+import { Calendar } from '@ui-kitten/components';
 import { Reminders } from '../components/Reminders';
 import { CalendarCard } from '../components/CalendarCard';
 import { TopNav } from '../components/TopNav';
@@ -84,6 +84,8 @@ export const CalendarScreen = () => {
     </>
 )
 
+const [date, setDate] = React.useState(new Date());
+
   return (
     <KeyboardAvoidingView 
         style={styles.container}
@@ -102,7 +104,14 @@ export const CalendarScreen = () => {
       <Layout style={styles.container}>
         
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <CalendarSimpleUsageShowcase />
+          <Calendar
+            style={{borderRadius: 30}}
+            date={date}
+            onSelect={nextDate => setDate(nextDate)}
+          />
+          <Text category='h6' style={{paddingTop: '5%'}}>
+            Selected date: {date.toDateString('en-US')}
+          </Text>
           <Button
             accessoryLeft={PlusIcon}
             style={styles.addBtn}
@@ -110,7 +119,10 @@ export const CalendarScreen = () => {
               <Text>Add to Calendar</Text>
           </Button>
            { user.map(o=>
-           open? <CalendarCard path={`users/${o.id}/reminders`}/> :null
+           open? <CalendarCard 
+                    path={`users/${o.id}/reminders`}
+                    date={date}
+                    /> :null
            )}
            
         </Layout>
@@ -118,7 +130,7 @@ export const CalendarScreen = () => {
             <Reminders
              path={`users/${o.id}/reminders`}
             />
-            )}
+        )}
     </Layout>
   </ScrollView>
   </SafeAreaView>

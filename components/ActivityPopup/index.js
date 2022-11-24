@@ -13,8 +13,8 @@ export const ActivityPopup = ({ navigation,
   list2="Helps with back pain relief",
   list3="Relaxes you",
   list4="Gives you more energy",
-  need="Pilates mat"
-
+  need="Pilates mat",
+  func
 }) => {
 
   const [open, setOpen] = useState(false);
@@ -56,7 +56,7 @@ export const ActivityPopup = ({ navigation,
               </View>
               </Layout>
               <View style={styles.buttondiv}>
-                  <ButtonMain style={styles.button} text="Add to Reminder" func={() => navigation.push('Calendar')}>
+                  <ButtonMain style={styles.button} text="Add to Reminder" func={func}>
                   </ButtonMain>
               </View>
           </Card>

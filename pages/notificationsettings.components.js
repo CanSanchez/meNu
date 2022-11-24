@@ -14,7 +14,7 @@ export const NotificationScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1}}>
       <Divider />
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFEF4'}}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h5'>Notification Preferences</Text>
         <View style={{margin: 10}}>
             <ActionListItem styl={actionstyle} tle='Allow Notifications' ar={ToggleButton}></ActionListItem>
@@ -27,7 +27,7 @@ export const NotificationScreen = ({ navigation }) => {
 };
 
 const actionstyle = StyleSheet.create({
-  backgroundColor: '#FFF3D3',
+  // backgroundColor: '#FFF3D3',
   borderRadius: '25%',
   marginTop: "2%",
   marginBottom: '2%',

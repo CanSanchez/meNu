@@ -4,6 +4,8 @@ import { Button, Card, Modal, Text, Layout, Icon } from '@ui-kitten/components';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { push } from 'firebase/database';
 
 
 
@@ -12,34 +14,34 @@ const SaveIcon = (props) => (
     <Icon {...props} name='bookmark-outline' fill="#434343"/>
   );
 
-export const RecActivities = ({ navigation }) => {
-
-   
-
+export const RecActivities = ({ 
+    navigation, 
+    func,
+    src = require('../../assets/yoga.jpeg'),
+    title = 'Yoga'
+}) => {
+ 
     return (
-        <><Text style={{padding:10, marginRight:170, fontWeight: 'bold', color:"black"}}>Recommended Activities</Text>
-        <Layout style={styles.cont}>
-     
-                <ScrollView horizontal={true}>
-            <Layout style={{backgroundColor: 'transparent'}}>
-                <Image style={{ width: 106, height: 100, borderRadius: 30 }} source={require('../../assets/yoga.jpeg')}></Image>
-                    <Text style={styles.text}>Yoga</Text>
-            </Layout>
-            <Layout style={{backgroundColor: 'transparent'}}>
-                <Image style={{ borderRadius: 30, width: 106, height: 100, marginLeft:10, marginRight:10 }} source={require('../../assets/Book.jpeg')}></Image>
-                <Text accessoryRight={SaveIcon} style={styles.text}>Reading</Text>
-            </Layout>
-            <Layout style={{backgroundColor: 'transparent'}}>
-                <Image style={{ borderRadius: 30, width: 106, height: 100, marginRight:10}} source={require('../../assets/jump.jpeg')}></Image>
-                <Text style={styles.text}>Dancing</Text>
-            </Layout>
-            <Layout style={{backgroundColor: 'transparent'}}>
-                <Image style={{ borderRadius: 30, width: 106, height: 100, marginRight:10 }} source={require('../../assets/sun.jpeg')}></Image>
-                <Text style={styles.text}>Walking</Text>
-            </Layout>
-            </ScrollView>            
-        </Layout></>
-
+       
+        <TouchableOpacity
+            onPress={func}
+            style={{backgroundColor: 'transparent', margin: 5}}>
+            <Image 
+                style={{ width: 106, height: 100, borderRadius: 30 }} source={src}></Image>
+            <Text style={styles.text}>{title}</Text>
+        </TouchableOpacity>
+                    // <TouchableOpacity style={{backgroundColor: 'transparent'}}> 
+                    //     <Image style={{ borderRadius: 30, width: 106, height: 100, marginLeft:10, marginRight:10 }} source={require('../../assets/Book.jpeg')}></Image>
+                    //     <Text accessoryRight={SaveIcon} style={styles.text}>Reading</Text>
+                    // </TouchableOpacity>
+                    // <TouchableOpacity style={{backgroundColor: 'transparent'}}>
+                    //     <Image style={{ borderRadius: 30, width: 106, height: 100, marginRight:10}} source={require('../../assets/jump.jpeg')}></Image>
+                    //     <Text style={styles.text}>Dancing</Text>
+                    // </TouchableOpacity>
+                    // <TouchableOpacity style={{backgroundColor: 'transparent'}}>
+                    //     <Image style={{ borderRadius: 30, width: 106, height: 100, marginRight:10 }} source={require('../../assets/sun.jpeg')}></Image>
+                    //     <Text style={styles.text}>Walking</Text>
+                    // </TouchableOpacity>
     )
 };
 
@@ -54,7 +56,7 @@ const styles=StyleSheet.create({
     text: {
         textAlign:"center",
         paddingTop:10,
-        color: 'black'
+        // color: 'black'
     },
     icon: {
             }

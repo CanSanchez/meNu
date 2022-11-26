@@ -46,21 +46,6 @@ export const ActivityScreen = () => {
   )
 
   return (
-
-    <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
-    <Layout style={{flex:1, backgroundColor:'#FFFEF4'}}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <TopNavigationSimpleUsageShowcase/>
-        
-        <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'#FFFEF4' }}>
-        <View style={{height:350}}>
-          
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='info' ar={Indoor}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='success' text='Outdoor' ar={Outdoor}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='warning' text='Creative' ar={Creative}></CategoryButton>
-        <CategoryButton func={() => navigation.push('Activity Card')} stat='danger' text='Self Care' ar={SelfCare}></CategoryButton>
-        </View>
-
       <SafeAreaView style={styles.layout}>
         <TopNavigation 
         alignment="center"
@@ -72,11 +57,10 @@ export const ActivityScreen = () => {
         }} 
         />
         <Layout style={styles.container}>
-        <CategoryButton func={() => handleSubmit('Indoor')} ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Outdoor')} stat='success' text='Outdoor' ar={HeartIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Creative')} stat='warning' text='Creative' ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Self-Care')} stat='danger' text='Self Care' ar={StarIcon}></CategoryButton>
-
+          <CategoryButton func={() => handleSubmit('Indoor')} ar={Indoor}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Outdoor')} stat='success' text='Outdoor' ar={Outdoor}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Creative')} stat='warning' text='Creative' ar={Creative}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Self-Care')} stat='danger' text='Self Care' ar={SelfCare}></CategoryButton>
         </Layout>
       </SafeAreaView>
   );

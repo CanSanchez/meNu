@@ -88,7 +88,7 @@ export const HomeScreen = () => {
         style={styles.container}
         behavior="padding"
     >
-      <SafeAreaView style={{backgroundColor: '#FFFEF4'}}>
+      <SafeAreaView style={{backgroundColor: 'transparent'}}>
         <TopNavigation 
         alignment="center"
         accessoryRight={renderDrawerAction}

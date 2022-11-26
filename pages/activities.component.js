@@ -57,10 +57,10 @@ export const ActivityScreen = () => {
         }} 
         />
         <Layout style={styles.container}>
-        <CategoryButton func={() => handleSubmit('Indoor')} ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Outdoor')} stat='success' text='Outdoor' ar={HeartIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Creative')} stat='warning' text='Creative' ar={StarIcon}></CategoryButton>
-        <CategoryButton func={() => handleSubmit('Self-Care')} stat='danger' text='Self Care' ar={StarIcon}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Indoor')} ar={Indoor}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Outdoor')} stat='success' text='Outdoor' ar={Outdoor}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Creative')} stat='warning' text='Creative' ar={Creative}></CategoryButton>
+          <CategoryButton func={() => handleSubmit('Self-Care')} stat='danger' text='Self Care' ar={SelfCare}></CategoryButton>
         </Layout>
       </SafeAreaView>
   );
@@ -113,3 +113,23 @@ const LogoPrimary = ({navigation}) => (
       />
   </View>
 );
+
+const SelfCare = (props) => (
+  <Image {...props}  source={require('../assets/imagescategory/selfcare.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
+)
+
+const Indoor = (props) => (
+  <Image {...props}  source={require('../assets/imagescategory/indoor.png')} 
+  style={{width:50, height:50, marginLeft:65}}/>
+)
+
+const Outdoor = (props) => (
+  <Image {...props}  source={require('../assets/imagescategory/outdoor.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
+)
+
+const Creative = (props) => (
+  <Image {...props}  source={require('../assets/imagescategory/creative.png')} 
+  style={{width:50, height:50, marginLeft:55}}/>
+)

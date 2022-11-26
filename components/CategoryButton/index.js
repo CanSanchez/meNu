@@ -11,8 +11,6 @@ export const CategoryButton = ({
   func="", 
   ar = "",
 }) => (
-  <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
-    <View style={styles.container}>
     <Button 
     style={styles.button} 
     status={stat}
@@ -20,17 +18,9 @@ export const CategoryButton = ({
     onPress={func}>
       {text}
     </Button>
-    </View>
-  </ApplicationProvider>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
-  },
   button: {
     margin: 5,
     borderRadius:30,

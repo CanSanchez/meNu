@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 import { Button } from '@ui-kitten/components';
@@ -16,6 +16,9 @@ import {
     doc,
  } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
+import { ImageBackground } from 'react-native';
+import { TutorialCard } from '../components/TutorialCard';
+import Swiper from 'react-native-swiper';
 
 
    export default function SignupScreen ({navigation}) {
@@ -72,6 +75,25 @@ import { useAuth } from '../contexts/AuthContext';
         style={styles.container}
         behavior="padding"
     >
+
+    <ImageBackground 
+    source={require('../assets/images-login/D6ED5F4DF0A578B1.png')}
+    resizeMode={'cover'}
+    style={{ flex: 1, width: '100%', height:'100%', justifyContent: 'center',
+    alignItems: 'center'}}
+    >
+
+<Image style={{ width: 250, height: 23, marginTop: 30 }} source={require('../assets/logo/welcome.png')} /><Swiper>
+                  <TutorialCard source={require('../assets/Group.png')}
+                   headertxt="Self Care" 
+                   cardtxt="Moms can select from various self care activities." />
+                  <TutorialCard source={require('../assets/plants.png')} 
+                  headertxt="Activities" 
+                  cardtxt="We will provide you with a set of activities you can complete on your own or with your child(ren)." />
+                  <TutorialCard source={require('../assets/Frame.png')} 
+                  headertxt="Reminders" 
+                  cardtxt="You will receive notifications about schedules, activities to help organize your busy day!" />
+            </Swiper>
         <View style={styles.inputContainer}>
             <TextInput 
                 placeholder='First name'
@@ -119,6 +141,7 @@ import { useAuth } from '../contexts/AuthContext';
                 <Text style={styles.buttonOutlineText}>Sign Up with Google</Text>
             </Button>
         </View>
+        </ImageBackground>
 
     </KeyboardAvoidingView>
   )
@@ -129,30 +152,36 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FDF1E1'
+        backgroundColor: '#FFFEF4'
     },
     inputContainer:{
-        width: '80%'
+        width: '70%',
+        height:'25%',
+        paddingTop:5,
+        marginBottom:-10
     },
     input:{
         backgroundColor: 'white',
         paddingHorizontal: 15,
         paddingVertical: 10,
-        borderRadius: 10,
-        marginTop: 5
+        borderRadius: 30,
+        marginTop: 5,
+        borderWidth: .5,
+        borderColor: '#DBD7B2'
     },
     buttonContainer:{
-        width: '60%',
+        width: '50%',
+        height: '20%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40
+        marginBottom:10
     },
     button:{
         width: '100%',
         padding: 15,
-        borderRadius: 10,
+        borderRadius: 30,
         alignItems: 'center',
-        marginTop: 10
+        marginBottom:10
         
     },
     buttonText:{

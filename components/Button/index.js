@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: 'transparent'
+    // backgroundColor: 'transparent'
   },
   button: {
     margin: 5,

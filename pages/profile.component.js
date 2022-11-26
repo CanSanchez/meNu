@@ -1,18 +1,25 @@
-import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
-import { Text, Divider, Layout, Button, Icon } from '@ui-kitten/components';
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, View, StyleSheet, KeyboardAvoidingView, Image } from 'react-native';
+import { Text, Divider, Layout, Button, Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 import { AvatarProfile } from '../components/Avatar';
 import { ButtonMain } from '../components/Button';
 import { PopupCardButton } from '../components/PopupCard';
 import { ToggleButton } from '../components/Toggle';
 import { ActionListItem } from '../components/ActionList';
-import { TopNavigationSimpleUsageShowcase } from '../components/TopNav';
-import { useAuth } from '../contexts/AuthContext';
+import { TopNav } from '../components/TopNav';
 import { useFonts } from 'expo-font';
+import { useNavigation, DrawerActions } from "@react-navigation/native";
 
-export const ProfileScreen = ({ navigation }, props) => {
 
-  const { logout } = useAuth()
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { useAuth } from '../contexts/AuthContext';
+
+export const ProfileScreen = (props) => {
+
+  //getting data from backend
+  const { currentUser, logout } = useAuth()
+  const db = getFirestore();
+  const [user,setUser] = useState([]);
 
   const logOut = async () => {
     try {
@@ -24,6 +31,32 @@ export const ProfileScreen = ({ navigation }, props) => {
       }
 }
 
+useEffect(() => {
+
+  const fetchUser = async () => {
+
+    const q = query(collection(db, "users"), where("email", '==', currentUser.email));
+
+        const querySnapshot = await getDocs(q);
+  
+        const dbuser = [];
+
+    querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+    dbuser.push({
+      ...doc.data(),
+      id:doc.id
+    });
+  });
+  setUser([
+    ...dbuser
+  ]);
+};
+  fetchUser();
+  // alert(user.map(o=>o.lastName))
+}, []);
+
 const [loaded] = useFonts({
   Poppins: require('../assets/fonts/Poppins-Regular.ttf'),
   PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
@@ -34,28 +67,65 @@ if (!loaded) {
   return null;
 }
 
-  return (<Layout style={{flex:1}}>
+//Notification & favourites drawer navigation
+const navigation = useNavigation();
 
-    <SafeAreaView style={{ flex: 1}}>
+//right rendering of top navigation
+const renderDrawerAction = () => (
+  <>
+    <TopNavigationAction 
+      icon={NotIcon} 
+      onPress={() => 
+      navigation.dispatch(DrawerActions.openDrawer())}
+    />
+    <TopNavigationAction 
+      icon={SaveIcon} 
+      onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+    />
+  </>
+)
+
+//left rendering of top navigation
+const renderLefttActions = ({navigation}) => (
+    <>
+    <TopNavigationAction 
+    icon={LogoPrimary}
+    />
+    </>
+)
+
+
+  return (
+    <SafeAreaView style={styles.layout}>
+      <TopNavigation 
+        alignment="center"
+        accessoryRight={renderDrawerAction}
+        accessoryLeft={renderLefttActions}
+        style={{
+          position: 'fixed',
+          width: '100%'
+        }} 
+        />
+      <Layout style={styles.container}>
       
-      <TopNavigationSimpleUsageShowcase/>
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
         <AvatarProfile />
-        <Text category='h5' style={{color: 'black', fontFamily:'PoppinsMedium'}}>Michelle Smith</Text>
+      {user.map(o=>    
+        <Text category='h5' style={{color: 'black', fontFamily:'PoppinsMedium'}}>{o.name} {o.lastName}</Text>
+      )}
         <ButtonMain func={() => navigation.push('Account Settings')} text='Edit Account' ar={ChevronRightIcon}></ButtonMain>
         <View style={{margin: 10}}>
             <Text category='s2'>Content</Text>
             <ButtonMain func={() => navigation.push('Favourites')} text='Favourites' al={FaveIcon} ar={ChevronRightIcon} sz='small' stat='basic'/>
             <Text category='s2'>Preferences</Text>
-            <ActionListItem func={() => navigation.push('Notifications')} styl={actionstyle} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>
-            <ActionListItem styl={actionstyle} tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
-            <Button onPress={props.toggleTheme}>Switch Theme</Button>
+            <ActionListItem func={() => navigation.push('Notifications')} tle='Notification' al={NotifIcon} ar={ChevronRightIcon}></ActionListItem>
+            <ActionListItem tle='Dark Mode' al={DarkIcon} ar={ToggleButton}></ActionListItem>
+            <ActionListItem tle='Colorblind Mode' al={ColorblindIcon} ar={ToggleButton}></ActionListItem>
+            {/* <Button onPress={props.toggleTheme}>Switch Theme</Button> */}
         </View>
-        <Button onPress={logOut}>Log Out</Button>
-      </Layout>
+ 
+        <Button onPress={logOut} style={{borderRadius:30}}>Log Out</Button>
+        </Layout>
     </SafeAreaView>
-    </Layout>
   );
 };
 
@@ -79,10 +149,38 @@ const ColorblindIcon = (props) => (
     <Icon {...props} name='eye'/>
   );
 
-const actionstyle = StyleSheet.create({
-  backgroundColor: '#FFF3D3',
-  borderRadius: '25%',
-  marginTop: "2%",
-  marginBottom: '2%',
-  width: "80%"
+const styles = StyleSheet.create({
+  layout:{
+    flex: 1,
+    flexDirection: 'column',
+    alignItems:'center',
+    width: '100%',
+    backgroundColor: '#FFFEF4'
+  },
+  container:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+    // backgroundColor: 'transparent'
+}
+  
 });
+
+//icon rendering
+const NotIcon = (props) => (
+  <Icon {...props} name='bell' fill="#E88C68" />
+);
+
+const SaveIcon = (props) => (
+  <Icon {...props}  name="bookmark" fill="#E88C68" />
+);
+
+const LogoPrimary = ({navigation}) => (
+  <View style={{paddingLeft: 15}}>
+    <Image 
+        style={{  width: 26 , height: 35, objectFit: 'cover' }}
+        source={require('../assets/logo/Logo.png')}
+      />
+  </View>
+);

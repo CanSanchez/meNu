@@ -8,7 +8,7 @@ color:${props=>props.cl};
 
 export default function HeadingText({
   text='Welcome',
-  size='50px'
+  size='20px'
 }) {
   return (
     <TxtCont sz={size} cl={color}>

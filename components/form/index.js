@@ -4,6 +4,7 @@ import { FlexStyleProps, PropsService } from '@ui-kitten/components/devsupport';
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 import { Text } from '@ui-kitten/components';
+import { HeaderTitle } from '../Header';
 
 const UserIcon = (props) => (
   <Icon {...props} name='person-outline'/>
@@ -14,10 +15,20 @@ const PassIcon = (props) => (
 );
 
 
-export const InputSimpleUsageShowcase = () => {
+export const LoginForm = ({
+  formtitle="Create Account",
+  placeholder="Username",
+}) => {
 
 
-  const [value, setValue] = React.useState('');
+  const [pass, setPass] = React.useState('');
+  const [user, setUser] = React.useState('');
+  const [secureTextEntry, setSecureTextEntry] = React.useState(true);
+
+  const toggleSecureEntry = () => {
+    setSecureTextEntry(!secureTextEntry);
+  };
+
 
   const renderCaption = () => {
     return (
@@ -31,28 +42,28 @@ export const InputSimpleUsageShowcase = () => {
 
   return (
 
-    <>
+    
 
-      <Text category="h6">Login</Text>
+      <><><Input style={styles.input}
+
+      placeholder={placeholder}
+      size='large'
+      value={user}
+      StyleProp='poppins'
+      accessoryLeft={UserIcon}
+
+      onChangeText={nextValue => setUser(nextValue)} />
+      </>
+      
       <Input style={styles.input}
-
-        placeholder='Username or Email'
-        size='large'
-        value={value}
-        StyleProp='poppins'
-        accessoryLeft={UserIcon}
-        
-        onChangeText={nextValue => setValue(nextValue)} />
-
-        <Input style={styles.input}
         caption={renderCaption}
         placeholder='Password'
         size='large'
-        value={value}
+        value={pass}
         StyleProp='poppins'
         accessoryLeft={PassIcon}
-        onChangeText={nextValue => setValue(nextValue)} />
-  </>
+        secureTextEntry={secureTextEntry}
+        onChangeText={nextValue => setPass(nextValue)} /></>
 
       
     
@@ -66,7 +77,6 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     margin:15,
     borderRadius:30,
-    
     
   },
 

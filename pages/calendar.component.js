@@ -87,13 +87,6 @@ export const CalendarScreen = () => {
 const [date, setDate] = React.useState(new Date());
 
   return (
-    <SafeAreaView style={{backgroundColor: '#FFFEF4'}}>
-      <TopNav />  
-    <ScrollView scrollEventThrottle={200}>
-      <Layout style={styles.layout}>
-          
-        {/* <Layout style={{paddingTop:40}}>
-        
     <KeyboardAvoidingView 
         style={styles.container}
         behavior="padding"
@@ -108,7 +101,7 @@ const [date, setDate] = React.useState(new Date());
           width: '100%'
         }} /> 
     <ScrollView scrollEventThrottle={200}>
-
+      <Layout style={styles.container}>
         
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Calendar

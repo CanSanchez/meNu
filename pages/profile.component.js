@@ -123,7 +123,7 @@ const renderLefttActions = ({navigation}) => (
             {/* <Button onPress={props.toggleTheme}>Switch Theme</Button> */}
         </View>
  
-        <Button onPress={logOut}>Log Out</Button>
+        <Button onPress={logOut} style={{borderRadius:30}}>Log Out</Button>
         </Layout>
     </SafeAreaView>
   );

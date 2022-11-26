@@ -11,12 +11,13 @@ export default function WelcomeScreen({navigation}) {
         >
              <ImageBackground
                 source={require('../assets/images-login/D6ED5F4DF0A578B2.png')}
-                resizeMode={'cover'}
+                resizeMode={'fill'}
                 style={{ flex: 1, width: '100%', height:'100%', justifyContent: 'center',
                 alignItems: 'center', }}>
                 <View style={styles.imgContainer}>
                     <Image style={styles.img}
-                    source={require('../assets/images-login/bears_splash.png')}></Image>
+                    source={require('../assets/logo/LogoMain.png')}></Image>
+                    <Image style={{width:250, height:23}} source={require('../assets/logo/welcome.png')}/>
                 </View>
         
                 <View style={styles.buttonContainer}>
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     button:{
-        width: '100%',
+        width: '80%',
         padding: 15,
-        borderRadius: 10,
+        borderRadius: 30,
         alignItems: 'center',
         marginTop: 10
         
@@ -83,11 +84,15 @@ const styles = StyleSheet.create({
     },
 
     imgContainer:{
-        objectFit: 'contain'
+        objectFit: 'contain',
+        display:'flex',
+        alignItems:'center'
+
     },
 
     img:{
-        width: 250,
-        height: 250
+        width: 166,
+        height: 225,
+        marginBottom:30
     }
 })

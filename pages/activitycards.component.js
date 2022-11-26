@@ -7,8 +7,6 @@ import { ActivityPopup } from '../components/ActivityPopup';
 import { FilterButtons } from '../components/FilterButtons';
 
 import Swiper from 'react-native-swiper';
-import { collection, getDocs, getFirestore } from "firebase/firestore";
-
 import { CalendarCard } from '../components/CalendarCard';
 
 

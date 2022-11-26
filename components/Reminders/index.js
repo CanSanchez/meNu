@@ -23,26 +23,9 @@ export const Reminders = ({
     const [checked, setChecked] = useState(false);
 
 
-    const [checked, setChecked] = React.useState(false);
-    const [notChecked, setNotChecked] = React.useState(false);
-
-
     return ( 
         <Layout style={styles.layout}>
             <ScrollView>
-
-            <Text style={{fontWeight: 'bold', color: 'black'}}>Reminders</Text>
-            <Card style={styles.recard}>
-                <Radio checked={checked}
-                onChange={nextChecked => setChecked(nextChecked)}>
-                Mediation and mindfulness (Yoga)</Radio>
-                <Text style={{paddingLeft:32, color: 'black'}}>8:00am</Text>
-            </Card>
-            <Card style={styles.recard}>
-                <Radio checked={notChecked}
-                onChange={nextNotChecked => setNotChecked(nextNotChecked)}>Breakfast with kids</Radio>
-                <Text style={{paddingLeft:32, color: "black"}}>Check emails for 15 mins</Text>
-
             {docs?.map((doc) => (
             <Card style={styles.recard} key={Math.random()}>
                 <Layout style={styles.container}>
@@ -55,7 +38,6 @@ export const Reminders = ({
                     <Text style={styles.time}>{doc.time}</Text>
                     <Text style={styles.title}>{doc.title}</Text> 
                 </Layout>
-
             </Card>
             ))}
             </ScrollView>

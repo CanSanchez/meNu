@@ -32,7 +32,7 @@ export default function WelcomeScreen({navigation}) {
                         style={[styles.button, styles.buttonOutline]}
                         appearance = 'outline'
                     >
-                        <Text style={styles.buttonOutlineText}>Sign Up as New User</Text>
+                        <Text style={styles.buttonOutlineText}>Sign Up</Text>
                     </Button>
                 </View>
             </ImageBackground>

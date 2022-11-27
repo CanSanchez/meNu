@@ -12,7 +12,7 @@
     "@eva-design/eva": "^2.1.1",
     "@expo-google-fonts/fredoka-one": "^0.2.2",
     "@expo/webpack-config": "^0.17.3",
-    "@react-native-community/datetimepicker": "^6.7.0",
+    "@react-native-community/datetimepicker": "^6.2.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-firebase/database": "^16.4.5",
     "@react-navigation/bottom-tabs": "^6.4.0",

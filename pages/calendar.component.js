@@ -105,7 +105,7 @@ const [date, setDate] = React.useState(new Date());
         
         <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Calendar
-            style={{borderRadius: 30}}
+            style={{borderRadius: 30, marginTop:30}}
             date={date}
             onSelect={nextDate => setDate(nextDate)}
           />
@@ -158,7 +158,8 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 20,
+    borderRadius: 30
   } 
   
 })

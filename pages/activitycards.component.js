@@ -87,9 +87,9 @@ export const ActivityCardScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.layout}>
       <Layout style={styles.container}>
-        <FilterButtons />
+        
         <Text style={styles.title}>{route.params.cat} Activities</Text>
-        <ScrollView horizontal={true} style={{margin:0}}>
+        <Swiper showsPagination={false} horizontal={true} style={{margin:0}}>
             {activities.map(o=>
                 <ActivityPopup
                 func={handleClickOpen}
@@ -100,7 +100,7 @@ export const ActivityCardScreen = ({ navigation, route }) => {
                 list1={o.activityDescription}
                 ></ActivityPopup>
             )}
-        </ScrollView>
+        </Swiper>
         { user.map(o=>
            open? <CalendarCard 
                     path={`users/${o.id}/reminders`}
@@ -124,7 +124,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    marginTop:'40%'
   },
   title: {
     fontSize: '20%',

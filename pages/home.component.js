@@ -90,7 +90,7 @@ export const HomeScreen = () => {
         style={styles.container}
         behavior="padding"
     >
-      <SafeAreaView style={{backgroundColor: 'transparent'}}>
+      <SafeAreaView style={{backgroundColor: '#FFFEF4'}}>
         <TopNavigation 
         alignment="center"
         accessoryRight={renderDrawerAction}
@@ -107,12 +107,12 @@ export const HomeScreen = () => {
             <HeaderTitle headertext={`Welcome back, ${o.name}`}
              />
           )}
-            <View style={styles.animationContainer}/>
+            <View style={{marginTop:-60}}/>
             <LottieView
                 autoPlay
                 style={{
-                  width: 180,
-                  height: 180
+                  width: 175,
+                  height: 175
                 }}
                 source={require('../assets/animations/bearanimation.json')}
               />

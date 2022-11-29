@@ -11,10 +11,8 @@ import { Reminders } from '../components/Reminders';
 import LottieView from 'lottie-react-native';
 import { useRef } from 'react';
 import { useNavigation, DrawerActions } from "@react-navigation/native";
-
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
-
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
@@ -106,16 +104,16 @@ export const HomeScreen = () => {
              />
           )}
             <View style={styles.animationContainer}/>
-            {/* <LottieView
+            { <LottieView
               autoPlay
-              ref={animation}
+              
               style={{
                 width: 150,
                 height: 150
                 
               }}
               source={require('../assets/animations/wavingbear.json')}
-            /> */}
+            /> }
             <TextCard />
             <Text style={styles.subtitle}>Recommended Activities</Text>
             <Layout style={styles.cont}>

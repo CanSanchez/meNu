@@ -28,7 +28,7 @@ export const TutorialCard = ({
                     
                     
                 <Card style={styles.card}>
-                    <Layout style={{alignItems:'center'}}>
+                    <Layout style={{alignItems:'center', backgroundColor:'transparent'}}>
                         <Image style={styles.picture}
                         source={source}></Image>
                     </Layout>
@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
        paddingTop:10
     },
     picture: {
-        width:110,
-        height:98,
+        width:126,
+        height:110,
         display:'flex',
         marginBottom:20
         

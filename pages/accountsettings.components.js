@@ -46,8 +46,7 @@ export const AccountSettingsScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Divider />
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFEF4' }}>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <AvatarProfile />
         <Text category='s2' style={{color: 'black', textDecorationLine: 'underline'}}>Update Profile Photo</Text>

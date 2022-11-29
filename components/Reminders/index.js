@@ -29,14 +29,16 @@ export const Reminders = ({
             {docs?.map((doc) => (
             <Card style={styles.recard} key={Math.random()}>
                 <Layout style={styles.container}>
-                    <Radio 
+                    {/* <Radio 
                         key={Math.random()}
                         checked={checked}
                         style={{margin: 0}}
                         onChange={nextChecked => setChecked(nextChecked)}>
-                    </Radio>
+                    </Radio> */}
                     <Text style={styles.time}>{doc.time}</Text>
-                    <Text style={styles.title}>{doc.title}</Text> 
+                    <Text style={styles.title}>{doc.title}</Text>
+                    <Icon name="close-outline" fill="#F1B08D" style={{width:16, height:16, justifySelf: 'flex-end' }}
+                        />
                 </Layout>
             </Card>
             ))}
@@ -63,11 +65,12 @@ const styles=StyleSheet.create({
     container:{
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: 'transparent',
         // borderColor: 'black',
         // borderWidth: 1
+        justifyContent: 'space-between',
+        alignContent: 'center'
     },
     time:{
         paddingLeft:5, 
@@ -75,5 +78,12 @@ const styles=StyleSheet.create({
     },
     title:{
         paddingLeft:7, 
+    },
+    icon: {
+        width:20
     }
 })
+
+const DeleteIcon = (props) => (
+    <Icon {...props} name='trash-2-outline'/>
+  );

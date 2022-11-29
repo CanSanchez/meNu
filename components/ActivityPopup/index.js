@@ -100,7 +100,7 @@ export const ActivityPopup = ({ navigation,
       fontFamily:'PoppinsMedium'
     },
     container:{
-      margin: 45
+      padding: 35,
   },
   layout:{
     flexDirection: 'column',

@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, View, KeyboardAvoidingView, Text} from 'react
 import { Icon, Button, Divider, Layout, TopNavigation, Card, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 import { HeaderTitle } from '../components/Header';
-
+import Lottie from 'lottie-react-native';
 import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
@@ -23,6 +23,7 @@ export const HomeScreen = () => {
   const db = getFirestore();
   const [user,setUser] = useState([]);
 
+  
   
 
   useEffect(() => {
@@ -80,6 +81,8 @@ export const HomeScreen = () => {
   )
 
   const [checked, onChange] = useState(false);
+
+  
 
   return (
     <KeyboardAvoidingView 
@@ -157,7 +160,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
     // backgroundColor: '#FFFEF4'
   },
   cont: {

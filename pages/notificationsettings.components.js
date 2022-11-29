@@ -12,8 +12,7 @@ export const NotificationScreen = ({ navigation }) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
-      <Divider />
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFEF4'}}>
       <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category='h5'>Notification Preferences</Text>
         <View style={{margin: 10}}>

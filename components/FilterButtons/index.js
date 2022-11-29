@@ -51,7 +51,7 @@ export const FilterButtons = ({
     },
     button: {
         textAlign:"center",
-        paddingTop: 60
+        paddingTop: 60,
     },
     filter1:{
         padding:10

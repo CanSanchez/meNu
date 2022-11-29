@@ -25,10 +25,15 @@ export const CalendarCard = ({
   const [time, setTime] = useState("");
 
   async function handleSubmit(e) {
+    if (title.length > 0 && time.length > 0){
     e.preventDefault();
     console.log(title)
     await addDoc(query, { title: title, date: date, time: time });
+    alert('Reminder successfully created')
     setClose(current => !current);
+    } else{
+      alert("Please put a time and title")
+    }
   }
 
 

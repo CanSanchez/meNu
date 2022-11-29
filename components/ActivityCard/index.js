@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Card, Text } from '@ui-kitten/components';
 import { useFonts } from 'expo-font'
 
-
 export const ActivityCard = ({
     func=console.log('not a button'),
     fronttxt="Pilates",
@@ -39,9 +38,10 @@ const styles = StyleSheet.create({
         display:"flex",
         padding: 20,
         borderRadius:30,
-        // backgroundColor:"#F8F386",
+        backgroundColor:"#F1B08D",
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 0
     },
 
     text: {

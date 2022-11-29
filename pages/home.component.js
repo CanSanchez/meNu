@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, View, KeyboardAvoidingView, Text} from 'react
 import { Icon, Button, Divider, Layout, TopNavigation, Card, TopNavigationAction } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 import { HeaderTitle } from '../components/Header';
-
+import Lottie from 'lottie-react-native';
 import { TextCard } from '../components/TextCard';
 import { Image } from 'react-native';
 import { RecActivities } from '../components/RecActivities';
@@ -11,10 +11,8 @@ import { Reminders } from '../components/Reminders';
 import LottieView from 'lottie-react-native';
 import { useRef } from 'react';
 import { useNavigation, DrawerActions } from "@react-navigation/native";
-
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
-
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
@@ -25,6 +23,7 @@ export const HomeScreen = () => {
   const db = getFirestore();
   const [user,setUser] = useState([]);
 
+  
   
 
   useEffect(() => {
@@ -83,6 +82,8 @@ export const HomeScreen = () => {
 
   const [checked, onChange] = useState(false);
 
+  
+
   return (
     <KeyboardAvoidingView 
         style={styles.container}
@@ -106,16 +107,16 @@ export const HomeScreen = () => {
              />
           )}
             <View style={styles.animationContainer}/>
-            {/* <LottieView
+            { <LottieView
               autoPlay
-              ref={animation}
+              
               style={{
                 width: 150,
                 height: 150
                 
               }}
-              source={require('../assets/animations/wavingbear.json')}
-            /> */}
+              source={require('../assets/animations/bearanimation.json')}
+            /> }
             <TextCard />
             <Text style={styles.subtitle}>Recommended Activities</Text>
             <Layout style={styles.cont}>
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
     // backgroundColor: '#FFFEF4'
   },
   cont: {

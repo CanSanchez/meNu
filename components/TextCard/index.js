@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         borderRadius:30,
         backgroundColor:"#E88C68",
         opacity:0.70,
-        margin:10,
-        marginBottom: 20,
+        margin:-25,
+        marginBottom: 30,
         padding: 10  
     },
     quote: {

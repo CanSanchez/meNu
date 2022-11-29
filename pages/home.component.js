@@ -11,7 +11,6 @@ import { Reminders } from '../components/Reminders';
 import LottieView from 'lottie-react-native';
 import { useRef } from 'react';
 import { useNavigation, DrawerActions } from "@react-navigation/native";
-import animationData from '../assets/animations/wavingbear.json';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
 
@@ -112,10 +111,10 @@ export const HomeScreen = () => {
             <LottieView
                 autoPlay
                 style={{
-                  width: 130,
-                  height: 130
+                  width: 180,
+                  height: 180
                 }}
-                source={require('../assets/animations/Bears_hand_waving (1) (1).json')}
+                source={require('../assets/animations/bearanimation.json')}
               />
             <TextCard />
             <Text style={styles.subtitle}>Recommended Activities</Text>

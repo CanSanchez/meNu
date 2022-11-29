@@ -61,9 +61,9 @@ export default function LoginScreen ({navigation}) {
                 alignItems: 'center'}}
             >
               <><Image style={{ width: 250, height: 23, marginTop: 30 }} source={require('../assets/logo/welcome.png')} /><Swiper>
-                  <TutorialCard source={require('../assets/Group.png')} headertxt="Self Care" cardtxt="Moms can select from various self care activities." />
-                  <TutorialCard source={require('../assets/plants.png')} headertxt="Activities" cardtxt="We will provide you with a set of activities you can complete on your own or with your child(ren)." />
-                  <TutorialCard source={require('../assets/Frame.png')} headertxt="Reminders" cardtxt="You will receive notifications about schedules, activities to help organize your busy day!" />
+                  <TutorialCard source={require('../assets/SELFCARE.png')} headertxt="Self Care" cardtxt="Moms can select from various self care activities." />
+                  <TutorialCard source={require('../assets/ACTIVITY.png')} headertxt="Activities" cardtxt="We will provide you with a set of activities you can complete on your own or with your child(ren)." />
+                  <TutorialCard source={require('../assets/REMINDER.png')} headertxt="Reminders" cardtxt="You will receive notifications about schedules, activities to help organize your busy day!" />
 
               </Swiper><View style={styles.inputContainer}>
                       <TextInput

@@ -13,7 +13,6 @@ import { useRef } from 'react';
 import { useNavigation, DrawerActions } from "@react-navigation/native";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContext';
-
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
@@ -107,15 +106,17 @@ export const HomeScreen = () => {
             <HeaderTitle headertext={`Welcome back, ${o.name}`}
              />
           )}
-            <View style={{marginTop:-60}}/>
-            <LottieView
-                autoPlay
-                style={{
-                  width: 175,
-                  height: 175
-                }}
-                source={require('../assets/animations/bearanimation.json')}
-              />
+            <View style={styles.animationContainer}/>
+            { <LottieView
+              autoPlay
+              
+              style={{
+                width: 150,
+                height: 150
+                
+              }}
+              source={require('../assets/animations/wavingbear.json')}
+            /> }
             <TextCard />
             <Text style={styles.subtitle}>Recommended Activities</Text>
             <Layout style={styles.cont}>

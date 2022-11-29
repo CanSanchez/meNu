@@ -115,7 +115,7 @@ export const HomeScreen = () => {
                 height: 150
                 
               }}
-              source={require('../assets/animations/wavingbear.json')}
+              source={require('../assets/animations/bearanimation.json')}
             /> }
             <TextCard />
             <Text style={styles.subtitle}>Recommended Activities</Text>

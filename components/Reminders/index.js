@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image } from 'react-native';
 import { Radio } from '@ui-kitten/components';
 
-import { collection, getFirestore, where } from "@firebase/firestore";
+import { collection, getFirestore, where, query } from "@firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export const Reminders = ({
@@ -17,8 +17,8 @@ export const Reminders = ({
 }) => {
 
     const db = getFirestore();
-    const query = collection(db, path);
-    const [docs] = useCollectionData(query);
+    const q = query(collection(db, path),  where("date", '==', date));
+    const [docs] = useCollectionData(q);
 
     const [checked, setChecked] = useState(false);
 

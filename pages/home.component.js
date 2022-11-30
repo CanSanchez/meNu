@@ -82,7 +82,8 @@ export const HomeScreen = () => {
 
   const [checked, onChange] = useState(false);
 
-  
+  const date = new Date().toDateString();
+  console.log(date)
 
   return (
     <KeyboardAvoidingView 
@@ -137,9 +138,13 @@ export const HomeScreen = () => {
                 </ScrollView>
             </Layout>
             <Text style={styles.subtitle}>Reminders</Text>
+            <Text category='h6' style={{paddingTop: '5%'}}>
+            Today: {date}
+            </Text>
             {user.map(o=>  
             <Reminders
              path={`users/${o.id}/reminders`}
+             date={date}
             />
             )}
           </Layout>

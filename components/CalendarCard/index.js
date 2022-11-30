@@ -28,7 +28,7 @@ export const CalendarCard = ({
     if (title.length > 0 && time.length > 0){
     e.preventDefault();
     console.log(title)
-    await addDoc(query, { title: title, date: date, time: time });
+    await addDoc(query, { title: title, date: chosendate.toDateString(), time: time });
     alert('Reminder successfully created')
     setClose(current => !current);
     } else{
@@ -45,6 +45,7 @@ export const CalendarCard = ({
 
   
   const [chosendate, setChosenDate] = useState(date);
+  console.log(chosendate)
   
   return <Layout 
             style={{

@@ -85,6 +85,7 @@ export const CalendarScreen = () => {
 )
 
 const [date, setDate] = React.useState(new Date());
+console.log(date)
 
   return (
     <KeyboardAvoidingView 
@@ -129,6 +130,7 @@ const [date, setDate] = React.useState(new Date());
         {user.map(o=>  
             <Reminders
              path={`users/${o.id}/reminders`}
+             date={date.toDateString()}
             />
         )}
     </Layout>

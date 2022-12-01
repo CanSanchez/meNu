@@ -50,7 +50,7 @@ export const Reminders = ({
 const styles=StyleSheet.create({
     recard: {
         width:310,
-        // backgroundColor:'#F8C8A5',
+        backgroundColor:'#E7E6DE',
         borderRadius:30,
         marginTop:20
     },

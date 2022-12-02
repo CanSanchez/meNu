@@ -17,7 +17,7 @@ export default function WelcomeScreen({navigation}) {
                 <View style={styles.imgContainer}>
                     <Image style={styles.img}
                     source={require('../assets/logo/LogoMain.png')}></Image>
-                    <Image style={{width:250, height:23}} source={require('../assets/logo/welcome.png')}/>
+                    <Image style={{width:380, height:35, marginRight:50}} source={require('../assets/logo/title.png')}/>
                 </View>
         
                 <View style={styles.buttonContainer}>
@@ -86,13 +86,17 @@ const styles = StyleSheet.create({
     imgContainer:{
         objectFit: 'contain',
         display:'flex',
-        alignItems:'center'
+        alignItems:'center',
+        
+        
 
     },
 
     img:{
         width: 166,
         height: 225,
-        marginBottom:30
+        display:'flex',
+        marginBottom:30,
+        alignItems:'center'
     }
 })

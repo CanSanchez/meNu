@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 15,
     paddingVertical: 10,
-    borderRadius: 10,
+    borderRadius: 30,
     marginTop: 5,
   },
   addBtn: {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 0,
     marginBottom: 0,
-    borderRadius: 5,
+    borderRadius: 30,
     textAlign: 'center',
     textAlignVertical: 'center',
     marginTop: 10

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         display:"flex",
         padding: 20,
         borderRadius:30,
-        backgroundColor:"#F1B08D",
+        backgroundColor:"#f5eaa6",
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 0,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 
     duration:{
         fontSize: '15%',
-        color: 'grey',
+        color: '#4f5257',
         textAlign:'center',
         fontFamily:'PoppinsBold'
     },

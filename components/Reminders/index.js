@@ -10,10 +10,6 @@ import { collection, getFirestore, where, query } from "@firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
-const deletePost = () => {
-    console.log()
-}
-
 export const Reminders = ({
     time="8:00am",
     title="Crafting with Chloe",
@@ -33,7 +29,7 @@ export const Reminders = ({
             <ScrollView>
             {docs?.map((doc) => (
             <Card style={styles.recard} key={Math.random()}>
-                <Layout style={styles.container} onDelete={deletePost}>
+                <Layout style={styles.container}>
                     {/* <Radio 
                         key={Math.random()}
                         checked={checked}
@@ -42,8 +38,7 @@ export const Reminders = ({
                     </Radio> */}
                     <Text style={styles.time}>{doc.time}</Text>
                     <Text style={styles.title}>{doc.title}</Text>
-                    <Icon name="close-outline" fill="#F1B08D" style={{width:16, height:16, justifySelf: 'flex-end' }}
-                     onPress={() => onDelete}   />
+                    <Icon name="close-outline" fill="#F1B08D" style={{width:16, height:16, justifySelf: 'flex-end' }}/>
                 </Layout>
             </Card>
             ))}
